@@ -1,0 +1,165 @@
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Landing
+:: Page Name 2
+*/
+
+
+/* -----------------------------------------
+   Variables & Such
+----------------------------------------- */
+
+
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville);
+
+
+@hilite: #83B600;
+@secondary: #1990ff;
+@tertiary: #ffc000;
+@maindark: #402000;
+@blank: #f0f0e0;
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+h1, h2, h3, h4, h5, h6, a, p {
+	font-family: 'Libre Baskerville', Georgia, serif;
+	color: @maindark;
+}
+a {
+	color: @secondary;
+}
+.button {
+	background: @secondary;
+}
+
+.panel.callout {
+	background: @tertiary;
+	border-color: darken(@tertiary, 10%);
+}
+
+/* -----------------------------------------
+   Landing
+----------------------------------------- */
+
+#landing {
+	background: @blank;
+	header {
+		background: url(../images/noise.png) repeat @hilite;
+		border: 5px solid @maindark;
+		border-width: 5px 0px 1px;
+		font-family: 'Libre Baskerville', Georgia, serif;
+		padding: 10px 0 30px;
+		text-align: center;
+		.logomark {
+			background: url(../images/helmets.png) no-repeat transparent;
+			display: block;
+			height: 226px;
+			margin: 0 auto;
+			text-align: center;
+			width: 306px;
+		}
+		.logotype {
+			background: url(../images/bold.png) no-repeat transparent;
+			display: block;
+			height: 132px;
+			margin: 0 auto;
+			text-align: center;
+			width: 500px;
+			text-indent: -999em;
+		}
+		h3 {
+			width: 500px;
+			margin: 0 auto;
+			font-family: 'Libre Baskerville', Georgia, serif;
+		}
+	}
+	.nav {
+		background: @maindark;
+		height: 45px;	
+		z-index: 1000000000;
+		.top-bar {
+			background: @maindark;
+			z-index: 1000000000;
+		}
+		.button {
+			margin-left: 20px;
+		}
+	}
+	/*.nav {
+		background: @blank;
+		border: 1px solid @maindark;
+		border-width: 0px 0px 1px;
+		.top-bar {
+			background: transparent;
+			margin: 0px;
+			ul {
+				height: 70px;
+				line-height: 70px;
+			}
+			ul > li:not(.name):hover, ul > li:not(.name).active, ul > li:not(.name):focus {
+				background: @tertiary;
+				-webkit-transition: .3s;
+			}
+			ul > li {
+				height: 70px;
+				line-height: 70px;
+				a {
+					height: 70px;
+					line-height: 70px;
+				}
+				&.toggle-topbar {
+					height: 45px;
+					line-height: 45px;
+					a {
+						height: 0px;
+					}
+				}
+			}
+			a {
+				color: @maindark;
+				&.button {
+					color: @blank;
+					margin-left: 20px;
+				}
+			}
+			.logo {
+				background: url(../images/menu.png) no-repeat;
+				text-indent: -999em;
+				width: 200px;
+				height: 40px;
+				position: relative;
+				top: 15px;
+			}
+		}
+	}*/
+	.content {
+		padding: 30px 0;
+	}
+}
+
+
+
+
+/* -----------------------------------------
+   Media Queries
+----------------------------------------- */
+
+@media only screen and (max-width: 767px) {
+	body { 
+		background: pink;
+		&#landing {
+			header {
+				h2 {
+					font-size: 18px;
+				}
+			}
+			
+		}
+	}
+}
