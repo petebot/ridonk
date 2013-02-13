@@ -87,8 +87,28 @@ a {
 		height: 45px;	
 		z-index: 1000000000;
 		.top-bar {
-			background: transparent;
+			background: @maindark;
 			z-index: 1000000000;
+			ul > li:not(.name):hover, ul > li:not(.name).active, ul > li:not(.name):focus {
+				background: @maindark;
+				-webkit-transition: .3s;
+				a {
+					color: @tertiary;
+				}
+			}
+			ul.right {
+				background: @maindark;
+				li {
+					&.has-dropdown {
+						.dropdown {
+							background: @maindark;
+							li {
+								background: @maindark;
+							}
+						}
+					}
+				}
+			}
 		}
 		.button {
 			margin-left: 20px;
