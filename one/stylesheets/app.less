@@ -49,8 +49,11 @@ a {
 
 #landing {
 	background: @blank;
+	.headwrap {
+		background: url(../images/header_bg.png) center bottom repeat-x @hilite;
+	}
 	header {
-		background: url(../images/noise.png) repeat @hilite;
+		background: url(../images/noise.png) repeat;
 		border: 5px solid @maindark;
 		border-width: 5px 0px 1px;
 		font-family: 'Libre Baskerville', Georgia, serif;
@@ -80,11 +83,11 @@ a {
 		}
 	}
 	.nav {
-		background: @maindark;
+		background: url(../images/noise.png) repeat @maindark;
 		height: 45px;	
 		z-index: 1000000000;
 		.top-bar {
-			background: @maindark;
+			background: transparent;
 			z-index: 1000000000;
 		}
 		.button {
