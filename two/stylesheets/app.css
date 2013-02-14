@@ -4,7 +4,7 @@
    Table of Contents
 -----------------------------------------------------
 :: Shared Styles
-:: Page Name 1
+:: Landing
 :: Page Name 2
 */
 
@@ -16,8 +16,18 @@
 
 
 /* -----------------------------------------
-   Page Name 1
+   Landing
 ----------------------------------------- */
+
+#landing {
+	header {
+		background: gold;
+		border: 5px solid #333;
+		border-width: 5px 0px 1px;
+		height: 430px;
+		text-align: center;
+	}
+}
 
 
 

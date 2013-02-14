@@ -1,0 +1,215 @@
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Landing
+:: Page Name 2
+*/
+
+
+/* -----------------------------------------
+   Variables & Such
+----------------------------------------- */
+
+
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville);
+
+
+@hilite: #83B600;
+@secondary: #1990ff;
+@tertiary: #ffc000;
+@maindark: #402000;
+@blank: #f0f0e0;
+
+.textshadow(@top: 1px, @left: 1px, @blur: 0px, @color: rgba(255,255,255,.5)) {
+	text-shadow: @top @left @blur @color;
+}
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+h1, h2, h3, h4, h5, h6, a, p {
+	font-family: 'Libre Baskerville', Georgia, serif;
+	color: @maindark;
+}
+a {
+	color: @secondary;
+}
+.button {
+	background: @secondary;
+}
+
+.panel {
+	.icon-4x, .icon-6x {
+		color: @secondary;
+		text-align: center;
+		margin: 0 auto;
+		width: 100%;
+		display: block;
+		.textshadow;
+	}
+	&.callout {
+		background: @tertiary;
+		border-color: darken(@tertiary, 10%);
+		.icon-4x {
+			color: @hilite;
+		}
+	}
+}
+.pricing-table {
+	.icon-4x, .icon-6x {
+		color: @hilite;
+		text-align: center;
+		margin: 0 auto;
+		width: 100%;
+		display: block;
+		.textshadow;
+	}
+	.title {
+		color: #fff;
+		&.callout1 {
+			background: @secondary;
+		}
+		&.callout2 {
+			background: @hilite;
+		}
+		&.callout3 {
+			background: darken(@tertiary, 5%);
+		}
+	}
+	&.callout {
+		background: @tertiary;
+		border-color: darken(@tertiary, 10%);
+		.icon-4x {
+			color: @hilite;
+		}
+	}
+}
+
+/* -----------------------------------------
+   Landing
+----------------------------------------- */
+
+#landing {
+	background: url(../images/noise.png) repeat @blank;
+	.headwrap {
+		background: url(../images/header_bg2.png) center bottom repeat-x @hilite;
+	}
+	header {
+		background: url(../images/noise.png) repeat;
+		border: 5px solid @maindark;
+		border-width: 5px 0px 0px;
+		font-family: 'Libre Baskerville', Georgia, serif;
+		padding: 80px 0 60px;
+		text-align: center;
+		.logomark {
+			background: url(../images/helmets.png) no-repeat transparent;
+			display: block;
+			height: 226px;
+			margin: 0 auto;
+			text-align: center;
+			width: 306px;
+		}
+		.logotype {
+			background: url(../images/ridonk2.png) no-repeat transparent;
+			display: block;
+			height: 112px;
+			margin: 0 auto;
+			text-align: center;
+			width: 460px;
+			text-indent: -999em;
+		}
+		h2, h3, h4 {
+			.textshadow;
+		}
+	}
+	.nav {
+		background: @maindark;
+		height: 45px;	
+		z-index: 1000000000;
+		&:after {
+			content: '';
+			background: red;
+			width: 100%;
+			height: 20px;
+			display: block;
+			background:  url(../images/header_bg3.png) center top repeat-x transparent;
+		}
+		.top-bar {
+			background: @maindark;
+			z-index: 1000000000;
+			ul > li:not(.name):hover, ul > li:not(.name).active, ul > li:not(.name):focus {
+				background: @maindark;
+				-webkit-transition: .3s;
+				a {
+					color: @tertiary;
+					-webkit-transition: .3s;
+				}
+			}
+			.logo.name a {
+				text-indent: -999em;
+				background: url(../images/small.png) no-repeat;
+				height: 45px;
+				width: 185px;
+			}
+			ul {
+				background: @maindark;
+				li {
+					a {
+						color: @blank;
+						-webkit-transition: .3s;
+					}
+					&.has-dropdown {
+						.dropdown {
+							background: @maindark;
+							a {
+								color: @blank;
+								-webkit-transition: 0s;
+								&:hover {
+									color: @tertiary;
+									background: @maindark;
+								}
+							}
+							li {
+								background: @maindark;
+								&:hover {
+									background: @maindark;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.button {
+			margin-left: 20px;
+		}
+	}
+	
+	.content {
+		padding: 30px 0;
+	}
+}
+
+
+
+
+/* -----------------------------------------
+   Media Queries
+----------------------------------------- */
+
+@media only screen and (max-width: 767px) {
+	body { 
+		background: pink;
+		&#landing {
+			header {
+				h2 {
+					font-size: 18px;
+				}
+			}
+			
+		}
+	}
+}

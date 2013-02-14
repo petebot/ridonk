@@ -23,6 +23,10 @@
 @maindark: #402000;
 @blank: #f0f0e0;
 
+.textshadow(@top: 1px, @left: 1px, @blur: 0px, @color: rgba(255,255,255,.5)) {
+	text-shadow: @top @left @blur @color;
+}
+
 
 /* -----------------------------------------
    Shared Styles
@@ -38,9 +42,22 @@ a {
 	background: @secondary;
 }
 
-.panel.callout {
-	background: @tertiary;
-	border-color: darken(@tertiary, 10%);
+.panel {
+	.icon-4x, .icon-6x {
+		color: @secondary;
+		text-align: center;
+		margin: 0 auto;
+		width: 100%;
+		display: block;
+		.textshadow;
+	}
+	&.callout {
+		background: @tertiary;
+		border-color: darken(@tertiary, 10%);
+		.icon-4x {
+			color: @hilite;
+		}
+	}
 }
 
 /* -----------------------------------------
@@ -76,10 +93,10 @@ a {
 			width: 500px;
 			text-indent: -999em;
 		}
-		h3 {
+		h2, h3, h4 {
 			width: 500px;
 			margin: 0 auto;
-			font-family: 'Libre Baskerville', Georgia, serif;
+			.textshadow;
 		}
 	}
 	.nav {
