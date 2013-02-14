@@ -87,23 +87,38 @@ a {
 		height: 45px;	
 		z-index: 1000000000;
 		.top-bar {
-			background: @maindark;
+			background: url(../images/noise.png) repeat @maindark;
 			z-index: 1000000000;
 			ul > li:not(.name):hover, ul > li:not(.name).active, ul > li:not(.name):focus {
-				background: @maindark;
+				background: url(../images/noise.png) repeat @maindark;
 				-webkit-transition: .3s;
 				a {
 					color: @tertiary;
+					-webkit-transition: .3s;
 				}
 			}
-			ul.right {
-				background: @maindark;
+			ul {
+				background: url(../images/noise.png) repeat @maindark;
 				li {
+					a {
+						-webkit-transition: .3s;
+					}
 					&.has-dropdown {
 						.dropdown {
 							background: @maindark;
+							a {
+								color: @blank;
+								-webkit-transition: 0s;
+								&:hover {
+									color: @tertiary;
+									background: @maindark;
+								}
+							}
 							li {
 								background: @maindark;
+								&:hover {
+									background: @maindark;
+								}
 							}
 						}
 					}
