@@ -18,6 +18,23 @@
 @primary: #0099ff;
 @hilite2: #ffff99;
 
+.rotate(@arg:45deg) {
+	-moz-transform: rotate(@arg);
+	-webkit-transform: rotate(@arg);
+    -o-transform: rotate(@arg);
+    -ms-transform: rotate(@arg);
+    transform: rotate(@arg);
+
+}
+
+.transition(@sec:.3s) {
+	-webkit-transition: all @sec ease-in;
+-moz-transition: all @sec ease-in;
+-ms-transition: all @sec ease-in;
+-o-transition: all @sec ease-in;
+transition: all @sec ease-in;
+}
+
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */
@@ -67,14 +84,11 @@ body {
 		}
 	}
 	header {
-			background: url(../images/football2.png) no-repeat center top;
+			background: #fff;
 			min-height: 700px;
-			-webkit-background-size: cover;
-			-moz-background-size: cover;
-			-o-background-size: cover;
-			background-size: cover;
 			padding-top: 100px;
 			border-bottom: 1px solid #999;
+			position: relative;
 		* {
 			color: #222;
 		}
@@ -84,6 +98,16 @@ body {
 			width: 478px;
 			height: 140px;
 		}
+		.splashimg {
+			background: url(../images/football3.png) no-repeat center bottom;
+			height: 500px;
+			width: 550px;
+			background-size: 100%;
+			overflow: visible;
+			position: relative;
+
+		}
+		
 		h2 {
 			font-weight: 400;
 			font-size: 4em;
@@ -118,4 +142,110 @@ body {
 /* -----------------------------------------
    Media Queries
 ----------------------------------------- */
+
+
+
+
+
+
+
+@badgewidth: 8em;
+
+.callto {
+  background: saturate(@primary, -30%);
+  border-radius: 1.5em;
+  color: #fff;
+  margin: 2em auto;
+  position: absolute;
+  width: @badgewidth; height:  @badgewidth;
+  z-index: 1;
+  top: 100px;
+  left: 20px;
+  &:before {
+    background: saturate(@primary, -30%);
+    border-radius: 1.5em;
+    content:"";
+    position: absolute;
+    top: 0; left: 0;
+    .rotate(30deg);
+    width:  @badgewidth; height:  @badgewidth;
+    z-index: 1;
+  }
+  &:after {
+    background: saturate(@primary, -30%);
+    border-radius: 1.5em;
+    content:"";
+    position: absolute;
+    top: 0; left: 0;
+    .rotate(-30deg);
+    width: @badgewidth; height: @badgewidth;
+    z-index: 1;
+  }
+  &:hover {
+  	background: @primary;
+  	&:before {
+  		background: @primary;
+  	}
+  	&:after {
+  		background: @primary;
+  	}
+  }
+}
+.seal {
+  border-radius: 100%;
+  position: absolute;
+  top: 50%; left: 50%;
+  background: #222;
+  margin-top: -(@badgewidth/2); margin-left: -(@badgewidth/2);
+  width: @badgewidth; height: @badgewidth;
+  z-index: 0;
+  &:before {
+    position: absolute;
+  	top: 50%; left: 50%;
+    .rotate(30deg);
+    @width: @badgewidth * 1.75;
+    @height: 1.25em;
+    background: @hilite;
+    content: '';
+    margin-top: -(@height);
+    margin-left: -(@width/2);    
+    z-index: -1;
+    width: @width; height: 0;
+    border: @height solid rgba(0, 0, 0, 0);
+    border-left: @height solid #fff;
+    border-right: @height solid #fff;
+    box-sizing: border-box;
+    /*Fix to make the borders appear on the ribbon ends also*/
+    background-origin: border-box;
+  }
+}
+.type {
+	border-radius: 100%;
+	transform: origin(50%, 50%);
+	.rotate(-20deg);
+	//background: darken(@primary, 5%);
+	border: 1px dashed #fff; 
+	font-family: "Neuton", serif;
+	text-align: center;
+	text-transform: uppercase;
+	padding-top: 1em;
+	position: absolute;
+  	top: 50%; left: 50%;
+	margin-top: -(@badgewidth/2); margin-left: -(@badgewidth/2); 
+	width: @badgewidth; height: @badgewidth;
+	z-index: 400;
+	h1 {  
+		font-family: "Neuton", serif;
+		font-size: 1.8em; 
+		font-weight: 600;
+		color: #fff;
+	}
+	em {
+		display: block;
+		font-size: .75em;
+		font-style: italic;
+		font-weight: 300;
+	}
+}
+
 
