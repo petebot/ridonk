@@ -161,6 +161,11 @@ body {
   z-index: 1;
   top: 100px;
   left: 20px;
+  .transition(.1s);
+  &:hover {
+  	.rotate(15deg);
+  	.transition(.2s);
+  }
   &:before {
     background: saturate(@primary, -30%);
     border-radius: 1.5em;
