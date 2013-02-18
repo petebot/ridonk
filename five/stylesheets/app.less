@@ -1,0 +1,122 @@
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Landing
+:: Page Name 2
+*/
+
+
+/* -----------------------------------------
+   Variables & Such
+----------------------------------------- */
+@import url(http://fonts.googleapis.com/css?family=Neuton:400,700,800|Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Roboto+Condensed);
+
+@hilite: #fff;
+@primary: #ff8000;
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+body {
+	background: #222;
+	* {
+		font-family: 'Roboto', sans-serif;
+		color: #eee;
+	}
+	.ultra {
+		font-weight: 900;
+		color: @hilite;
+	}
+	.button {
+		background: darken(@primary, 10%);
+		font-family: 'Roboto Condensed', sans-serif;
+		border: 1px solid darken(@primary, 20%);
+		&:hover {
+			background: @primary;
+		}
+	}
+	i {
+		color: darken(@primary, 10%);
+	}
+	.nav {
+		background: #111;
+		max-height: 45px;
+		box-shadow: 0px 0px 4px #333;
+		border-bottom: 1px solid #999;
+		.top-bar {
+			background: transparent;
+
+			.logo {
+				a { 
+					background: url(../images/small.png) no-repeat center;
+					background-size: auto 35px;
+					text-indent: -999em;
+					width:185px;
+					height:45px;
+				}
+			}
+			li a {
+				color: #eee;
+			}
+		}
+	}
+	header {
+			background: url(../images/vid3.gif) no-repeat center -100px fixed;
+			min-height: 500px;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			padding-top: 100px;
+			border-bottom: 1px solid #999;
+		* {
+			color: #eee;
+		}
+		h1.splash {
+			background: url(../images/splash.png) no-repeat center center;
+			text-indent: -999em;
+			width: 478px;
+			height: 140px;
+			margin: 0 auto;
+		}
+		h2 {
+			font-weight: 400;
+			font-size: 4em;
+			text-align: center;
+			text-shadow: 5px 5px 2px rgba(0,0,0,.8);
+		}
+		.text {
+			//background: rgba(0,0,0,.5);
+			padding: 20px;
+			h2 {
+				font-family: Neuton;
+				.ultra {
+					font-family: Neuton;
+				}
+			}
+		}
+	}
+	.content {
+		margin: 50px auto 20px;
+		h1,h2,h3,h4,h5,h6 {
+			font-family: Neuton;
+			color: @hilite;
+		}
+	}
+} 
+
+/* -----------------------------------------
+   Landing
+----------------------------------------- */
+
+
+
+
+/* -----------------------------------------
+   Media Queries
+----------------------------------------- */
+
