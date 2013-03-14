@@ -1,0 +1,119 @@
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Landing
+:: Page Name 2
+*/
+
+
+/* -----------------------------------------
+   Variables & Such
+----------------------------------------- */
+@import url(http://fonts.googleapis.com/css?family=Neuton:400,700,800|Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Roboto+Condensed);
+
+@hilite: #ffff73;
+@primary: #0099ff;
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+body {
+	background: #222;
+	* {
+		font-family: 'Roboto', sans-serif;
+		color: #fff;
+	}
+	.ultra {
+		font-weight: 900;
+		color: @hilite;
+	}
+	.button {
+		background: darken(@primary, 10%);
+		font-family: 'Roboto Condensed', sans-serif;
+		border: 1px solid darken(@primary, 20%);
+		&:hover {
+			background: @primary;
+		}
+	}
+	i {
+		color: darken(@primary, 10%);
+	}
+	.nav {
+		background: #111;
+		max-height: 45px;
+		box-shadow: 0px 0px 4px #333;
+		border-bottom: 1px solid #999;
+		.top-bar {
+			background: transparent;
+
+			.logo {
+				a { 
+					background: url(../images/small.png) no-repeat center;
+					background-size: auto 35px;
+					text-indent: -999em;
+					width:185px;
+					height:45px;
+				}
+			}
+			li a {
+				color: #fff;
+			}
+		}
+	}
+	header {
+			background: url(../images/football-grass.png) no-repeat center top fixed;
+			min-height: 700px;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			padding-top: 100px;
+			border-bottom: 1px solid #999;
+		* {
+			color: #fff;
+		}
+		h1.splash {
+			background: url(../images/splash.png) no-repeat center center;
+			text-indent: -999em;
+			width: 478px;
+			height: 140px;
+		}
+		h2 {
+			font-weight: 400;
+			font-size: 4em;
+		}
+		.text {
+			background: rgba(0,0,0,.5);
+			padding: 20px;
+			h2 {
+				font-family: Neuton;
+				.ultra {
+					font-family: Neuton;
+				}
+			}
+		}
+	}
+	.content {
+		margin: 50px auto 20px;
+		h1,h2,h3,h4,h5,h6 {
+			font-family: Neuton;
+			color: @hilite;
+		}
+	}
+} 
+
+/* -----------------------------------------
+   Landing
+----------------------------------------- */
+
+
+
+
+/* -----------------------------------------
+   Media Queries
+----------------------------------------- */
+
