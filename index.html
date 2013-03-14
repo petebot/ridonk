@@ -20,43 +20,38 @@
 
   <!-- Nav and Banner -->
 
-	
 
-  	<div class="headwrap">
-		<header>
-			<div id="globalNav" class="contain-to-grid sticky nav">
-  				<nav class="top-bar">
-	  				<ul class="title-area">
-	  				   <!-- Title Area -->
-	  				    <li class="logo name"><h1><a href="#">Ridonkulous</a></h1></li>
-	  				   <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-	  				   <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-	  				</ul>
+	<div id="globalNav" class="contain-to-grid nav">
+			<nav class="top-bar">
+				<ul class="title-area">
+				   <!-- Title Area -->
+				    <li class="logo name"><h1><a href="#">Ridonkulous</a></h1></li>
+				   <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+				   <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+				</ul>
 
 
-  				  	<section class="top-bar-section">
-  		          		<!-- Right Nav Section -->
-	  		         	<ul class="right">
-		  		            <li id="account" class="has-dropdown account">
-		  		            	<img src="images/userimage.png" id="accountImage" class="tinyimage" />
-		  		             	<a href="#"></a>
-		  		            	<ul class="dropdown">
-			  		                <li><label>Personal Settings</label></li>
-			  		                <li><a href="#">Your Profile</a></li>
-			  		                <li><a href="#">Your Ranking</a></li>
-			  		                <hr>
-			  		                <li><label>Account Settings</label></li>
-			  		                <li><a href="#">Billing Info</a></li>
-			  		                <li><a href="#">Social Profiles</a></li>
-		  		            	</ul>
-		  		            </li>
+			  	<section class="top-bar-section">
+	          		<!-- Right Nav Section -->
+		         	<ul class="right">
+  		            <li id="account" class="has-dropdown account">
+  		            	<img src="images/userimage.png" id="accountImage" class="tinyimage" />
+  		             	<a href="#"></a>
+  		            	<ul class="dropdown">
+	  		                <li><label>Personal Settings</label></li>
+	  		                <li><a href="#"><i class="icon-user"></i> Your Profile</a></li>
+	  		                <li><a href="#"><i class="icon-trophy"></i> Your Ranking</a></li>
+	  		                <hr>
+	  		                <li><label>Account Settings</label></li>
+	  		                <li><a href="#"><i class="icon-credit-card"></i> Billing Info</a></li>
+	  		                <li><a href="#"><i class="icon-comments"></i> Social Profiles</a></li>
+  		            	</ul>
+  		            </li>
 
-	  		         	</ul>
-  		        	</section>
-  				</nav>
-  			</div>
-		</header>
-	</div>
+		         	</ul>
+	        	</section>
+			</nav>
+		</div>
 
 	
 
@@ -67,18 +62,22 @@
   
   <div id="content" class="row">
   	<div id="sideBar" class="sidebar large-4 columns">
-  		<div id="profile" class="profilecard row">
-  			<div id="imageAndRank" class="imageandrank one columns">
+  		<div id="profile" class="profilecard">
+  			<div id="imageAndRank" class="imageandrank">
   				<img src="images/userimage.png" id="accountImage" class="bigimage">
-  				<span id="accountRank" class="rank">278</span>
+  				<div id="accountRank" class="rank"><span>Rank</span>278</div>
   			</div>
-  			<div id="profileInfo" class="info three columns">
+  			<div id="profileInfo" class="info">
 	  			<div id="accountName"><a href="#">User <span id="nickName" class="nickname">Nickname</span> Name</a></div>
 	  			<div class="timestamp">Last seen <span id="time">2 hours ago</span></div>
 	  			<div id="accountQuote" class="quote">Maybe users can have a tagline? We would have to limit the char length.</div>
   			</div>
   		</div>
   		<div id="accountTeams" class="teams">
+
+  			<!-- YOUR TEAMS -->
+
+
   			<h5>Your Teams</h5>
   			<ul id="teamList">
   				<li id="team" class="team">
@@ -87,7 +86,79 @@
   					<span id="leagueName" class"leaguename">The Skulls</span>
   					<i class="icon-caret-right"></i>
   				</li>
+  				<li id="team" class="team">
+  					<img src="images/themoons.png" id="teamImage" class="tinyimage">
+  					<span id="teamName" class="teamname">The Moons</span>
+  					<span id="leagueName" class"leaguename">The Skulls</span>
+  					<i class="icon-caret-right"></i>
+  				</li>
+  				<li id="team" class="team">
+  					<img src="images/themoons.png" id="teamImage" class="tinyimage">
+  					<span id="teamName" class="teamname">The Moons</span>
+  					<span id="leagueName" class"leaguename">The Skulls</span>
+  					<i class="icon-caret-right"></i>
+  				</li>
+  				<li id="createTeam" class="create">
+  					<i class="icon-plus-sign icon-2x"></i>
+  					<a href="#">Create a New Team</a>  					
+  				</li>
   			</ul>
+  			<a href="#" id="viewMore" class="more">more</a>
+  			<hr>
+
+  			<!-- FEATURED TEAMS -->
+
+  			<h5>Featured Teams</h5>
+  			<ul id="teamList">
+  				<li id="team" class="team">
+  					<img src="images/themoons.png" id="teamImage" class="tinyimage">
+  					<span id="teamName" class="teamname">The Moons</span>
+  					<span id="leagueName" class"leaguename">The Skulls</span>
+  					<i class="icon-caret-right"></i>
+  				</li>
+  				<li id="team" class="team">
+  					<img src="images/themoons.png" id="teamImage" class="tinyimage">
+  					<span id="teamName" class="teamname">The Moons</span>
+  					<span id="leagueName" class"leaguename">The Skulls</span>
+  					<i class="icon-caret-right"></i>
+  				</li>
+  				<li id="team" class="team">
+  					<img src="images/themoons.png" id="teamImage" class="tinyimage">
+  					<span id="teamName" class="teamname">The Moons</span>
+  					<span id="leagueName" class"leaguename">The Skulls</span>
+  					<i class="icon-caret-right"></i>
+  				</li>
+  			</ul>
+  			<a href="#" id="viewMore" class="more">more</a>
+  			<hr>
+
+  			<!-- TOP RANKED -->
+
+  			<h5>Top Ranked</h5>
+  			<ol id="teamList">
+  				<li id="team" class="team">
+  					<img src="images/themoons.png" id="teamImage" class="tinyimage">
+  					<span id="teamName" class="teamname"><span id="teamRank">1. </span>The Moons</span>
+  					<span id="leagueName" class"leaguename">The Skulls</span>
+  					<i class="icon-caret-right"></i>
+  				</li>
+  				<li id="team" class="team">
+  					<img src="images/themoons.png" id="teamImage" class="tinyimage">
+  					<span id="teamName" class="teamname"><span id="teamRank">2. </span>The Moons</span>
+  					<span id="leagueName" class"leaguename">The Skulls</span>
+  					<i class="icon-caret-right"></i>
+  				</li>
+  				<li id="team" class="team">
+  					<img src="images/themoons.png" id="teamImage" class="tinyimage">
+  					<span id="teamName" class="teamname"><span id="teamRank">3. </span>The Moons</span>
+  					<span id="leagueName" class"leaguename">The Skulls</span>
+  					<i class="icon-caret-right"></i>
+  				</li>
+  			</ol>
+  			<a href="#" id="viewMore" class="more">more</a>
+  			<hr>
+
+
   		</div>
   	</div>
   	<div id="main" class="large-8 columns">
