@@ -26,6 +26,7 @@
 				<ul class="title-area">
 				   <!-- Title Area -->
 				    <li class="logo name"><h1><a href="#">Ridonkulous</a></h1></li>
+
 				   <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
 				   <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 				</ul>
@@ -36,6 +37,7 @@
 		         	<ul class="right">
   		            <li id="account" class="has-dropdown account">
   		            	<img src="images/userimage.png" id="accountImage" class="tinyimage" />
+  		            	<span class="badge"><span id="badgeCount" class="count">1</span></span>
   		             	<a href="#"></a>
   		            	<ul class="dropdown">
 	  		                <li><label>Personal Settings</label></li>
@@ -68,7 +70,7 @@
   				<div id="accountRank" class="rank"><span>Rank</span>208</div>
   			</div>
   			<div id="userProfileInfo" class="info">
-	  			<div id="accountName" class="accountname"><a href="#">User <span id="nickName" class="nickname">Nickname</span> Name</a></div>
+	  			<div id="accountName" class="name"><a href="#">User <span id="nickName" class="nickname">Nickname</span> Name</a></div>
 	  			<div class="timestamp">Last seen <span id="time">2 hours ago</span></div>
 	  			<div id="accountLocation" class="location">Chicago, IL</div>
 	  			<div id="accountQuote" class="quote">Maybe users can have a tagline? We would have to limit the char length.</div>
@@ -83,28 +85,31 @@
   			<ul id="teamList">
   				<li id="team" class="team selected">
   					<img src="images/themoons.png" id="teamImage" class="tinyimage">
+  					<span class="badge five"><span id="badgeCount" class="count">1</span></span>
   					<span id="teamName" class="teamname">The Moons</span>
-  					<span id="leagueName" class"leaguename">The Skulls</span>
-  					<i class="icon-caret-right"></i>
+  					<i class="icon-caret-right right"></i>
+  					<span id="leagueName" class="leaguename right">The Skulls</span>
+  					
   				</li>
   				<li id="team" class="team">
   					<img src="images/themoons.png" id="teamImage" class="tinyimage">
   					<span id="teamName" class="teamname">The Moons</span>
-  					<span id="leagueName" class"leaguename">The Skulls</span>
-  					<i class="icon-caret-right"></i>
+  					<i class="icon-caret-right right"></i>
+  					<span id="leagueName" class="leaguename right">The Skulls</span>
   				</li>
   				<li id="team" class="team">
   					<img src="images/themoons.png" id="teamImage" class="tinyimage">
+  					<span class="badge five"><span id="badgeCount" class="count">2</span></span>
   					<span id="teamName" class="teamname">The Moons</span>
-  					<span id="leagueName" class"leaguename">The Skulls</span>
-  					<i class="icon-caret-right"></i>
+  					<i class="icon-caret-right right"></i>
+  					<span id="leagueName" class="leaguename right">The Skulls</span>
   				</li>
   				<li id="createTeam" class="create">
-  					<i class="icon-plus-sign icon-2x"></i>
-  					<a href="#">Create a New Team</a>  					
+  					<i class="icon-plus-sign onepointfive"></i>
+  					<a href="#" class="dropdown">Create a New Team</a>  					
   				</li>
   			</ul>
-  			<a href="#" id="viewMore" class="more">more</a>
+  			<a href="#" id="viewMore" class="more"><i class="icon-caret-down"></i></a>
   			<hr>
   		</div>
 
@@ -115,20 +120,20 @@
   				<li id="team" class="team">
   					<img src="images/themoons.png" id="teamImage" class="tinyimage">
   					<span id="teamName" class="teamname">The Moons</span>
-  					<span id="leagueName" class"leaguename">The Skulls</span>
-  					<i class="icon-caret-right"></i>
+  					<i class="icon-caret-right right"></i>
+  					<span id="leagueName" class="leaguename right">The Skulls</span>
   				</li>
   				<li id="team" class="team">
   					<img src="images/themoons.png" id="teamImage" class="tinyimage">
   					<span id="teamName" class="teamname">The Moons</span>
-  					<span id="leagueName" class"leaguename">The Skulls</span>
-  					<i class="icon-caret-right"></i>
+  					<i class="icon-caret-right right"></i>
+  					<span id="leagueName" class="leaguename right">The Skulls</span>
   				</li>
   				<li id="team" class="team">
   					<img src="images/themoons.png" id="teamImage" class="tinyimage">
   					<span id="teamName" class="teamname">The Moons</span>
-  					<span id="leagueName" class"leaguename">The Skulls</span>
-  					<i class="icon-caret-right"></i>
+  					<i class="icon-caret-right right"></i>
+  					<span id="leagueName" class="leaguename right">The Skulls</span>
   				</li>
   			</ul>
   			<a href="#" id="viewMore" class="more">more</a>
@@ -142,20 +147,20 @@
   				<li id="team" class="team">
   					<img src="images/themoons.png" id="teamImage" class="tinyimage">
   					<span id="teamName" class="teamname"><span id="teamRank">1. </span>The Moons</span>
-  					<span id="leagueName" class"leaguename">The Skulls</span>
-  					<i class="icon-caret-right"></i>
+  					<i class="icon-caret-right right"></i>
+  					<span id="leagueName" class="leaguename right">The Skulls</span>
   				</li>
   				<li id="team" class="team">
   					<img src="images/themoons.png" id="teamImage" class="tinyimage">
   					<span id="teamName" class="teamname"><span id="teamRank">2. </span>The Moons</span>
-  					<span id="leagueName" class"leaguename">The Skulls</span>
-  					<i class="icon-caret-right"></i>
+  					<i class="icon-caret-right right"></i>
+  					<span id="leagueName" class="leaguename right">The Skulls</span>
   				</li>
   				<li id="team" class="team">
   					<img src="images/themoons.png" id="teamImage" class="tinyimage">
   					<span id="teamName" class="teamname"><span id="teamRank">3. </span>The Moons</span>
-  					<span id="leagueName" class"leaguename">The Skulls</span>
-  					<i class="icon-caret-right"></i>
+  					<i class="icon-caret-right right"></i>
+  					<span id="leagueName" class="leaguename right">The Skulls</span>
   				</li>
   			</ol>
   			<a href="#" id="viewMore" class="more">more</a>
@@ -184,8 +189,8 @@
   				<div id="accountRank" class="rank"><span>Rank</span>79</div>
   			</div>
   			<div id="TeamProfileInfo" class="info">
-	  			<div id="teamName"><a href="#">Team Name</a></div>
-	  			<span id="leagueName" class"leaguename">The Skulls</span>
+	  			<div id="teamName" class="name"><a href="#">Team Name</a></div>
+	  			<span id="leagueName" class="leaguename">The Skulls</span>
 	  			<table>
 	  				<tbody>
 		  				<tr>
@@ -316,6 +321,7 @@
 		  document.write('<script src=javascripts/vendor/'
 		    + ('__proto__' in {} ? 'zepto' : 'jquery')
 		    + '.js><\/script>');
+		  less.watch();
 		</script>
 
 

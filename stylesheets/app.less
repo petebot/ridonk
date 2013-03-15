@@ -62,7 +62,46 @@ body {
 	hr {
 		.box-shadow(0px 1px 0px #fff)
 	}
-	
+	.onepointfive {
+		font-size: 1.5em;
+	}
+	.badge {
+		background: #FFFF73;
+		display: inline-block;
+		height: 15px;
+		width: 15px;
+		position: relative;
+		margin: -15px -15px 0 0;
+		top: -7px;
+		right: 0px;
+		color: #666;
+		z-index: 1000000;
+		padding: 0;
+		.box-shadow(1px 1px 0 rgba(0,0,0,.3));
+		&:before {
+			content: '';
+			display: block;
+			border: 10px solid transparent;
+			border-width: 0px 5px 4px 10px;
+			border-right-color: #ffff73;
+			width: 0px;
+			height: 0px;
+			position: relative;
+			left: -15px;
+			top: 10px;
+		}
+		.count {
+			font-family: 'Ubuntu Mono', courier, monospace;
+			font-size: 14px;
+			font-weight: bold;
+			line-height: 10px;
+			text-align: center;
+			content: '';
+			position: relative;
+			top: -10px;
+			left: 4px;
+		}
+	}
 } 
 
 /* -----------------------------------------
@@ -95,6 +134,7 @@ body {
 					background: #000;
 				}
 				&.name {
+					position: relative;
 					&:hover {
 						background: transparent;
 					}
@@ -160,8 +200,153 @@ body {
 	}
 
 
+/* -----------------------------------------
+   Main Content
+----------------------------------------- */
 
 	.content {
+
+		.profilecard {
+			position: relative;
+			.imageandrank {
+				width: 48px;
+				display: inline-block;
+				.bigimage {
+					position: absolute;
+					top: 0px;
+				}
+				.rank {
+					background: #468C00;
+					color: #fff;
+					text-align: center;
+					padding: 0 3px 5px;
+					position: absolute;
+					top: 50px;
+					width: 48px;
+					line-height: 15px;
+					font-family: 'Ubuntu Mono', courier, monospace;
+					font-size: 21px;
+					font-weight: bold;
+					text-shadow: none;
+    				filter: none;
+					span {
+						color: #fff;
+						font-weight: normal;
+						display: block;
+						font-size: 10px;
+						text-transform: uppercase;
+					}
+				}
+			}
+			.info {
+				display: inline-block;
+				width:250px;
+				padding: 0px 5px;
+				.name {
+					a, span {
+						font-size: 21px;
+						font-family: 'Neuton', georgia, serif;
+					}
+					.nickname {
+						&:before {
+							content: "\201C";
+						}
+						&:after {
+							content: "\201D";
+						}
+					}
+				}
+				.timestamp {
+					font-size: 12px;
+					color: #666;
+				}
+				.location {
+					font-size: 14px;
+				}
+				.quote {
+					font-style: italic;
+					font-size: 14px;
+					&:before {
+						content: "\201C";
+					}
+					&:after {
+						content: "\201D";
+					}
+				}
+			}
+		}
+		.teams {
+			
+			.team {
+				.transition;
+				&.selected {
+					background: #fff;
+					margin-right:-20px;
+					.transition;					
+					border: 1px solid #ccc;
+					border-color:  rgba(0,0,0,.2);
+					border-width: 1px 0px 1px 1px;
+					.tinyimage, .teamname {
+						left: 5px;
+						.transition;	
+					}
+					.badge {
+						right: 0px;
+						.transition;
+					}
+				}
+				.tinyimage {
+					position: relative;
+					top: 4px;
+				}
+				.teamname {
+					font-size: 18px;
+					font-family: 'Neuton', georgia, serif;
+					position: relative;
+					top: -6px;
+				}
+				.leaguename {
+					color: @primary;
+					font-size: 10px;
+					text-transform: uppercase;
+					position: relative;
+					top: 11px;
+				}
+				i {
+					position: relative;
+					top: 11px;
+					color: #999;
+				}
+			}
+			.create {
+				font-size: 12px;
+				i {
+					position: relative;
+					top: 2px;
+					color: #468C00;
+				}
+			}
+		}
+		.more {
+			background: #fff;
+			width: 16px;
+			height: 16px;
+			position: relative;
+			border: 1px solid #ccc;
+			border-color:  rgba(0,0,0,.2);
+			.rounded(100%);
+			display: block;
+			left: 150px;
+			margin: -10px 0 -28px;
+			i {
+				color: #999;
+				position: relative;
+				top: -3px;
+				left: 3px;		
+				font-size: .9em;
+			}
+
+		}
 
 /* -----------------------------------------
    Sidebar
@@ -173,6 +358,10 @@ body {
 			position: relative;
 			top:0px;
 			bottom: 0px;
+
+			border: 1px solid #ccc;
+			border-color:  rgba(0,0,0,.2);
+			border-width: 0px 1px 0 0;
 			h5 {
 				font-size: 10px;
 				color: #666;
@@ -181,83 +370,11 @@ body {
 				font-family: 'Open Sans', arial, sans-serif;
 				text-transform: uppercase;
 			}
-			.profilecard {
-				position: relative;
-				.imageandrank {
-					width: 48px;
-					display: inline-block;
-					background: pink;
-					.bigimage {
-						position: absolute;
-						top: 0px;
-					}
-					.rank {
-						background: #468C00;
-						color: #fff;
-						text-align: center;
-						padding: 0 3px 5px;
-						position: absolute;
-						top: 50px;
-						width: 48px;
-						line-height: 15px;
-						font-family: 'Ubuntu Mono', courier, monospace;
-						font-size: 21px;
-						font-weight: bold;
-						text-shadow: none;
-        				filter: none;
-						span {
-							color: #fff;
-							font-weight: normal;
-							display: block;
-							font-size: 10px;
-							text-transform: uppercase;
-						}
-					}
-				}
-				.info {
-					display: inline-block;
-					width:250px;
-					padding: 0px 5px;
-					.accountname {
-						a, span {
-							font-size: 21px;
-							font-family: 'Neuton', georgia, serif;
-						}
-						.nickname {
-							&:before {
-								content: "\201C";
-							}
-							&:after {
-								content: "\201D";
-							}
-						}
-					}
-					.timestamp {
-						font-size: 12px;
-						color: #666;
-					}
-					.location {
-						font-size: 14px;
-					}
-					.quote {
-						font-style: italic;
-						font-size: 14px;
-						&:before {
-							content: "\201C";
-						}
-						&:after {
-							content: "\201D";
-						}
-					}
-				}
+			.badge {
+				top: 3px;
+				right: 5px;
 			}
-			.teams {
-				.team {
-					&.selected {
-						background: #fff;
-					}
-				}
-			}
+
 		}
 
 /* -----------------------------------------
@@ -270,7 +387,7 @@ body {
 			height: 100%;
 			border: 1px solid #ccc;
 			border-color:  rgba(0,0,0,.2);
-			border-width: 0px 1px;
+			border-width: 0px 1px 0 0;
 			.breadcrumbs {
 				background: transparent;
 				border: none;
