@@ -14,8 +14,10 @@
 /* -----------------------------------------
    Variables & Such
 ----------------------------------------- */
-@import url(http://fonts.googleapis.com/css?family=Neuton:400,700,800|Open+Sans:400italic,600italic,400,600|Roboto+Condensed:400italic,400);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700|Neuton:400,700,400italic|Open+Sans:400italic,600italic,400,600|Roboto+Condensed:400,700);
 @import url(elements.less);
+
+//http://www.google.com/webfonts#ChoosePlace:select/Collection:Ubuntu+Mono|Neuton|Open+Sans|Roboto+Condensed
 
 @hilite: #ffff73;
 @primary: #007fff;
@@ -33,22 +35,32 @@
 ----------------------------------------- */
 
 body {
-	background: #fff;
+	background: #f5f5f5;
+	background: rgba(0,0,0,.05);
+	color: #333;
+	line-height: 18px;
+	text-shadow: 1px 1px 0px #fff;
+    filter: dropshadow(color=#fff, offx=1, offy=1);
 	* {
 		font-family: 'Open Sans', sans-serif;
-		color: #333;
 		.box-size;
-		a {
+	}
+	a {
 			color: @primary;
 		}
-	}
 	h1, h2, h3, h4, h5, h6 {
 		font-family: 'Neuton', Georgia, sans-serif;
+	}
+	li {
+		list-style: none;
 	}
 	.tinyimage {
 		height: 30px;
 		width: 30px;
 		display: inline-block;
+	}
+	hr {
+		.box-shadow(0px 1px 0px #fff)
 	}
 	
 } 
@@ -157,11 +169,95 @@ body {
 	
 		.sidebar {
 			padding-top: 30px;
-			background: #f5f5f5;
 			height:100%;
 			position: relative;
 			top:0px;
 			bottom: 0px;
+			h5 {
+				font-size: 10px;
+				color: #666;
+				font-weight: 600;
+				font-style: italic;
+				font-family: 'Open Sans', arial, sans-serif;
+				text-transform: uppercase;
+			}
+			.profilecard {
+				position: relative;
+				.imageandrank {
+					width: 48px;
+					display: inline-block;
+					background: pink;
+					.bigimage {
+						position: absolute;
+						top: 0px;
+					}
+					.rank {
+						background: #468C00;
+						color: #fff;
+						text-align: center;
+						padding: 0 3px 5px;
+						position: absolute;
+						top: 50px;
+						width: 48px;
+						line-height: 15px;
+						font-family: 'Ubuntu Mono', courier, monospace;
+						font-size: 21px;
+						font-weight: bold;
+						text-shadow: none;
+        				filter: none;
+						span {
+							color: #fff;
+							font-weight: normal;
+							display: block;
+							font-size: 10px;
+							text-transform: uppercase;
+						}
+					}
+				}
+				.info {
+					display: inline-block;
+					width:250px;
+					padding: 0px 5px;
+					.accountname {
+						a, span {
+							font-size: 21px;
+							font-family: 'Neuton', georgia, serif;
+						}
+						.nickname {
+							&:before {
+								content: "\201C";
+							}
+							&:after {
+								content: "\201D";
+							}
+						}
+					}
+					.timestamp {
+						font-size: 12px;
+						color: #666;
+					}
+					.location {
+						font-size: 14px;
+					}
+					.quote {
+						font-style: italic;
+						font-size: 14px;
+						&:before {
+							content: "\201C";
+						}
+						&:after {
+							content: "\201D";
+						}
+					}
+				}
+			}
+			.teams {
+				.team {
+					&.selected {
+						background: #fff;
+					}
+				}
+			}
 		}
 
 /* -----------------------------------------
@@ -170,9 +266,11 @@ body {
 
 		.main {
 			padding-top: 30px;
+			background: #fff;
 			height: 100%;
 			border: 1px solid #ccc;
-			border-width: 0px 0px 0px 1px;
+			border-color:  rgba(0,0,0,.2);
+			border-width: 0px 1px;
 			.breadcrumbs {
 				background: transparent;
 				border: none;

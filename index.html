@@ -16,7 +16,7 @@
   <script src="javascripts/vendor/less-1.3.3.min.js"></script>
 
 </head>
-<body id="landing">
+<body class="depthchart">
 
   <!-- Nav and Banner -->
 
@@ -65,22 +65,23 @@
   		<div id="userProfile" class="user profilecard">
   			<div id="imageAndRank" class="imageandrank">
   				<img src="images/userimage.png" id="accountImage" class="bigimage">
-  				<div id="accountRank" class="rank"><span>Rank</span>278</div>
+  				<div id="accountRank" class="rank"><span>Rank</span>208</div>
   			</div>
   			<div id="userProfileInfo" class="info">
-	  			<div id="accountName"><a href="#">User <span id="nickName" class="nickname">Nickname</span> Name</a></div>
+	  			<div id="accountName" class="accountname"><a href="#">User <span id="nickName" class="nickname">Nickname</span> Name</a></div>
 	  			<div class="timestamp">Last seen <span id="time">2 hours ago</span></div>
+	  			<div id="accountLocation" class="location">Chicago, IL</div>
 	  			<div id="accountQuote" class="quote">Maybe users can have a tagline? We would have to limit the char length.</div>
   			</div>
   		</div>
 
   			<!-- YOUR TEAMS -->
-
+  			<hr>
 
   		<div id="accountTeams" class="teams">
   			<h5>Your Teams</h5>
   			<ul id="teamList">
-  				<li id="team" class="team">
+  				<li id="team" class="team selected">
   					<img src="images/themoons.png" id="teamImage" class="tinyimage">
   					<span id="teamName" class="teamname">The Moons</span>
   					<span id="leagueName" class"leaguename">The Skulls</span>
