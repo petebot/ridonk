@@ -62,6 +62,9 @@ body {
 	hr {
 		.box-shadow(0px 1px 0px #fff)
 	}
+	.num {
+		font-family: "Ubuntu Mono", Courier, monospace;
+	}
 	.onepointfive {
 		font-size: 1.5em;
 	}
@@ -101,6 +104,36 @@ body {
 			top: -10px;
 			left: 4px;
 		}
+	}
+	.tooltip {
+		text-shadow: none;
+		background: #ffff73;
+		background: rgba(255,255,115,.95);
+		color: #333;
+		.nub {
+			border-color: transparent transparent rgba(255,255,115,.95) transparent;
+		}
+		&.tip-top {
+			.nub {
+				border-color: rgba(255,255,115,.95) transparent transparent transparent;
+			}
+		}
+		&.tip-right {
+			.nub {
+				border-color: transparent rgba(255,255,115,.95) transparent transparent;
+			}
+		}
+		&.tip-bottom {
+			.nub {
+				border-color: transparent transparent rgba(255,255,115,.95) transparent;
+			}
+		}
+		&.tip-left {
+			.nub {
+				border-color: transparent transparent transparent rgba(255,255,115,.95);
+			}
+		}
+
 	}
 } 
 
@@ -278,6 +311,8 @@ body {
 		.teams {
 			
 			.team {
+				border: 1px solid transparent;
+				cursor: pointer;
 				.transition;
 				&.selected {
 					background: #fff;
@@ -294,6 +329,9 @@ body {
 						right: 0px;
 						.transition;
 					}
+				}
+				&:hover {
+					background: #ddd;
 				}
 				.tinyimage {
 					position: relative;
@@ -418,9 +456,9 @@ body {
 			.controlbar {
 			}
 			.playerbar {
-				padding: 0px 0;
+				padding: 0px;
 				border: 1px solid #ccc;
-				height: 37px;
+				max-height: 37px;
 				clear: both;
 				&:before {
 					content: '';
@@ -434,13 +472,21 @@ body {
 				}
 				&.selected {
 					background: #666;
-					span { color: #fff; }
+					.playername {
+						color: #fff;
+						text-shadow: none;
+					}
 				}
 				&.injured {
 					background: #ffcfbf;
 				}
 				&.available {
 					background: #ffffe2;
+				}
+				.playername {
+					text-shadow: none;
+					position: relative;
+					top: -7px;
 				}
 				.nflteam {
 					width: 41px;
@@ -451,6 +497,63 @@ body {
 				}
 				.actions {
 					display: inline-block;
+					max-height: 30px;
+					.button {
+						max-height: 30px;
+						margin: 0px;
+					}
+				}
+			}
+			.playerstats {
+				display: none;
+				clear: both;
+				background: #f5f5f5;
+				padding: 10px 10px 0;
+				border: 1px solid #ccc;
+				border-width: 0px 1px;
+				&.open { display: block;}
+				.bigimage {
+					width: 48px;
+				}
+				.bigimage, .info, .stats {
+					display: inline-block;
+					vertical-align: top;
+				}
+				.info {
+					margin: 0px 20px 0px 10px;
+				}
+				.stats {
+					min-width: 400px;
+					table {
+						width: 100%;
+					}
+				}
+				table {
+					background: transparent;
+					border: 0px;
+					font-size: 12px;
+					th {
+						text-align: left;
+						text-transform: uppercase;
+						font-weight: 400;
+						font-style: italic;
+						color: #666;
+						background: #fff;
+					}
+					td {
+						font-weight: 600;
+						&.num {
+							text-align: right;
+						}
+					}
+					th, td {
+						&.divide {
+							border-right: 1px solid #ccc;
+							&:last-child {
+								border-right: none;
+							}
+						}
+					}
 				}
 			}
 		}

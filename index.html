@@ -136,7 +136,7 @@
   					<span id="leagueName" class="leaguename right">The Skulls</span>
   				</li>
   			</ul>
-  			<a href="#" id="viewMore" class="more">more</a>
+  			<a href="#" id="viewMore" class="more"><i class="icon-caret-down"></i></a>
   			<hr>
   		</div>
 
@@ -163,7 +163,7 @@
   					<span id="leagueName" class="leaguename right">The Skulls</span>
   				</li>
   			</ol>
-  			<a href="#" id="viewMore" class="more">more</a>
+  			<a href="#" id="viewMore" class="more"><i class="icon-caret-down"></i></a>
   			<hr>
   		</div>
 
@@ -247,20 +247,92 @@
   				<span class="title opponent right">Opponent</span>
   			</div>
   			<h2>Quarterbacks</h2>
-  			<ul>
+  			<ul id="quarterbacks" class="quarterbacks">
 	  			<li id="playerHead" class="playerbar selected">
-	  				<img data-tooltip class="has-tip tip-top nflteam " title="Green Bay Packers" src="images/nflteams/Green_Bay_Packers.jpg"  >
-	  				<span id="playerName">Aaron Rodgers</span>
-	  				<img src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+	  				<img data-tooltip class="has-tip nflteam " title="Green Bay Packers" src="images/nflteams/Green_Bay_Packers.jpg"  >
+	  				<span id="playerName" class="playername">Aaron Rodgers</span>
+	  				<img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
 	  				<div class="actions right">
 		  				<a href="#" class="button tiny secondary">Trade</a>
 		  				<a href="#" class="button tiny secondary">Drop</a>
 		  			</div>
 	  			</li>
+	  			<div id="playerStats" class="playerstats open">
+	  				<img src="images/aaronrodgers.jpeg" id="accountImage" class="bigimage">
+			  			<div id="playerProfileInfo" class="info">
+				  			<div id="playerPosition" class="position statlabel">#12 Quarterback</div>
+				  			<table>
+				  				<tbody>
+					  				<tr>
+					  					<td>
+					  						Height <span class="num">5'6"</span>
+					  					</td>
+					  				</tr>
+					  				<tr>
+					  					<td>
+					  						Weight <span class="num">210</span>
+					  					</td>
+					  				</tr>
+					  				<tr>
+					  					<td>
+					  						Yds/G <span class="num">365</span>
+					  					</td>
+					  				</tr>
+					  			</tbody>
+				  			</table>
+			  			</div>
+			  			<div id="playerProfileStats" class="stats">
+	  			  			<table>
+	  			  				<tbody>
+	  			  					<tr>
+	  			  						<th>Passing</th>
+	  			  						<th class="divide"></th>
+	  			  						<th>Rushing</th>
+	  			  						<th class="divide"></th>
+	  			  						<th>Receiving</th>
+	  			  						<th class="divide"></th>
+	  			  						<th>Misc</th>
+	  			  						<th class="divide"></th>
+	  			  					</tr>
+	  				  				<tr>
+	  				  					<td>Yds</td>
+	  				  					<td id="ydsPassing" class="num divide">4065</td>
+	  				  					<td>Yds</td>
+	  				  					<td id="ydsRushing" class="num divide">139</td>
+	  				  					<td>Rec</td>
+	  				  					<td id="receptions" class="num divide">0</td>
+	  				  					<td>2pt</td>
+	  				  					<td id="twoPoints" class="num divide">1</td>
+	  				  				</tr>
+	  				  				<tr>
+	  				  					<td>TD</td>
+	  				  					<td id="tdPassing" class="num divide">27</td>
+	  				  					<td>TD</td>
+	  				  					<td id="tdRushing" class="num divide">0</td>
+	  				  					<td>Yds</td>
+	  				  					<td id="ydsReceiving" class="num divide">0</span>
+	  				  					<td>Fum</td>
+	  				  					<td id="fumbles" class="num divide">2</span>
+	  				  				</tr>
+	  				  				<tr>
+	  				  					<td>Int</td>
+	  				  					<td id="intPassing" class="num divide">17</td>
+	  				  					<td></td>
+	  				  					<td id="" class="num divide">-</td>
+	  				  					<td>TD</td>
+	  				  					<td id="tdReceiving" class="num divide">0</td>
+	  				  					<td></td>
+	  				  					<td id="" class="num divide">-</td>
+
+	  				  				</tr>
+	  				  			</tbody>
+	  			  			</table>
+			  			</div>
+	  			</div> 
 	  			<li id="playerHead" class="playerbar available">
 	  				<img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
-	  				<span id="playerName">Aaron Rodgers</span>
-	  				<img src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+	  				<span id="playerName" class="playername">Aaron Rodgers</span>
+	  				<img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
 	  				<div class="actions right">
 		  				<a href="#" class="button tiny secondary">Trade</a>
 		  				<a href="#" class="button tiny secondary">Drop</a>
@@ -268,14 +340,15 @@
 	  			</li>
 	  			<li id="playerHead" class="playerbar injured">
 	  				<img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
-	  				<span id="playerName">Aaron Rodgers</span>
+	  				<span id="playerName" class="playername">Aaron Rodgers</span>
 	  				<span id="playerInjured" class="injury"><i class="icon-medkit"></i> Injured</span>
-	  				<img src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+	  				<img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
 	  				<div class="actions right">
 		  				<a href="#" class="button tiny secondary">Trade</a>
 		  				<a href="#" class="button tiny secondary">Drop</a>
 		  			</div>
 	  			</li>
+	  		</ul>
   			<h2>Running Backs</h2>
   			<h2>Wide Receivers</h2>
   			<h2>Tight Ends</h2>
