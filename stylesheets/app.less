@@ -105,35 +105,93 @@ body {
 			left: 4px;
 		}
 	}
+	.has-tip {
+		border: none;
+		&:hover {
+			border: none;
+		}
+	}
 	.tooltip {
 		text-shadow: none;
-		background: #ffff73;
-		background: rgba(255,255,115,.95);
-		color: #333;
+		background: #333;
+		background: rgba(51,51,51,.9); 
+		color: #ffff73;
+		font-weight: 400;
+		font-size: 14px;
+		max-width: 300px;
 		.nub {
-			border-color: transparent transparent rgba(255,255,115,.95) transparent;
+			border-color: transparent transparent rgba(51,51,51,.9) transparent;
 		}
 		&.tip-top {
 			.nub {
-				border-color: rgba(255,255,115,.95) transparent transparent transparent;
+				border-color: rgba(51,51,51,.9) transparent transparent transparent;
 			}
 		}
 		&.tip-right {
 			.nub {
-				border-color: transparent rgba(255,255,115,.95) transparent transparent;
+				border-color: transparent rgba(51,51,51,.9) transparent transparent;
 			}
 		}
 		&.tip-bottom {
 			.nub {
-				border-color: transparent transparent rgba(255,255,115,.95) transparent;
+				border-color: transparent transparent rgba(51,51,51,.9) transparent;
 			}
 		}
 		&.tip-left {
 			.nub {
-				border-color: transparent transparent transparent rgba(255,255,115,.95);
+				border-color: transparent transparent transparent rgba(51,51,51,.9);
 			}
 		}
-
+		.tap-to-close {
+			color: #ccc;
+		}
+	}
+	table {
+		&.statistics {
+			background: transparent;
+			border: 0px;
+			font-size: 12px;
+			th {
+				text-align: left;
+				text-transform: uppercase;
+				font-size: 10px;
+				font-weight: 400;
+				font-style: italic;
+				color: #666;
+				background: #fff;
+				height: 18px;
+				padding-top: 2px;
+				padding-bottom: 2px;
+			}
+			tr.even, tr.alt, tr:nth-of-type(even) {
+				background: none;
+			}
+			td {
+				font-weight: 600;
+				&.num {
+					text-align: right;
+				}
+			}
+			th, td {
+				&.divide {
+					border-right: 1px solid #ccc;
+					&:last-child {
+						border-right: none;
+					}
+				}
+			}
+		}
+	}
+	.button {
+		&.callout {
+			background: #ffff73;
+			color: #333;
+			border: 1px solid #ccc;
+			font-weight: 400;
+			&:hover {
+				background: lighten(#ffff73, 15%);
+			}
+		}
 	}
 } 
 
@@ -238,7 +296,11 @@ body {
 ----------------------------------------- */
 
 	.content {
-
+		h2 {
+			font-size: 16px;
+			font-family: 'Open Sans', arial, sans-serif;
+			font-weight: 400;
+		}
 		.profilecard {
 			position: relative;
 			.imageandrank {
@@ -271,6 +333,11 @@ body {
 					}
 				}
 			}
+			table.statistics {
+				td {
+					padding: 3px 20px 2px 0px;
+				}
+			}
 			.info {
 				display: inline-block;
 				width:250px;
@@ -288,6 +355,10 @@ body {
 							content: "\201D";
 						}
 					}
+				}
+				.leaguename {
+					font-size: 10px;
+					text-transform: uppercase;
 				}
 				.timestamp {
 					font-size: 12px;
@@ -429,6 +500,8 @@ body {
 			.breadcrumbs {
 				background: transparent;
 				border: none;
+				padding: 0px;
+				margin: 0px 0px 10px;
 				.current {
 					color: #999;
 				}
@@ -449,17 +522,87 @@ body {
 			}
 			.titlebar {
 				background: #f5f5f5;
-				padding: 10px;
+				padding: 10px 2px;
 				border: 1px solid #ccc;
 				border-width: 1px 0px;
+				color: #666;
+				font-weight:600;
+				text-transform: uppercase;
+				.position {
+					font-size: 16px;
+				}
+				.opponent {
+					font-size:10px;
+					font-style:italic;
+					margin-right: 3px;
+				}
 			}
 			.controlbar {
+				background: transparent;
+				padding: 5px 0;
+				border: 1px solid #ccc;
+				border-width: 1px 0 0;
+				.pagetitle {
+					display: inline-block;
+					h1 {
+						font-size: 21px;
+						margin: 0px;
+						display: inline-block;
+						font-weight: 400;
+					}
+				}
+				.controls {
+					padding: 0px;
+					display: inline-block;
+					position: relative;
+					top: 4px;
+					i {
+						padding-right: 5px;
+						color: #666;
+						position: relative;
+						top: 2px;
+						margin-left: 10px;
+					}
+					a {
+						i {
+							padding: 0px;
+							top: 0px;
+							margin-left: 0px;
+						}
+					}
+					.button { 
+						margin: 0px; 
+						font-size: 12px;
+						font-weight: normal;
+						&.small {
+							height: 21px;
+							padding: 4px 10px;
+						}
+						&.dropdown {
+							padding-right: 20px;
+							&:before {
+								right: 7px;
+								border-width: 5px 3px;
+								border-color: #666 transparent transparent transparent;
+							}
+						}
+						&.secondary {
+							.gradient(#f5f5f5, #eee, #fff);
+						}
+					}
+				}
 			}
 			.playerbar {
-				padding: 0px;
+				padding: 0px 2px 0 0;
 				border: 1px solid #ccc;
+				border-width: 1px 1px 0px;
 				max-height: 37px;
 				clear: both;
+				&:last-child {
+					border-width: 1px;
+				}
+				.transition;
+				cursor: pointer;
 				&:before {
 					content: '';
 					background: url(../images/icons/texture.png);
@@ -470,18 +613,65 @@ body {
 					top: -5px;
 					left: 2px;
 				}
+				&:hover {
+					.transition;
+				}
 				&.selected {
 					background: #666;
 					.playername {
 						color: #fff;
 						text-shadow: none;
 					}
+					&:hover {
+						background: darken(#666, 10%);
+					}
 				}
 				&.injured {
 					background: #ffcfbf;
+					&:hover {
+						background: darken(#ffcfbf, 10%);
+						.injury {
+							color: darken(#ff5b26, 20%);
+						}
+					}
+					.injury {
+						color: #FF5B26;
+						position: relative;
+						top: -7px;
+						font-size: 12px;
+						font-weight: 600;
+						text-shadow: none;
+						i {
+							font-size: 1.2em;
+						}
+					}
 				}
 				&.available {
 					background: #ffffe2;
+					&:hover {
+						background: darken(#ffffe2, 10%);
+					}
+				}
+				&.slot {
+					background: url(../images/subtle-pattern-1.jpg);
+					min-height: 35px;
+					padding-left: 5px;
+					.note, .playername {
+						top: 4px;
+						left: 5px;
+					}
+					.note {
+						color: #666;
+					}
+					&:before {
+						display: none;
+					}
+				}
+				.note {
+					font-size: 12px;
+					position: relative;
+					top: -7px;
+					text-shadow: none;
 				}
 				.playername {
 					text-shadow: none;
@@ -498,6 +688,9 @@ body {
 				.actions {
 					display: inline-block;
 					max-height: 30px;
+					position: relative;
+					top: 4px;
+					right: 5px;
 					.button {
 						max-height: 30px;
 						margin: 0px;
@@ -512,6 +705,11 @@ body {
 				border: 1px solid #ccc;
 				border-width: 0px 1px;
 				&.open { display: block;}
+				.position {
+					font-size: 12px;
+					font-weight: 600;
+					text-transform: uppercase;
+				}
 				.bigimage {
 					width: 48px;
 				}
@@ -526,33 +724,6 @@ body {
 					min-width: 400px;
 					table {
 						width: 100%;
-					}
-				}
-				table {
-					background: transparent;
-					border: 0px;
-					font-size: 12px;
-					th {
-						text-align: left;
-						text-transform: uppercase;
-						font-weight: 400;
-						font-style: italic;
-						color: #666;
-						background: #fff;
-					}
-					td {
-						font-weight: 600;
-						&.num {
-							text-align: right;
-						}
-					}
-					th, td {
-						&.divide {
-							border-right: 1px solid #ccc;
-							&:last-child {
-								border-right: none;
-							}
-						}
 					}
 				}
 			}

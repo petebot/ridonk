@@ -189,45 +189,33 @@
   				<div id="accountRank" class="rank"><span>Rank</span>79</div>
   			</div>
   			<div id="TeamProfileInfo" class="info">
-	  			<div id="teamName" class="name"><a href="#">Team Name</a></div>
-	  			<span id="leagueName" class="leaguename">The Skulls</span>
-	  			<table>
+	  			<div id="teamName" class="name"><a href="#">The Moons</a></div>
+	  			<span id="leagueName" class="leaguename"><a href="#">The Skulls</a></span>
+	  			<table class="statistics">
 	  				<tbody>
 		  				<tr>
-		  					<td>
-		  						Wins
-		  					</td>
-		  					<td id="winCount">
-		  						3
-		  					</td>
+		  					<td>Wins</td>
+		  					<td id="winCount" class="num divide">0</td>
 		  				</tr>
 		  				<tr>
-		  					<td>
-		  						Losses
-		  					</td>
-		  					<td id="lossCount">
-		  						3
-		  					</td>
+		  					<td>Losses</td>
+		  					<td id="lossCount" class="num divide">0</td>
 		  				</tr>
 		  				<tr>
-		  					<td>
-		  						Place
-		  					</td>
-		  					<td id="leaguePlacement">
-		  						3
-		  					</td>
+		  					<td>Place</td>
+		  					<td id="leaguePlacement" class="num divide">-</td>
 		  				</tr>
 		  			</tbody>
 	  			</table>
   			</div>
   		</div>
   		<div id="controlbar" class="controlbar">
-  			<div class="">
+  			<div id="pageTitle" class="pagetitle">
   				<h1>Depth Chart</h1>
   			</div>
-  			<div id="controls" class="controls">
-  				 <i class="icon-calendar"></i><a href="#" data-dropdown="timeSelect" class="small button dropdown secondary">Wk 6</a>
-  				 <i class="icon-bar-chart"></i><a href="#" data-dropdown="statSelect" class="small button dropdown secondary">NFL</a>
+  			<div id="controls" class="controls right">
+  				 <i data-tooltip class="icon-calendar has-tip" title="Select Time"></i><a href="#" data-dropdown="timeSelect" class="small button dropdown secondary">Wk 6</a>
+  				 <i data-tooltip class="icon-bar-chart has-tip" title="Select Stat Source"></i><a href="#" data-dropdown="statSelect" class="small button dropdown secondary">NFL</a>
   				 <a href="#" class="small button secondary"><i class="icon-plus"></i> Expand All</a>
   				 <ul id="timeSelect" class="f-dropdown">
 				  <li><a href="#">This is a link</a></li>
@@ -243,7 +231,7 @@
   		</div>
   		<div id="depthChart">
   			<div id="chartHead" class="titlebar">
-  				<span class="title position">Position</span>
+  				<span class="title position">Offense</span>
   				<span class="title opponent right">Opponent</span>
   			</div>
   			<h2>Quarterbacks</h2>
@@ -261,28 +249,25 @@
 	  				<img src="images/aaronrodgers.jpeg" id="accountImage" class="bigimage">
 			  			<div id="playerProfileInfo" class="info">
 				  			<div id="playerPosition" class="position statlabel">#12 Quarterback</div>
-				  			<table>
+				  			<table class="statistics">
 				  				<tbody>
 					  				<tr>
-					  					<td>
-					  						Height <span class="num">5'6"</span>
-					  					</td>
+					  					<td>Height</td>
+					  					<td class="num divide">5-6</td>
 					  				</tr>
 					  				<tr>
-					  					<td>
-					  						Weight <span class="num">210</span>
-					  					</td>
+					  					<td>Weight</td>
+					  					<td class="num">210</td>
 					  				</tr>
 					  				<tr>
-					  					<td>
-					  						Yds/G <span class="num">365</span>
-					  					</td>
+					  					<td>Yds/G</td>
+					  					<td class="num">365</td>
 					  				</tr>
 					  			</tbody>
 				  			</table>
 			  			</div>
 			  			<div id="playerProfileStats" class="stats">
-	  			  			<table>
+	  			  			<table class="statistics">
 	  			  				<tbody>
 	  			  					<tr>
 	  			  						<th>Passing</th>
@@ -341,7 +326,7 @@
 	  			<li id="playerHead" class="playerbar injured">
 	  				<img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
 	  				<span id="playerName" class="playername">Aaron Rodgers</span>
-	  				<span id="playerInjured" class="injury"><i class="icon-medkit"></i> Injured</span>
+	  				<span data-tooltip id="playerInjured" class="injury has-tip tip-small" title="Can we somehow put some data in here (the title attribute of this span) from a news source describing the injury and other information?"><i class="icon-medkit"></i> Injured</span>
 	  				<img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
 	  				<div class="actions right">
 		  				<a href="#" class="button tiny secondary">Trade</a>
@@ -350,9 +335,77 @@
 	  			</li>
 	  		</ul>
   			<h2>Running Backs</h2>
+  				<ul id="runningbacks" class="runningbacks">
+		  			<li id="playerHead" class="playerbar slot">
+		  				<span class="playername">Available</span> <span class="note">(you have not yet filled this position)</span>
+		  				<div class="actions right">
+			  				<a href="#" class="button tiny callout">Add Player</a>
+			  			</div>
+		  			</li>
+		  			<li id="playerHead" class="playerbar slot">
+		  				<span class="playername">Available</span> <span class="note">(you have not yet filled this position)</span>
+		  				<div class="actions right">
+			  				<a href="#" class="button tiny callout">Add Player</a>
+			  			</div>
+		  			</li>
+		  			<li id="playerHead" class="playerbar slot">
+		  				<span class="playername">Available</span> <span class="note">(you have not yet filled this position)</span>
+		  				<div class="actions right">
+			  				<a href="#" class="button tiny callout">Add Player</a>
+			  			</div>
+		  			</li>
+  				</ul>
   			<h2>Wide Receivers</h2>
+  				<ul id="widereceivers" class="widereceivers">
+		  			<li id="playerHead" class="playerbar slot">
+		  				<span class="playername">Available</span> <span class="note">(you have not yet filled this position)</span>
+		  				<div class="actions right">
+			  				<a href="#" class="button tiny callout">Add Player</a>
+			  			</div>
+		  			</li>
+		  			<li id="playerHead" class="playerbar slot">
+		  				<span class="playername">Available</span> <span class="note">(you have not yet filled this position)</span>
+		  				<div class="actions right">
+			  				<a href="#" class="button tiny callout">Add Player</a>
+			  			</div>
+		  			</li>
+		  			<li id="playerHead" class="playerbar slot">
+		  				<span class="playername">Available</span> <span class="note">(you have not yet filled this position)</span>
+		  				<div class="actions right">
+			  				<a href="#" class="button tiny callout">Add Player</a>
+			  			</div>
+		  			</li>
+  				</ul>
   			<h2>Tight Ends</h2>
+  				<ul id="tightends" class="tightends">
+		  			<li id="playerHead" class="playerbar slot">
+		  				<span class="playername">Available</span> <span class="note">(you have not yet filled this position)</span>
+		  				<div class="actions right">
+			  				<a href="#" class="button tiny callout">Add Player</a>
+			  			</div>
+		  			</li>
+		  			<li id="playerHead" class="playerbar slot">
+		  				<span class="playername">Available</span> <span class="note">(you have not yet filled this position)</span>
+		  				<div class="actions right">
+			  				<a href="#" class="button tiny callout">Add Player</a>
+			  			</div>
+		  			</li>
+		  			<li id="playerHead" class="playerbar slot">
+		  				<span class="playername">Available</span> <span class="note">(you have not yet filled this position)</span>
+		  				<div class="actions right">
+			  				<a href="#" class="button tiny callout">Add Player</a>
+			  			</div>
+		  			</li>
+  				</ul>
   			<h2>Defense</h2>
+  				<ul id="runningbacks" class="runningbacks">
+		  			<li id="playerHead" class="playerbar slot">
+		  				<span class="playername">Available</span> <span class="note">(you have not yet filled this position)</span>
+		  				<div class="actions right">
+			  				<a href="#" class="button tiny callout">Add Defense</a>
+			  			</div>
+		  			</li>
+  				</ul>
   		</div>
   	</div>
 
