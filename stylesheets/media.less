@@ -1,0 +1,104 @@
+/* We use this media query to add styles to any device that supports media queries */
+@media only screen { }
+
+/* Used to alter styles for screens at least 768px wide. This is where the grid changes. */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Used to alter styles for screens BELOW 768px wide. This is where the grid changes. */
+@media only screen and (max-width: 768px) {
+		@menu_width: 80%;
+		@content_offset : 0px;
+		html,
+		body {
+			//margin:0;
+			overflow-x:hidden;
+			.hide-it-small {
+				display: none;
+			}
+
+			.nav {
+				.top-bar {
+					.title-area {
+						.name {
+							margin-left: 30px;
+						}
+					}
+				}
+			}
+		}
+
+	.content {
+		.main {
+			position: absolute;
+			top: 44px;
+			margin-bottom: 40px;
+		}
+		
+		.forsidebar {
+			z-index: 200000000;
+		}
+		label.forsidebar {
+		  display:block;
+		  top: 0;
+		}
+
+		label.forsidebar:after {
+		  position: absolute;
+		  right: 7px;  
+		  top: 6px;
+		  content:"\2261";
+		  font-size: 50px;
+		}
+
+		label.forsidebar:hover,
+		input.forsidebar:checked ~ label.forsidebar {
+		  color:#000;
+		}
+
+		input.forsidebar:checked ~ .offcanvas {
+		  opacity:1;
+		  left:0;
+		  box-shadow:-30em 0 0 30em rgba(0, 0, 0, .3);
+		  .transition;
+		  
+		}
+
+		input.forsidebar:checked ~ .main {
+		  margin-left: @menu_width + @content_offset;
+		  margin-right:-(@menu_width + @content_offset);
+		}
+		  
+		.offcanvas {
+		  position:absolute;
+		  top:3em;
+		  left:-@menu_width;
+		  width: @menu_width;
+		  opacity:0;
+		  .transition;
+		}
+	}
+	
+	footer {
+			display: none;
+		}
+}
+/* Used to alter styles for screens at least 1280px wide. */
+@media only screen and (min-width: 1280px) {}
+
+/* Used to alter styles for screens at least 1440px wide. */
+@media only screen and (min-width: 1440px) {}
+
+/* Apply styles to screens in landscape orientation */
+@media only screen and (orientation: landscape) {
+
+}
+
+/* Apply styles to screens in portrait orientation */
+@media only screen and (orientation: portrait) {
+}
+
+/* We also use Modernizr to add a .touch class to the body when applicable */
+/* You can prepend this class to anything and it will style only for touch devices */
+.touch .your-element {}

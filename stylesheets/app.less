@@ -16,6 +16,7 @@
 ----------------------------------------- */
 @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700|Neuton:400,700,400italic|Open+Sans:400italic,600italic,400,600|Roboto+Condensed:400,700);
 @import url(elements.less);
+@import url(media.less);
 
 //http://www.google.com/webfonts#ChoosePlace:select/Collection:Ubuntu+Mono|Neuton|Open+Sans|Roboto+Condensed
 
@@ -206,6 +207,7 @@ body {
 		.top-bar {
 			background: transparent;
 			.title-area {
+				
 				&:hover {
 					background: transparent;
 				}
@@ -296,6 +298,27 @@ body {
 ----------------------------------------- */
 
 	.content {
+		input[type=checkbox] {
+		  position: absolute;
+		  top: -9999px;
+		  left: -9999px;
+		}
+
+		label {
+		  position: absolute;
+		  left:0;
+		  display:none;
+		  width:43px;
+		  height:43px;
+		  padding:.35em;
+		  font-size:1.1em;
+		  color:#fff;
+		  transition:color .3s ease-in-out;
+		  cursor: pointer;
+		  user-select:none;
+		  margin:0;
+		  background:rgba(0, 0, 0, .4); 
+		}
 		h2 {
 			font-size: 16px;
 			font-family: 'Open Sans', arial, sans-serif;
@@ -306,8 +329,8 @@ body {
 			.imageandrank {
 				width: 48px;
 				display: inline-block;
+				position: absolute;
 				.bigimage {
-					position: absolute;
 					top: 0px;
 				}
 				.rank {
@@ -340,8 +363,10 @@ body {
 			}
 			.info {
 				display: inline-block;
-				width:250px;
+				max-width:250px;
+				min-width: 173px;
 				padding: 0px 5px;
+				margin-left: 52px;
 				.name {
 					a, span {
 						font-size: 21px;
