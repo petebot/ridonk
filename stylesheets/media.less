@@ -19,9 +19,64 @@
 
 			.nav {
 				.top-bar {
+					&.expanded {
+						.title-area {
+							.menu-icon {
+								background:rgba(0, 0, 0, .4); 
+								&:after {
+									border-top-color: transparent;
+									border-bottom-color: #eee;
+									top:15px;
+								}
+							}
+						}
+					}
 					.title-area {
 						.name {
 							margin-left: 30px;
+						}
+						.menu-icon {
+							margin: 0px;
+							padding: 7px 7px 7px 7px;
+							top: 0px;
+							right: 0px;
+							&:after {
+									content: "";
+									display: inline-block;
+									border: 5px solid transparent;
+									border-top-color: white;
+									height: 0px;
+									width: 0px;
+									position: absolute;
+									right: 10px;
+									top: 20px;
+								}
+							.mobilemenu {
+								margin-right: 20px;
+								vertical-align: middle;
+							}
+						}
+					}
+					.top-bar-section {
+						margin-bottom: 20px;
+						ul {
+							background: #ffff79;
+							border-bottom: 1px solid #ccc;
+							.box-shadow(0px 0px 8px #333);
+							&:hover {background: #ffff79;}
+							li {
+								background: #ffff79;
+								label {
+									font-size: 10px;
+									text-transform: uppercase;
+									font-style: italic;
+									padding: 5px 0 0 15px;
+								}
+								a {
+									background: #ffff79;
+									color: #333;
+								}
+							}
 						}
 					}
 				}
@@ -33,6 +88,24 @@
 			position: absolute;
 			top: 44px;
 			margin-bottom: 40px;
+			.playerbar {
+				.actions {
+					.button {
+						&.tiny {
+							padding: 5px 3px;
+						}
+					}
+				}
+			}
+			.playerstats {
+				&.open {
+					ul {
+						li {
+							border-right: none;
+						}
+					}
+				}
+			}
 		}
 		
 		.forsidebar {
@@ -45,15 +118,18 @@
 
 		label.forsidebar:after {
 		  position: absolute;
-		  right: 7px;  
-		  top: 6px;
+		  right: 4px;  
+		  top: 12px;
 		  content:"\2261";
-		  font-size: 50px;
+		  font-size: 37px;
+		  font-weight: normal;
+		  text-shadow: none;
 		}
 
 		label.forsidebar:hover,
 		input.forsidebar:checked ~ label.forsidebar {
-		  color:#000;
+		  //color:#000;
+		  background:rgba(0, 0, 0, .4); 
 		}
 
 		input.forsidebar:checked ~ .offcanvas {

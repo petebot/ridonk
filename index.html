@@ -29,30 +29,38 @@
 				    <li class="logo name"><h1><a href="#">Ridonkulous</a></h1></li>
 
 				   <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-				   <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+				   <li class="toggle-topbar menu-icon">
+				   			<img src="images/userimage.png" id="accountImage" class="tinyimage mobilemenu" />
+	  		            	<!--span class="badge"><span id="badgeCount" class="count">1</span></span1-->
+	  		        </li>
 				</ul>
 
 
 			  	<section class="top-bar-section">
 	          		<!-- Right Nav Section -->
-		         	<ul class="right">
-  		            <li id="account" class="has-dropdown account">
-  		            	<img src="images/userimage.png" id="accountImage" class="tinyimage" />
-  		            	<span class="badge"><span id="badgeCount" class="count">1</span></span>
-  		             	<a href="#"></a>
-  		            	<ul class="dropdown">
-	  		                <li><label>Personal Settings</label></li>
-	  		                <li><a href="#"><i class="icon-user"></i> Your Profile</a></li>
-	  		                <li><a href="#"><i class="icon-trophy"></i> Your Ranking</a></li>
-	  		                <hr>
-	  		                <li><label>Account Settings</label></li>
-	  		                <li><a href="#"><i class="icon-credit-card"></i> Billing Info</a></li>
-	  		                <li><a href="#"><i class="icon-comments"></i> Social Profiles</a></li>
-  		            	</ul>
-  		            </li>
-  		            
-
+		         	<ul class="right hide-for-small">
+	  		            <li id="account" class="has-dropdown account">
+	  		            	<img src="images/userimage.png" id="accountImage" class="tinyimage" />
+	  		            	<span class="badge"><span id="badgeCount" class="count">1</span></span>
+	  		            	<ul class="dropdown">
+		  		                <li><label>Personal Settings</label></li>
+		  		                <li><a href="#"><i class="icon-user"></i> Your Profile</a></li>
+		  		                <li><a href="#"><i class="icon-trophy"></i> Your Ranking</a></li>
+		  		                <hr>
+		  		                <li><label>Account Settings</label></li>
+		  		                <li><a href="#"><i class="icon-credit-card"></i> Billing Info</a></li>
+		  		                <li><a href="#"><i class="icon-comments"></i> Social Profiles</a></li>
+	  		            	</ul>
+	  		            </li>
 		         	</ul>
+	            	<ul class="show-for-small">
+		                <li><label>Personal Settings</label></li>
+		                <li><a href="#"><i class="icon-user"></i> Your Profile</a></li>
+		                <li><a href="#"><i class="icon-trophy"></i> Your Ranking</a></li>
+		                <li><label>Account Settings</label></li>
+		                <li><a href="#"><i class="icon-credit-card"></i> Billing Info</a></li>
+		                <li><a href="#"><i class="icon-comments"></i> Social Profiles</a></li>
+	            	</ul>
 	        	</section>
 			</nav>
 		</div>
@@ -245,96 +253,72 @@
 	  				<span id="playerName" class="playername">Aaron Rodgers</span>
 	  				<img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
 	  				<div class="actions right">
-		  				<a href="#" class="button tiny secondary">Trade</a>
-		  				<a href="#" class="button tiny secondary">Drop</a>
+		  				<a href="#" class="button tiny secondary"><i class="icon-random has-tip" data-tooltip title="Trade"></i></a>
+		  				<a href="#" class="button tiny secondary"><i class="icon-arrow-down has-tip" data-tooltip title="Drop"></i></a>
 		  			</div>
 	  			</li>
 	  			<div id="playerStats" class="playerstats open">
-	  				<img src="images/aaronrodgers.jpeg" id="accountImage" class="bigimage">
-			  			<div id="playerProfileInfo" class="info">
-				  			<div id="playerPosition" class="position statlabel">#12 Quarterback</div>
-				  			<table class="statistics">
-				  				<tbody>
-					  				<tr>
-					  					<td>Height</td>
-					  					<td class="num divide">5-6</td>
-					  				</tr>
-					  				<tr>
-					  					<td>Weight</td>
-					  					<td class="num">210</td>
-					  				</tr>
-					  				<tr>
-					  					<td>Yds/G</td>
-					  					<td class="num">365</td>
-					  				</tr>
-					  			</tbody>
-				  			</table>
-			  			</div>
-			  			<div id="playerProfileStats" class="stats">
-	  			  			<table class="statistics">
-	  			  				<tbody>
-	  			  					<tr>
-	  			  						<th>Passing</th>
-	  			  						<th class="divide"></th>
-	  			  						<th>Rushing</th>
-	  			  						<th class="divide"></th>
-	  			  						<th>Receiving</th>
-	  			  						<th class="divide"></th>
-	  			  						<th>Misc</th>
-	  			  						<th class="divide"></th>
-	  			  					</tr>
-	  				  				<tr>
-	  				  					<td>Yds</td>
-	  				  					<td id="ydsPassing" class="num divide">4065</td>
-	  				  					<td>Yds</td>
-	  				  					<td id="ydsRushing" class="num divide">139</td>
-	  				  					<td>Rec</td>
-	  				  					<td id="receptions" class="num divide">0</td>
-	  				  					<td>2pt</td>
-	  				  					<td id="twoPoints" class="num divide">1</td>
-	  				  				</tr>
-	  				  				<tr>
-	  				  					<td>TD</td>
-	  				  					<td id="tdPassing" class="num divide">27</td>
-	  				  					<td>TD</td>
-	  				  					<td id="tdRushing" class="num divide">0</td>
-	  				  					<td>Yds</td>
-	  				  					<td id="ydsReceiving" class="num divide">0</span>
-	  				  					<td>Fum</td>
-	  				  					<td id="fumbles" class="num divide">2</span>
-	  				  				</tr>
-	  				  				<tr>
-	  				  					<td>Int</td>
-	  				  					<td id="intPassing" class="num divide">17</td>
-	  				  					<td></td>
-	  				  					<td id="" class="num divide">-</td>
-	  				  					<td>TD</td>
-	  				  					<td id="tdReceiving" class="num divide">0</td>
-	  				  					<td></td>
-	  				  					<td id="" class="num divide">-</td>
-
-	  				  				</tr>
-	  				  			</tbody>
-	  			  			</table>
-			  			</div>
+	  				<img src="images/aaronrodgers.jpeg" id="accountImage" class="tinyimage">
+	  				<ul class="large-block-grid-5 small-block-grid-1">
+	  					<li>
+	  						<div id="playerPosition" class="stathead position">#12 Quarterback</div>
+				  			<dl>
+					  			<dt id="statHeight">Height</dt> <dd>5-6</dd>
+						  		<dt id="statWeight">Weight</dt> <dd>210</dd>
+						  		<dt id="statYdsPerGame">Yds/G</dt> <dd>365</dd>
+					  		</dl>
+				  		</li>
+				  		<li>
+				  			<div class="stathead">Passing</div>
+	  			  			<dl>
+	  				  			<dt>Yds</dt> <dd id="statYdsPass">1234</dd>
+	  					  		<dt>TD</dt> <dd id="statTdPass">27</dd>
+	  					  		<dt>INT</dt> <dd id="statIntPass">17</dd>
+	  				  		</dl>
+				  		</li>
+				  		<li>
+				  			<div class="stathead">Rushing</div>
+				  			<dl>
+					  			<dt>Yds</dt> <dd id="statYdsRush">139</dd>
+						  		<dt>TD</dt> <dd id="statTdRush">0</dd>
+						  		<dt class="hide-for-small"></dt> <dd id="stat" class="hide-for-small"></dd>
+					  		</dl>
+				  		</li>
+				  		<li>
+				  			<div class="stathead">Receiving</div>
+				  			<dl>
+					  			<dt>Rec</dt> <dd id="statRec">0</dd>
+						  		<dt>Yds</dt> <dd id="statYdsRec">0</dd>
+						  		<dt>TD</dt> <dd id="statTdRec">0</dd>
+					  		</dl>
+				  		</li>
+				  		<li>
+				  			<div class="stathead">Misc</div>
+				  			<dl>
+					  			<dt>2pt</dt> <dd id="stat2ptMisc">1</dd>
+						  		<dt>Fum</dt> <dd id="statFumMisc">2</dd>
+						  		<dt class="hide-for-small"></dt> <dd class="hide-for-small"></dd>
+					  		</dl>
+				  		</li>
+				  	</ul>
 	  			</div> 
 	  			<li id="playerHead" class="playerbar available">
 	  				<img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
 	  				<span id="playerName" class="playername">Aaron Rodgers</span>
 	  				<img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
 	  				<div class="actions right">
-		  				<a href="#" class="button tiny secondary">Trade</a>
-		  				<a href="#" class="button tiny secondary">Drop</a>
+		  				<a href="#" class="button tiny secondary"><i class="icon-random has-tip" data-tooltip title="Trade"></i></a>
+		  				<a href="#" class="button tiny secondary"><i class="icon-arrow-down has-tip" data-tooltip title="Drop"></i></a>
 		  			</div>
 	  			</li>
 	  			<li id="playerHead" class="playerbar injured">
 	  				<img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
 	  				<span id="playerName" class="playername">Aaron Rodgers</span>
-	  				<span data-tooltip id="playerInjured" class="injury has-tip tip-small" title="Can we somehow put some data in here (the title attribute of this span) from a news source describing the injury and other information?"><i class="icon-medkit"></i> Injured</span>
+	  				<span data-tooltip id="playerInjured" class="injury has-tip tip-small" title="Can we somehow put some data in here (the title attribute of this span) from a news source describing the injury and other information?"><i class="icon-medkit"></i> <span class="hide-for-small">Injured</span></span>
 	  				<img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
 	  				<div class="actions right">
-		  				<a href="#" class="button tiny secondary">Trade</a>
-		  				<a href="#" class="button tiny secondary">Drop</a>
+		  				<a href="#" class="button tiny secondary"><i class="icon-random has-tip" data-tooltip title="Trade"></i></a>
+		  				<a href="#" class="button tiny secondary"><i class="icon-arrow-down has-tip" data-tooltip title="Drop"></i></a>
 		  			</div>
 	  			</li>
 	  		</ul>

@@ -206,6 +206,7 @@ body {
 		border-bottom: 1px solid #999;
 		.top-bar {
 			background: transparent;
+			z-index: 100000000;
 			.title-area {
 				
 				&:hover {
@@ -221,69 +222,72 @@ body {
 					}
 				}
 			}
-			ul {
-				background: transparent;
-				&:hover {
-					background: #000;
-				}
-				&.name {
-					position: relative;
+			.top-bar-section {
+				z-index: 10000000;
+				ul {
+					background: transparent;
 					&:hover {
-						background: transparent;
+						background: #000;
 					}
-				}
-				li {
-					&.account {
-						height: 45px;
-						width: 70px;
-						a {
-							display: inline-block;
-							&:after {
-								margin-top: 0px;
-							}
-							&.accountimage { 
-								text-indent: -999em;
-							}
+					&.name {
+						position: relative;
+						&:hover {
+							background: transparent;
 						}
 					}
-					.tinyimage {
-						display: inline-block;
-						margin: 7px 0 7px 5px;
-					}
-					ul {
-						top: 45px;
-						&.dropdown {
-							border: 1px solid #ccc;
-							background: #f5f5f5;
-							height: auto;
-							min-width: 200px;
-							li {
-								background: #f5f5f5;
-								color: #333;
-								padding-bottom: 0px;
-								&:last-child {
-									padding-bottom: 0px;
-									a {
-										padding-bottom: 15px;
-									}
+					li {
+						&.account {
+							height: 45px;
+							width: 70px;
+							a {
+								display: inline-block;
+								&:after {
+									margin-top: 0px;
 								}
-								a {
-									background: #f5f5f5;
-									color: #333;
-									width: 100%;
-									padding: 10px 5px 10px 15px;
-									&:hover {
-										background: @hilite;
-									}
-								}
-								label {
-									font-size: 10px;
-									background: #f5f5f5;
-									color: #666;
+								&.accountimage { 
+									text-indent: -999em;
 								}
 							}
-							hr {
-								margin:0 0 0px;
+						}
+						.tinyimage {
+							display: inline-block;
+							margin: 7px 0 7px 5px;
+						}
+						ul {
+							top: 45px;
+							&.dropdown {
+								border: 1px solid #ccc;
+								background: #f5f5f5;
+								height: auto;
+								min-width: 200px;
+								li {
+									background: #f5f5f5;
+									color: #333;
+									padding-bottom: 0px;
+									&:last-child {
+										padding-bottom: 0px;
+										a {
+											padding-bottom: 15px;
+										}
+									}
+									a {
+										background: #f5f5f5;
+										color: #333;
+										width: 100%;
+										padding: 10px 5px 10px 15px;
+										&:hover {
+											background: @hilite;
+										}
+									}
+									label {
+										font-size: 10px;
+										background: #f5f5f5;
+										color: #666;
+									}
+								}
+								hr {
+									margin:0 0 0px;
+								}
 							}
 						}
 					}
@@ -317,7 +321,6 @@ body {
 		  cursor: pointer;
 		  user-select:none;
 		  margin:0;
-		  background:rgba(0, 0, 0, .4); 
 		}
 		h2 {
 			font-size: 16px;
@@ -719,6 +722,9 @@ body {
 					.button {
 						max-height: 30px;
 						margin: 0px;
+						i {
+							font-size: 1.4em;
+						}
 					}
 				}
 			}
@@ -726,9 +732,63 @@ body {
 				display: none;
 				clear: both;
 				background: #f5f5f5;
-				padding: 10px 10px 0;
+				padding: 10px;
 				border: 1px solid #ccc;
 				border-width: 0px 1px;
+				img {
+					vertical-align: top;
+					position: absolute;
+					left: 26px;
+					width: 48px;
+					height: 48px;
+				}
+				ul {
+					height: 100%;
+					position: relative;
+					margin-left: 50px;
+					margin-right: 0px;
+
+					li {
+						padding: 0px;
+						border-right: 1px solid #ccc;
+						&:last-child, &:first-child {
+							border-right: none;
+						}
+						.stathead {
+							text-align: left;
+							text-transform: uppercase;
+							font-size: 10px;
+							font-weight: 400;
+							font-style: italic;
+							color: #666;
+							background: #fff;
+							height: 18px;
+							padding-left: 10px;
+							&.position {
+								font-weight: 800;
+								background: transparent;
+							}
+						}
+						dl {
+							display: inline-block;
+							font-size: 10px;
+							padding: 0px 10px;
+							width: 100%;
+							dt {
+								display: inline-block;
+								width: 50%;
+								margin: 0px;
+							}
+							dd {
+								display: inline-block;
+								text-align: right;
+								width: 45%;
+								margin: 0px;
+								font-family: 'Ubuntu Mono', courier, monospace;
+							}
+						}
+					}
+				}
 				&.open { display: block;}
 				.position {
 					font-size: 12px;
