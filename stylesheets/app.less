@@ -1,10 +1,10 @@
-/* Artfully masterminded by ZURB  */
-
 /* -------------------------------------------------- 
    Table of Contents
 -----------------------------------------------------
+:: Variables & Imports
 :: Shared Styles
 :: Nav
+:: Content
 :: Sidebar
 :: Main
 :: Footer
@@ -12,831 +12,898 @@
 
 
 /* -----------------------------------------
-   Variables & Such
+   Variables & Imports
 ----------------------------------------- */
+
+//Import google fonts
 @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700|Neuton:400,700,400italic|Open+Sans:400italic,600italic,400,600|Roboto+Condensed:400,700);
+
+//Import Less Elements Mixins
 @import url(elements.less);
+
+//Import the media queries file
 @import url(media.less);
 
-//http://www.google.com/webfonts#ChoosePlace:select/Collection:Ubuntu+Mono|Neuton|Open+Sans|Roboto+Condensed
 
 @hilite: #ffff73;
 @primary: #007fff;
 
-
-
-.box-size() { 
-	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
-	box-sizing: border-box;         /* Opera/IE 8+ */
-}
 
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */
 
 body {
-	background: #f5f5f5;
-	background: rgba(0,0,0,.05);
-	color: #333;
-	line-height: 18px;
-	text-shadow: 1px 1px 0px #fff;
-    filter: dropshadow(color=#fff, offx=1, offy=1);
-	* {
-		font-family: 'Open Sans', sans-serif;
-		.box-size;
-	}
-	a {
-			color: @primary;
-		}
-	h1, h2, h3, h4, h5, h6 {
-		font-family: 'Neuton', Georgia, sans-serif;
-	}
-	li {
-		list-style: none;
-	}
-	.tinyimage {
-		height: 30px;
-		width: 30px;
-		display: inline-block;
-	}
-	hr {
-		.box-shadow(0px 1px 0px #fff)
-	}
-	.num {
-		font-family: "Ubuntu Mono", Courier, monospace;
-	}
-	.onepointfive {
-		font-size: 1.5em;
-	}
-	.badge {
-		background: #FFFF73;
-		display: inline-block;
-		height: 15px;
-		width: 15px;
-		position: relative;
-		margin: -15px -15px 0 0;
-		top: -7px;
-		right: 0px;
-		color: #666;
-		z-index: 1000000;
-		padding: 0;
-		.box-shadow(1px 1px 0 rgba(0,0,0,.3));
-		&:before {
-			content: '';
-			display: block;
-			border: 10px solid transparent;
-			border-width: 0px 5px 4px 10px;
-			border-right-color: #ffff73;
-			width: 0px;
-			height: 0px;
+    background: #f5f5f5;
+    background: rgba(0,0,0,.05);
+    color: #333;
+    line-height: 18px;
+    text-shadow: 1px 1px 0px #fff;
+    * {
+        .box-size;
+        font-family: 'Open Sans',sans-serif;
+    }
+    a {
+        color: @primary;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Neuton',Georgia,sans-serif;
+    }
+    li {
+        list-style: none;
+    }
+    .tinyimage {
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+    }
+    hr {
+        .box-shadow(0px 1px 0px #fff);
+    }
+    .num {
+        font-family: "Ubuntu Mono",Courier,monospace;
+    }
+    .onepointfive {
+        font-size: 1.5em;
+    }
+    .badge {
+        .box-shadow(1px 1px 0 rgba(0,0,0,.3));
+        background: #FFFF73;
+        color: #666;
+        display: inline-block;
+        height: 15px;
+        margin: -15px -15px 0 0;
+        padding: 0;
+        position: relative;
+        right: 0px;
+        top: -7px;
+        width: 15px;
+        z-index: 1000000;
+        &:before {
+            border: 10px solid transparent;
+            border-right-color: #ffff73;
+            border-width: 0px 5px 4px 10px;
+            content: '';
+            display: block;
+            height: 0px;
+            left: -15px;
+            position: relative;
+            top: 10px;
+            width: 0px;
+        }
+        .count {
+            content: '';
+            font-family: 'Ubuntu Mono',courier,monospace;
+            font-size: 14px;
+            font-weight: bold;
+            left: 4px;
+            line-height: 10px;
+            position: relative;
+            text-align: center;
+            top: -10px;
+        }
+    }
+    .has-tip {
+        border: none;
+        &:hover {
+            border: none;
+        }
+    }
+    .tooltip {
+        background: #333;
+        background: rgba(51,51,51,.9);
+        color: #ffff73;
+        font-size: 14px;
+        font-weight: 400;
+        max-width: 300px;
+        text-shadow: none;
+        .nub {
+            border-color: transparent transparent rgba(51,51,51,.9) transparent;
+        }
+        &.tip-top {
+            .nub {
+                border-color: rgba(51,51,51,.9) transparent transparent transparent;
+            }
+        }
+        &.tip-right {
+            .nub {
+                border-color: transparent rgba(51,51,51,.9) transparent transparent;
+            }
+        }
+        &.tip-bottom {
+            .nub {
+                border-color: transparent transparent rgba(51,51,51,.9) transparent;
+            }
+        }
+        &.tip-left {
+            .nub {
+                border-color: transparent transparent transparent rgba(51,51,51,.9);
+            }
+        }
+        .tap-to-close {
+            color: #ccc;
+        }
+    }
+    table {
+        &.statistics {
+            background: transparent;
+            border: 0px;
+            font-size: 12px;
+            th {
+                background: #fff;
+                color: #666;
+                font-size: 10px;
+                font-style: italic;
+                font-weight: 400;
+                height: 18px;
+                padding-bottom: 2px;
+                padding-top: 2px;
+                text-align: left;
+                text-transform: uppercase;
+            }
+            tr.even, tr.alt, tr:nth-of-type(even) {
+                background: none;
+            }
+            td {
+                font-weight: 600;
+                &.num {
+                    text-align: right;
+                }
+            }
+            th, td {
+                &.divide {
+                    border-right: 1px solid #ccc;
+                    &:last-child {
+                        border-right: none;
+                    }
+                }
+            }
+        }
+    }
+    .button {
+        &.callout {
+            background: #ffff73;
+            border: 1px solid #ccc;
+            color: #333;
+            font-weight: 400;
+            &:hover {
+                background: lighten(#ffff73,15%);
+            }
+        }
+		&.dropdown {
 			position: relative;
-			left: -15px;
-			top: 10px;
 		}
-		.count {
-			font-family: 'Ubuntu Mono', courier, monospace;
-			font-size: 14px;
-			font-weight: bold;
-			line-height: 10px;
-			text-align: center;
-			content: '';
-			position: relative;
-			top: -10px;
-			left: 4px;
-		}
-	}
-	.has-tip {
-		border: none;
-		&:hover {
-			border: none;
-		}
-	}
-	.tooltip {
-		text-shadow: none;
-		background: #333;
-		background: rgba(51,51,51,.9); 
-		color: #ffff73;
-		font-weight: 400;
-		font-size: 14px;
-		max-width: 300px;
-		.nub {
-			border-color: transparent transparent rgba(51,51,51,.9) transparent;
-		}
-		&.tip-top {
-			.nub {
-				border-color: rgba(51,51,51,.9) transparent transparent transparent;
-			}
-		}
-		&.tip-right {
-			.nub {
-				border-color: transparent rgba(51,51,51,.9) transparent transparent;
-			}
-		}
-		&.tip-bottom {
-			.nub {
-				border-color: transparent transparent rgba(51,51,51,.9) transparent;
-			}
-		}
-		&.tip-left {
-			.nub {
-				border-color: transparent transparent transparent rgba(51,51,51,.9);
-			}
-		}
-		.tap-to-close {
-			color: #ccc;
-		}
-	}
-	table {
-		&.statistics {
-			background: transparent;
-			border: 0px;
-			font-size: 12px;
-			th {
-				text-align: left;
-				text-transform: uppercase;
-				font-size: 10px;
-				font-weight: 400;
-				font-style: italic;
-				color: #666;
-				background: #fff;
-				height: 18px;
-				padding-top: 2px;
-				padding-bottom: 2px;
-			}
-			tr.even, tr.alt, tr:nth-of-type(even) {
-				background: none;
-			}
-			td {
-				font-weight: 600;
-				&.num {
-					text-align: right;
+    }
+	.f-dropdown {
+		&.open {
+			top: 25px !important;
+			left: 25px !important;
+			.active {
+				background: #f5f5f5;
+				a {
+					color: #999;
 				}
 			}
-			th, td {
-				&.divide {
-					border-right: 1px solid #ccc;
-					&:last-child {
-						border-right: none;
+		}
+		&.content {
+			padding: 0px;
+			&.timeselect {
+				min-width: 211px;
+				.byseason {
+					display: inline-block;
+					width: 105px;
+					.label {
+						background: transparent;
+						text-align: right;
+						color: #333;
+						width: 100%;
+						float: right;
+						font-size: 12px;
+						margin: 0px;
+					}
+					li { 
+						margin: 0px;
+						padding: 0px 0px 4px 5px;
+						&:hover {
+							background: #fff;
+						}
+						.button.secondary {
+							width: 100px;
+							margin: 0px;
+						}
+					}
+				}
+				.byweek {
+					display: inline-block;
+					max-width: 96px;
+				}
+				.weeks {
+					li {
+						display: inline-block;
+						width: 21px;
+						height: 21px;
+						background: #f5f5f5;
+						padding: 2px;
+						border: 1px solid #ccc;
+						&:hover {
+							background: #ddd;
+						}
+						&.active {
+							background: @hilite;
+							a {
+								color: #333;
+							}
+						}
+						&.disabled {
+							background: #ddd;
+							cursor: default;
+							a {
+								color: #999;
+								cursor: default;
+							}
+						}
+						a {
+							text-align: center;
+							font-family: 'Ubuntu Mono', monospace;
+							margin: 0 auto;
+							display: block;
+						}
 					}
 				}
 			}
 		}
 	}
-	.button {
-		&.callout {
-			background: #ffff73;
-			color: #333;
-			border: 1px solid #ccc;
-			font-weight: 400;
-			&:hover {
-				background: lighten(#ffff73, 15%);
-			}
-		}
-	}
-} 
+}
 
 /* -----------------------------------------
    Nav
 ----------------------------------------- */
-	.nav {
-		background: url(../images/darkdenim3.png) repeat #333;
-		max-height: 45px;
-		.box-shadow(0px 0px 8px #333);
-		border-bottom: 1px solid #999;
-		.top-bar {
-			background: transparent;
-			z-index: 100000000;
-			.title-area {
-				
-				&:hover {
-					background: transparent;
-				}
-				.logo {
-					a { 
-						background: url(../images/small.png) no-repeat center;
-						background-size: auto 35px;
-						text-indent: -999em;
-						width:185px;
-						height:45px;
-					}
-				}
-			}
-			.top-bar-section {
-				z-index: 10000000;
-				ul {
-					background: transparent;
-					&:hover {
-						background: #000;
-					}
-					&.name {
-						position: relative;
-						&:hover {
-							background: transparent;
-						}
-					}
-					li {
-						&.account {
-							height: 45px;
-							width: 70px;
-							a {
-								display: inline-block;
-								&:after {
-									margin-top: 0px;
-								}
-								&.accountimage { 
-									text-indent: -999em;
-								}
-							}
-						}
-						.tinyimage {
-							display: inline-block;
-							margin: 7px 0 7px 5px;
-						}
-						ul {
-							top: 45px;
-							&.dropdown {
-								border: 1px solid #ccc;
-								background: #f5f5f5;
-								height: auto;
-								min-width: 200px;
-								li {
-									background: #f5f5f5;
-									color: #333;
-									padding-bottom: 0px;
-									&:last-child {
-										padding-bottom: 0px;
-										a {
-											padding-bottom: 15px;
-										}
-									}
-									a {
-										background: #f5f5f5;
-										color: #333;
-										width: 100%;
-										padding: 10px 5px 10px 15px;
-										&:hover {
-											background: @hilite;
-										}
-									}
-									label {
-										font-size: 10px;
-										background: #f5f5f5;
-										color: #666;
-									}
-								}
-								hr {
-									margin:0 0 0px;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
 
 
+.nav {
+    .box-shadow(0px 0px 8px #333);
+    background: url(../images/darkdenim3.png) repeat #333;
+    border-bottom: 1px solid #999;
+    max-height: 45px;
+    .top-bar {
+        background: transparent;
+        z-index: 100000000;
+        .title-area {
+            &:hover {
+                background: transparent;
+            }
+            .logo {
+                a {
+                    background: url(../images/small.png) no-repeat center;
+                    background-size: auto 35px;
+                    height: 45px;
+                    text-indent: -999em;
+                    width: 185px;
+                }
+            }
+        }
+        .top-bar-section {
+            z-index: 10000000;
+            ul {
+                background: transparent;
+                &:hover {
+                    background: #000;
+                }
+                &.name {
+                    position: relative;
+                    &:hover {
+                        background: transparent;
+                    }
+                }
+                li {
+                    &.account {
+                        height: 45px;
+                        width: 70px;
+                        a {
+                            display: inline-block;
+                            &:after {
+                                margin-top: 0px;
+                            }
+                            &.accountimage {
+                                text-indent: -999em;
+                            }
+                        }
+                    }
+                    .tinyimage {
+                        display: inline-block;
+                        margin: 7px 0 7px 5px;
+                    }
+                    ul {
+                        top: 45px;
+                        &.dropdown {
+                            background: #f5f5f5;
+                            border: 1px solid #ccc;
+                            height: auto;
+                            min-width: 200px;
+                            li {
+                                background: #f5f5f5;
+                                color: #333;
+                                padding-bottom: 0px;
+                                &:last-child {
+                                    padding-bottom: 0px;
+                                    a {
+                                        padding-bottom: 15px;
+                                    }
+                                }
+                                a {
+                                    background: #f5f5f5;
+                                    color: #333;
+                                    padding: 10px 5px 10px 15px;
+                                    width: 100%;
+                                    &:hover {
+                                        background: @hilite;
+                                    }
+                                }
+                                label {
+                                    background: #f5f5f5;
+                                    color: #666;
+                                    font-size: 10px;
+                                }
+                            }
+                            hr {
+                                margin: 0 0 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 /* -----------------------------------------
-   Main Content
+   Content
 ----------------------------------------- */
-
-	.content {
-		input[type=checkbox] {
-		  position: absolute;
-		  top: -9999px;
-		  left: -9999px;
-		}
-
-		label {
-		  position: absolute;
-		  left:0;
-		  display:none;
-		  width:43px;
-		  height:43px;
-		  padding:.35em;
-		  font-size:1.1em;
-		  color:#fff;
-		  transition:color .3s ease-in-out;
-		  cursor: pointer;
-		  user-select:none;
-		  margin:0;
-		}
-		h2 {
-			font-size: 16px;
-			font-family: 'Open Sans', arial, sans-serif;
-			font-weight: 400;
-		}
-		.profilecard {
-			position: relative;
-			.imageandrank {
-				width: 48px;
-				display: inline-block;
-				position: absolute;
-				.bigimage {
-					top: 0px;
-				}
-				.rank {
-					background: #468C00;
-					color: #fff;
-					text-align: center;
-					padding: 0 3px 5px;
-					position: absolute;
-					top: 50px;
-					width: 48px;
-					line-height: 15px;
-					font-family: 'Ubuntu Mono', courier, monospace;
-					font-size: 21px;
-					font-weight: bold;
-					text-shadow: none;
-    				filter: none;
-					span {
-						color: #fff;
-						font-weight: normal;
-						display: block;
-						font-size: 10px;
-						text-transform: uppercase;
-					}
-				}
-			}
-			table.statistics {
-				td {
-					padding: 3px 20px 2px 0px;
-				}
-			}
-			.info {
-				display: inline-block;
-				max-width:250px;
-				min-width: 173px;
-				padding: 0px 5px;
-				margin-left: 52px;
-				.name {
-					a, span {
-						font-size: 21px;
-						font-family: 'Neuton', georgia, serif;
-					}
-					.nickname {
-						&:before {
-							content: "\201C";
-						}
-						&:after {
-							content: "\201D";
-						}
-					}
-				}
-				.leaguename {
-					font-size: 10px;
-					text-transform: uppercase;
-				}
-				.timestamp {
-					font-size: 12px;
-					color: #666;
-				}
-				.location {
-					font-size: 14px;
-				}
-				.quote {
-					font-style: italic;
-					font-size: 14px;
-					&:before {
-						content: "\201C";
-					}
-					&:after {
-						content: "\201D";
-					}
-				}
-			}
-		}
-		.teams {
-			
-			.team {
-				border: 1px solid transparent;
-				cursor: pointer;
-				.transition;
-				&.selected {
-					background: #fff;
-					margin-right:-20px;
-					.transition;					
-					border: 1px solid #ccc;
-					border-color:  rgba(0,0,0,.2);
-					border-width: 1px 0px 1px 1px;
-					.tinyimage, .teamname {
-						left: 5px;
-						.transition;	
-					}
-					.badge {
-						right: 0px;
-						.transition;
-					}
-				}
-				&:hover {
-					background: #ddd;
-				}
-				.tinyimage {
-					position: relative;
-					top: 4px;
-				}
-				.teamname {
-					font-size: 18px;
-					font-family: 'Neuton', georgia, serif;
-					position: relative;
-					top: -6px;
-				}
-				.leaguename {
-					color: @primary;
-					font-size: 10px;
-					text-transform: uppercase;
-					position: relative;
-					top: 11px;
-				}
-				i {
-					position: relative;
-					top: 11px;
-					color: #999;
-				}
-			}
-			.create {
-				font-size: 12px;
-				i {
-					position: relative;
-					top: 2px;
-					color: #468C00;
-				}
-			}
-		}
-		.more {
-			background: #fff;
-			width: 16px;
-			height: 16px;
-			position: relative;
-			border: 1px solid #ccc;
-			border-color:  rgba(0,0,0,.2);
-			.rounded(100%);
-			display: block;
-			left: 150px;
-			margin: -10px 0 -28px;
-			i {
-				color: #999;
-				position: relative;
-				top: -3px;
-				left: 3px;		
-				font-size: .9em;
-			}
-
-		}
-
+.content {
+    input[type=checkbox] {
+        left: -9999px;
+        position: absolute;
+        top: -9999px;
+    }
+    label {
+        color: #fff;
+        cursor: pointer;
+        display: none;
+        font-size: 1.1em;
+        height: 43px;
+        left: 0;
+        margin: 0;
+        padding: .35em;
+        position: absolute;
+        transition: color .3s ease-in-out;
+        user-select: none;
+        width: 43px;
+    }
+    h2 {
+        font-family: 'Open Sans',arial,sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .profilecard {
+        position: relative;
+        .imageandrank {
+            display: inline-block;
+            position: absolute;
+            width: 48px;
+            .bigimage {
+                top: 0px;
+            }
+            .rank {
+                background: #468C00;
+                color: #fff;
+                filter: none;
+                font-family: 'Ubuntu Mono',courier,monospace;
+                font-size: 21px;
+                font-weight: bold;
+                line-height: 15px;
+                padding: 0 3px 5px;
+                position: absolute;
+                text-align: center;
+                text-shadow: none;
+                top: 50px;
+                width: 48px;
+                span {
+                    color: #fff;
+                    display: block;
+                    font-size: 10px;
+                    font-weight: normal;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        table.statistics {
+            td {
+                padding: 3px 20px 2px 0px;
+            }
+        }
+        .info {
+            display: inline-block;
+            margin-left: 52px;
+            max-width: 250px;
+            min-width: 173px;
+            padding: 0px 5px;
+            .name {
+                a, span {
+                    font-family: 'Neuton',georgia,serif;
+                    font-size: 21px;
+                }
+                .nickname {
+                    &:before {
+                        content: "\201C";
+                    }
+                    &:after {
+                        content: "\201D";
+                    }
+                }
+            }
+            .leaguename {
+                font-size: 10px;
+                text-transform: uppercase;
+            }
+            .timestamp {
+                color: #666;
+                font-size: 12px;
+            }
+            .location {
+                font-size: 14px;
+            }
+            .quote {
+                font-size: 14px;
+                font-style: italic;
+                &:before {
+                    content: "\201C";
+                }
+                &:after {
+                    content: "\201D";
+                }
+            }
+        }
+    }
+    .teams {
+        .team {
+            .transition;
+            border: 1px solid transparent;
+            cursor: pointer;
+            &.selected {
+                .transition;
+                background: #fff;
+                border: 1px solid #ccc;
+                border-color: rgba(0,0,0,.2);
+                border-width: 1px 0px 1px 1px;
+                margin-right: -20px;
+                .tinyimage, .teamname {
+                    .transition;
+                    left: 5px;
+                }
+                .badge {
+                    .transition;
+                    right: 0px;
+                }
+            }
+            &:hover {
+                background: #ddd;
+            }
+            .tinyimage {
+                position: relative;
+                top: 4px;
+            }
+            .teamname {
+                font-family: 'Neuton',georgia,serif;
+                font-size: 18px;
+                position: relative;
+                top: -6px;
+            }
+            .leaguename {
+                color: @primary;
+                font-size: 10px;
+                position: relative;
+                text-transform: uppercase;
+                top: 11px;
+            }
+            i {
+                color: #999;
+                position: relative;
+                top: 11px;
+            }
+        }
+        .create {
+            font-size: 12px;
+            i {
+                color: #468C00;
+                position: relative;
+                top: 2px;
+            }
+        }
+    }
+    .more {
+        .rounded(100%);
+        background: #fff;
+        border: 1px solid #ccc;
+        border-color: rgba(0,0,0,.2);
+        display: block;
+        height: 16px;
+        left: 150px;
+        margin: -10px 0 -28px;
+        position: relative;
+        width: 16px;
+        i {
+            color: #999;
+            font-size: .9em;
+            left: 3px;
+            position: relative;
+            top: -3px;
+        }
+    }
 /* -----------------------------------------
    Sidebar
 ----------------------------------------- */
-	
-		.sidebar {
-			padding-top: 30px;
-			height:100%;
-			position: relative;
-			top:0px;
-			bottom: 0px;
-
-			border: 1px solid #ccc;
-			border-color:  rgba(0,0,0,.2);
-			border-width: 0px 1px 0 0;
-			h5 {
-				font-size: 10px;
-				color: #666;
-				font-weight: 600;
-				font-style: italic;
-				font-family: 'Open Sans', arial, sans-serif;
-				text-transform: uppercase;
-			}
-			.badge {
-				top: 3px;
-				right: 5px;
-			}
-
-		}
-
+    .sidebar {
+        border: 1px solid #ccc;
+        border-color: rgba(0,0,0,.2);
+        border-width: 0px 1px 0 0;
+        bottom: 0px;
+        height: 100%;
+        padding-top: 30px;
+        position: relative;
+        top: 0px;
+        h5 {
+            color: #666;
+            font-family: 'Open Sans',arial,sans-serif;
+            font-size: 10px;
+            font-style: italic;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .badge {
+            right: 5px;
+            top: 3px;
+        }
+    }
 /* -----------------------------------------
    Main
 ----------------------------------------- */
-
-		.main {
-			padding-top: 30px;
-			background: #fff;
-			height: 100%;
-			border: 1px solid #ccc;
-			border-color:  rgba(0,0,0,.2);
-			border-width: 0px 1px 0 0;
-			.breadcrumbs {
-				background: transparent;
-				border: none;
-				padding: 0px;
-				margin: 0px 0px 10px;
-				.current {
-					color: #999;
-				}
-				li {
-					&:hover {
-						text-decoration: none;
-						a {
-							text-decoration: none;
-						}
-					}
-					a {
-						color: @primary;
-						&:hover {
-							text-decoration: none;
-						}
-					}
-				}
-			}
-			.titlebar {
-				background: #f5f5f5;
-				padding: 10px 2px;
-				border: 1px solid #ccc;
-				border-width: 1px 0px;
-				color: #666;
-				font-weight:600;
-				text-transform: uppercase;
-				.position {
-					font-size: 16px;
-				}
-				.opponent {
-					font-size:10px;
-					font-style:italic;
-					margin-right: 3px;
-				}
-			}
-			.controlbar {
-				background: transparent;
-				padding: 5px 0;
-				border: 1px solid #ccc;
-				border-width: 1px 0 0;
-				.pagetitle {
-					display: inline-block;
-					h1 {
-						font-size: 21px;
-						margin: 0px;
-						display: inline-block;
-						font-weight: 400;
-					}
-				}
-				.controls {
-					padding: 0px;
-					display: inline-block;
-					position: relative;
-					top: 4px;
-					i {
-						padding-right: 5px;
-						color: #666;
-						position: relative;
-						top: 2px;
-						margin-left: 10px;
-					}
-					a {
-						i {
-							padding: 0px;
-							top: 0px;
-							margin-left: 0px;
-						}
-					}
-					.button { 
-						margin: 0px; 
-						font-size: 12px;
-						font-weight: normal;
-						&.small {
-							height: 21px;
-							padding: 4px 10px;
-						}
-						&.dropdown {
-							padding-right: 20px;
-							&:before {
-								right: 7px;
-								border-width: 5px 3px;
-								border-color: #666 transparent transparent transparent;
-							}
-						}
-						&.secondary {
-							.gradient(#f5f5f5, #eee, #fff);
-						}
-					}
-				}
-			}
-			.playerbar {
-				padding: 0px 2px 0 0;
-				border: 1px solid #ccc;
-				border-width: 1px 1px 0px;
-				max-height: 37px;
-				clear: both;
-				&:last-child {
-					border-width: 1px;
-				}
-				.transition;
-				cursor: pointer;
-				&:before {
-					content: '';
-					background: url(../images/icons/texture.png);
-					width: 6px;
-					height:14px;
+    .main {
+        background: #fff;
+        border: 1px solid #ccc;
+        border-color: rgba(0,0,0,.2);
+        border-width: 0px 1px 0 0;
+        height: 100%;
+        padding-top: 30px;
+        .breadcrumbs {
+            background: transparent;
+            border: none;
+            margin: 0px 0px 10px;
+            padding: 0px;
+            .current {
+                color: #999;
+            }
+            li {
+                &:hover {
+                    text-decoration: none;
+                    a {
+                        text-decoration: none;
+                    }
+                }
+                a {
+                    color: @primary;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .titlebar {
+            background: #f5f5f5;
+            border: 1px solid #ccc;
+            border-width: 1px 0px;
+            color: #666;
+            font-weight: 600;
+            padding: 10px 2px;
+            text-transform: uppercase;
+            .position {
+                font-size: 16px;
+            }
+            .opponent {
+                font-size: 10px;
+                font-style: italic;
+                margin-right: 3px;
+            }
+        }
+        .controlbar {
+            background: transparent;
+            border: 1px solid #ccc;
+            border-width: 1px 0 0;
+            padding: 5px 0;
+            .pagetitle {
+                display: inline-block;
+                h1 {
+                    display: inline-block;
+                    font-size: 21px;
+                    font-weight: 400;
+                    margin: 0px;
+                }
+            }
+            .controls {
+                display: inline-block;
+                padding: 0px;
+                position: relative;
+                top: 4px;
+                i {
+                    color: #666;
+                    margin-left: 10px;
+                    padding-right: 5px;
+                    position: relative;
+                    top: 2px;
+                }
+                a {
+                    i {
+                        margin-left: 0px;
+                        padding: 0px;
+                        top: 0px;
+                    }
+                }
+				.control {
 					display: inline-block;
 					position: relative;
-					top: -5px;
-					left: 2px;
 				}
-				&:hover {
-					.transition;
-				}
-				&.selected {
-					background: #666;
-					.playername {
-						color: #fff;
-						text-shadow: none;
-					}
-					&:hover {
-						background: darken(#666, 10%);
-					}
-				}
-				&.injured {
-					background: #ffcfbf;
-					&:hover {
-						background: darken(#ffcfbf, 10%);
-						.injury {
-							color: darken(#ff5b26, 20%);
-						}
-					}
-					.injury {
-						color: #FF5B26;
-						position: relative;
-						top: -7px;
-						font-size: 12px;
-						font-weight: 600;
-						text-shadow: none;
-						i {
-							font-size: 1.2em;
-						}
-					}
-				}
-				&.available {
-					background: #ffffe2;
-					&:hover {
-						background: darken(#ffffe2, 10%);
-					}
-				}
-				&.slot {
-					background: url(../images/subtle-pattern-1.jpg);
-					min-height: 35px;
-					padding-left: 5px;
-					.note, .playername {
-						top: 4px;
-						left: 5px;
-					}
-					.note {
-						color: #666;
-					}
-					&:before {
-						display: none;
-					}
-				}
-				.note {
-					font-size: 12px;
-					position: relative;
-					top: -7px;
-					text-shadow: none;
-				}
-				.playername {
-					text-shadow: none;
-					position: relative;
-					top: -7px;
-				}
-				.nflteam {
-					width: 41px;
-					height: auto;
-					display: inline-block;
-					top: 2px;
-					position: relative;
-				}
-				.actions {
-					display: inline-block;
-					max-height: 30px;
-					position: relative;
-					top: 4px;
-					right: 5px;
-					.button {
-						max-height: 30px;
-						margin: 0px;
-						i {
-							font-size: 1.4em;
-						}
-					}
-				}
-			}
-			.playerstats {
-				display: none;
-				clear: both;
-				background: #f5f5f5;
-				padding: 10px;
-				border: 1px solid #ccc;
-				border-width: 0px 1px;
-				img {
-					vertical-align: top;
-					position: absolute;
-					left: 26px;
-					width: 48px;
-					height: 48px;
-				}
-				ul {
-					height: 100%;
-					position: relative;
-					margin-left: 50px;
-					margin-right: 0px;
-
-					li {
-						padding: 0px;
-						border-right: 1px solid #ccc;
-						&:last-child, &:first-child {
-							border-right: none;
-						}
-						.stathead {
-							text-align: left;
-							text-transform: uppercase;
-							font-size: 10px;
-							font-weight: 400;
-							font-style: italic;
-							color: #666;
-							background: #fff;
-							height: 18px;
-							padding-left: 10px;
-							&.position {
-								font-weight: 800;
-								background: transparent;
-							}
-						}
-						dl {
-							display: inline-block;
-							font-size: 10px;
-							padding: 0px 10px;
-							width: 100%;
-							dt {
-								display: inline-block;
-								width: 50%;
-								margin: 0px;
-							}
-							dd {
-								display: inline-block;
-								text-align: right;
-								width: 45%;
-								margin: 0px;
-								font-family: 'Ubuntu Mono', courier, monospace;
-							}
-						}
-					}
-				}
-				&.open { display: block;}
-				.position {
-					font-size: 12px;
-					font-weight: 600;
-					text-transform: uppercase;
-				}
-				.bigimage {
-					width: 48px;
-				}
-				.bigimage, .info, .stats {
-					display: inline-block;
-					vertical-align: top;
-				}
-				.info {
-					margin: 0px 20px 0px 10px;
-				}
-				.stats {
-					min-width: 400px;
-					table {
-						width: 100%;
-					}
-				}
-			}
-		}
-	}
-
+                .button {
+                    font-size: 12px;
+                    font-weight: normal;
+                    margin: 0px;
+                    &.small {
+                        height: 21px;
+                        padding: 4px 10px;
+                    }
+                    &.dropdown {
+                        padding-right: 20px;
+                        &:before {
+                            border-color: #666 transparent transparent transparent;
+                            border-width: 5px 3px;
+                            right: 7px;
+                        }
+                    }
+                    &.secondary {
+                        .gradient(#f5f5f5,#eee,#fff);
+                    }
+                }
+            }
+        }
+        .playerbar {
+            .transition;
+            border: 1px solid #ccc;
+            border-width: 1px 1px 0px;
+            clear: both;
+            cursor: pointer;
+            max-height: 37px;
+            padding: 0px 2px 0 0;
+            &:last-child {
+                border-width: 1px;
+            }
+            &:before {
+                background: url(../images/icons/texture.png);
+                content: '';
+                display: inline-block;
+                height: 14px;
+                left: 2px;
+                position: relative;
+                top: -5px;
+                width: 6px;
+            }
+            &:hover {
+                .transition;
+            }
+            &.selected {
+                background: #666;
+                .playername {
+                    color: #fff;
+                    text-shadow: none;
+                }
+                &:hover {
+                    background: darken(#666,10%);
+                }
+            }
+            &.injured {
+                background: #ffcfbf;
+                &:hover {
+                    background: darken(#ffcfbf,10%);
+                    .injury {
+                        color: darken(#ff5b26,20%);
+                    }
+                }
+                .injury {
+                    color: #FF5B26;
+                    font-size: 12px;
+                    font-weight: 600;
+                    position: relative;
+                    text-shadow: none;
+                    top: -7px;
+                    i {
+                        font-size: 1.2em;
+                    }
+                }
+            }
+            &.available {
+                background: #ffffe2;
+                &:hover {
+                    background: darken(#ffffe2,10%);
+                }
+            }
+            &.slot {
+                background: url(../images/subtle-pattern-1.jpg);
+                min-height: 35px;
+                padding-left: 5px;
+                .note, .playername {
+                    left: 5px;
+                    top: 4px;
+                }
+                .note {
+                    color: #666;
+                }
+                &:before {
+                    display: none;
+                }
+            }
+            .note {
+                font-size: 12px;
+                position: relative;
+                text-shadow: none;
+                top: -7px;
+            }
+            .playername {
+                position: relative;
+                text-shadow: none;
+                top: -7px;
+            }
+            .nflteam {
+                display: inline-block;
+                height: auto;
+                position: relative;
+                top: 2px;
+                width: 41px;
+            }
+            .actions {
+                display: inline-block;
+                max-height: 30px;
+                position: relative;
+                right: 5px;
+                top: 4px;
+                .button {
+                    margin: 0px;
+                    max-height: 30px;
+                    i {
+                        font-size: 1.4em;
+                    }
+                }
+            }
+        }
+        .playerstats {
+            background: #f5f5f5;
+            border: 1px solid #ccc;
+            border-width: 0px 1px;
+            clear: both;
+            display: none;
+            padding: 10px;
+            img {
+                height: 48px;
+                left: 26px;
+                position: absolute;
+                vertical-align: top;
+                width: 48px;
+            }
+            ul {
+                height: 100%;
+                margin-left: 50px;
+                margin-right: 0px;
+                position: relative;
+                li {
+                    border-right: 1px solid #ccc;
+                    padding: 0px;
+                    &:last-child, &:first-child {
+                        border-right: none;
+                    }
+                    .stathead {
+                        background: #fff;
+                        color: #666;
+                        font-size: 10px;
+                        font-style: italic;
+                        font-weight: 400;
+                        height: 18px;
+                        padding-left: 10px;
+                        text-align: left;
+                        text-transform: uppercase;
+                        &.position {
+                            background: transparent;
+                            font-weight: 800;
+                        }
+                    }
+                    dl {
+                        display: inline-block;
+                        font-size: 10px;
+                        padding: 0px 10px;
+                        width: 100%;
+                        dt {
+                            display: inline-block;
+                            margin: 0px;
+                            width: 50%;
+                        }
+                        dd {
+                            display: inline-block;
+                            font-family: 'Ubuntu Mono',courier,monospace;
+                            margin: 0px;
+                            text-align: right;
+                            width: 45%;
+                        }
+                    }
+                }
+            }
+            &.open {
+                display: block;
+            }
+            .position {
+                font-size: 12px;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+            .bigimage {
+                width: 48px;
+            }
+            .bigimage, .info, .stats {
+                display: inline-block;
+                vertical-align: top;
+            }
+            .info {
+                margin: 0px 20px 0px 10px;
+            }
+            .stats {
+                min-width: 400px;
+                table {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
 /* -----------------------------------------
    Footer
 ----------------------------------------- */
-
-	footer {
-		border-top: 1px solid #ccc;
-		top: 0px;
-		position: relative;
-		padding: 20px;
-		* {
-			color: #999;
-		}
-		.link-list {
-			li {
-				display: inline;
-				padding: 0 10px;
-				border-right: 1px solid #ccc
-			}
-		}
-	}
-
-/* -----------------------------------------
-   Media Queries
------------------------------------------ */
+footer {
+    border-top: 1px solid #ccc;
+    padding: 20px;
+    position: relative;
+    top: 0px;
+    * {
+        color: #999;
+    }
+    .link-list {
+        li {
+            border-right: 1px solid #ccc;
+            display: inline;
+            padding: 0 10px;
+        }
+    }
+}
 
