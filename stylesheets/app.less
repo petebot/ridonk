@@ -405,6 +405,8 @@ body {
     }
     .profilecard {
         position: relative;
+		width: 315px;
+		display: inline-block;
         .imageandrank {
             display: inline-block;
             position: absolute;
@@ -482,6 +484,26 @@ body {
                 }
             }
         }
+		&.opponent {
+			text-align: right;
+			.imageandrank {
+				right: 0px;
+	        }
+			.info {
+	            margin-right: 52px;
+			}
+			.statistics {
+				position: absolute;
+				right: 57px;
+				text-align: right;
+				td {
+					text-align: right;
+					&.num {
+						padding-right: 0px;
+					}
+				}
+			}
+		}
     }
     .teams {
         .team {
@@ -501,7 +523,7 @@ body {
                 }
                 .badge {
                     .transition;
-                    right: 0px;
+                    right:0px;
                 }
             }
             &:hover {
@@ -1026,6 +1048,86 @@ body {
                 }
             }
         }
+//gameday
+		&.gameday {
+			background: url(../images/clashsplash.png) no-repeat 80px -10px #fff;
+			h1 {
+				font-size: 44px;
+				font-weight: normal;
+				text-transform: uppercase;
+				text-align: center;
+				line-height: 44px;
+				color: #666;
+				margin: 40px 0px;
+			}
+			.profilecard {
+				margin-top: 10px;
+			}
+			.tabs {
+				.secondary {
+					.gradient();
+					font-weight: normal;
+					&.active {
+						.gradient(#F5F5F5, #FFF, #EEE);
+						color: #999;
+						cursor: default;
+					}
+				}
+			}
+			.results {
+				background: url(/images/subtle-pattern-1.jpg) repeat #efefef;
+				border: 1px solid #ccc;
+				margin: 0px;
+				position: relative;
+				top: -21px;
+				h2 {
+					font-size: 24px;
+					font-family: 'Neuton', serif;
+					margin-left: 10px;
+					color: #666;
+				}
+				.plays {
+					margin: 0px;
+					.play{
+						border: 1px solid #ccc;
+						border-width: 1px 0px 0px;
+						padding: 10px;
+						&.hilight {
+							background: rgba(207,255,191,.4);
+							font-size: 28px;
+							line-height: 36px;
+						}
+						.comment {
+							font-size: 12px;
+							text-transform: capitalize;
+							display: block;
+							font-weight: 600;
+						}
+					}
+				}
+			}
+			.controls {
+				background: url(/images/subtle-pattern-1.jpg) repeat #efefef;
+				border: 1px solid #ccc;
+				height: 39px;
+				.button {
+					.gradient();
+					border: 1px solid #ccc;
+					&.navigation {
+						height: 39px;
+						top: -1px;
+						color: #999;
+						i { font-weight: 800; line-height: 0px;}
+						&.prev {
+							left: -1px;
+						}
+						&.next {
+							right: -1px;
+						}
+					}
+				}
+			}
+		}
     }
 }
 /* -----------------------------------------
