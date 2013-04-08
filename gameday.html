@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]--> <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]--> 
+	<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Ridonkulous™</title>
+        <link rel="stylesheet" href="stylesheets/normalize.css" />
+        <link rel="stylesheet" href="stylesheets/foundation.css" />
+        <link rel="stylesheet/less" href="stylesheets/app.less">
+        <link rel="stylesheet/less" href="stylesheets/font-awesome.less">
+        <script src="javascripts/vendor/custom.modernizr.js"></script>
+        <script src="javascripts/vendor/less-1.3.3.min.js"></script>
+    </head>
+    <body class="home">
+        <!-- Global Nav  -->
+        <div id="globalNav" class="contain-to-grid nav">
+            <nav class="top-bar">
+                <ul class="title-area">
+                    <!-- Title Area -->
+                    <li class="logo name">
+                        <h1><a href="#">Ridonkulous</a></h1>
+                    </li>
+                    <li class="toggle-topbar menu-icon">
+                        <img src="images/userimage.png" id="accountImage" class="tinyimage mobilemenu" />
+                    </li>
+                </ul>
+                <section class="top-bar-section">
+                    <!-- Right Nav Section -->
+                    <ul class="right hide-for-small">
+                        <li id="account" class="has-dropdown account">
+                            <img src="images/userimage.png" id="accountImage" class="tinyimage" />
+                            <span class="badge"><span id="badgeCount" class="count">1</span></span>
+                            <ul class="dropdown">
+                                <li><label>Personal Settings</label></li>
+                                <li><a href="#"><i class="icon-user"></i> Your Profile</a></li>
+                                <li><a href="#"><i class="icon-trophy"></i> Your Ranking</a></li>
+                                <hr>
+                                <li><label>Account Settings</label></li>
+                                <li><a href="#"><i class="icon-credit-card"></i> Billing Info</a></li>
+                                <li><a href="#"><i class="icon-comments"></i> Social Profiles</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="show-for-small">
+                        <li><label>Personal Settings</label></li>
+                        <li><a href="#"><i class="icon-user"></i> Your Profile</a></li>
+                        <li><a href="#"><i class="icon-trophy"></i> Your Ranking</a></li>
+                        <li><label>Account Settings</label></li>
+                        <li><a href="#"><i class="icon-credit-card"></i> Billing Info</a></li>
+                        <li><a href="#"><i class="icon-comments"></i> Social Profiles</a></li>
+                    </ul>
+                </section>
+            </nav>
+        </div>
+        <!-- Main Content Section -->
+        <div id="content" class="content row">
+            <input type="checkbox" id="menu" class="forsidebar">
+            <label class="forsidebar" for="menu" onclick></label>
+            <div id="sideBar" class="sidebar large-4 columns offcanvas">
+                <div id="userProfile" class="user profilecard">
+                    <div id="imageAndRank" class="imageandrank">
+                        <img src="images/userimage.png" id="accountImage" class="bigimage">
+                        <div id="accountRank" class="rank"><span>Rank</span>208</div>
+                    </div>
+                    <div id="userProfileInfo" class="info">
+                        <div id="accountName" class="name"><a href="#">User <span id="nickName" class="nickname">Nickname</span> Name</a></div>
+                        <div class="timestamp">Last seen <span id="time">2 hours ago</span></div>
+                        <div id="accountLocation" class="location">Chicago, IL</div>
+                        <div id="accountQuote" class="quote">Maybe users can have a tagline? We would have to limit the char length.</div>
+                    </div>
+                </div>
+                <!-- YOUR TEAMS -->
+                <hr>
+                <div id="accountTeams" class="teams">
+                    <h5>Your Teams</h5>
+                    <ul id="teamList">
+                        <li id="team" class="team">
+                            <img src="images/themoons.png" id="teamImage" class="tinyimage">
+                            <span class="badge five"><span id="badgeCount" class="count">1</span></span>
+                            <span id="teamName" class="teamname">The Moons</span>
+                            <i class="icon-caret-right right"></i>
+                            <span id="leagueName" class="leaguename right">The Skulls</span>
+                        </li>
+                        <li id="team" class="team">
+                            <img src="images/themoons.png" id="teamImage" class="tinyimage">
+                            <span id="teamName" class="teamname">The Moons</span>
+                            <i class="icon-caret-right right"></i>
+                            <span id="leagueName" class="leaguename right">The Skulls</span>
+                        </li>
+                        <li id="team" class="team">
+                            <img src="images/themoons.png" id="teamImage" class="tinyimage">
+                            <span class="badge five"><span id="badgeCount" class="count">2</span></span>
+                            <span id="teamName" class="teamname">The Moons</span>
+                            <i class="icon-caret-right right"></i>
+                            <span id="leagueName" class="leaguename right">The Skulls</span>
+                        </li>
+                        <li id="createTeam" class="create">
+                            <i class="icon-plus-sign onepointfive"></i>
+                            <a href="#" class="dropdown">Create a New Team</a>  					
+                        </li>
+                    </ul>
+                    <a href="#" id="viewMore" class="more"><i class="icon-caret-down"></i></a>
+                    <hr>
+                </div>
+                <!-- YOUR GAMES -->
+                <div id="yourGames" class="games">
+                    <h5>Your Games</h5>
+                    <ul id="gameList">
+                        <li id="game" class="game selected">
+                            <div class="gameblock">
+                            	<img src="images/themoons.png" id="teamImage" class="tinyimage">
+                            	<img src="images/amys.gif" id="teamImage" class="tinyimage">
+                            	<a href="#" class="button watch">Watch</a>
+                            </div>
+                            <div class="gameinfo">
+	                            <span id="gameName" class="gamename">The Moons vs Amy's Team</span>
+	                            <i class="icon-caret-right right"></i>
+	                            <span id="gameOption" class="gameoption right">Results</span>
+	                        </div>
+                        </li>
+                        <li id="game" class="game">
+                            <div class="gameblock">
+                            	<img src="images/themoons.png" id="teamImage" class="tinyimage">
+                            	<img src="images/amys.gif" id="teamImage" class="tinyimage">
+                            	<a href="#" class="button countdown">12m</a>
+                            </div>
+                            <div class="gameinfo">
+	                            <span id="gameName" class="gamename">The Moons vs Amy's Team</span>
+	                            <i class="icon-caret-right right"></i>
+	                            <span id="gameOption" class="gameoption right">Projections</span>
+	                        </div>
+                        </li>
+                        <li id="game" class="game">
+                            <div class="gameblock">
+                            	<img src="images/themoons.png" id="teamImage" class="tinyimage">
+                            	<img src="images/amys.gif" id="teamImage" class="tinyimage">
+                            	<a href="#" class="button countdown">2h</a>
+                            </div>
+                            <div class="gameinfo">
+	                            <span id="gameName" class="gamename">The Moons vs Amy's Team</span>
+	                            <i class="icon-caret-right right"></i>
+	                            <span id="gameOption" class="gameoption right">Projections</span>
+	                        </div>
+                        </li>
+                    </ul>
+                    <a href="#" id="viewMore" class="more"><i class="icon-caret-down"></i></a>
+                    <hr>
+                </div>
+                <!-- FEATURED TEAMS -->
+                <div id="featuredTeams" class="teams">
+                    <h5>Featured Teams</h5>
+                    <ul id="teamList">
+                        <li id="team" class="team">
+                            <img src="images/themoons.png" id="teamImage" class="tinyimage">
+                            <span id="teamName" class="teamname">The Moons</span>
+                            <i class="icon-caret-right right"></i>
+                            <span id="leagueName" class="leaguename right">The Skulls</span>
+                        </li>
+                        <li id="team" class="team">
+                            <img src="images/themoons.png" id="teamImage" class="tinyimage">
+                            <span id="teamName" class="teamname">The Moons</span>
+                            <i class="icon-caret-right right"></i>
+                            <span id="leagueName" class="leaguename right">The Skulls</span>
+                        </li>
+                        <li id="team" class="team">
+                            <img src="images/themoons.png" id="teamImage" class="tinyimage">
+                            <span id="teamName" class="teamname">The Moons</span>
+                            <i class="icon-caret-right right"></i>
+                            <span id="leagueName" class="leaguename right">The Skulls</span>
+                        </li>
+                    </ul>
+                    <a href="#" id="viewMore" class="more"><i class="icon-caret-down"></i></a>
+                    <hr>
+                </div>
+                <!-- TOP RANKED -->
+                <div id="topRankedTeams" class="teams">
+                    <h5>Top Ranked</h5>
+                    <ol id="teamList">
+                        <li id="team" class="team">
+                            <img src="images/themoons.png" id="teamImage" class="tinyimage">
+                            <span id="teamName" class="teamname"><span id="teamRank">1. </span>The Moons</span>
+                            <i class="icon-caret-right right"></i>
+                            <span id="leagueName" class="leaguename right">The Skulls</span>
+                        </li>
+                        <li id="team" class="team">
+                            <img src="images/themoons.png" id="teamImage" class="tinyimage">
+                            <span id="teamName" class="teamname"><span id="teamRank">2. </span>The Moons</span>
+                            <i class="icon-caret-right right"></i>
+                            <span id="leagueName" class="leaguename right">The Skulls</span>
+                        </li>
+                        <li id="team" class="team">
+                            <img src="images/themoons.png" id="teamImage" class="tinyimage">
+                            <span id="teamName" class="teamname"><span id="teamRank">3. </span>The Moons</span>
+                            <i class="icon-caret-right right"></i>
+                            <span id="leagueName" class="leaguename right">The Skulls</span>
+                        </li>
+                    </ol>
+                    <a href="#" id="viewMore" class="more"><i class="icon-caret-down"></i></a>
+                    <hr>
+                </div>
+            </div>
+            <!-- MAIN -->
+            <div id="main" class="large-8 columns main">
+                <ul class="breadcrumbs">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#" id="teamName">The Moons</a></li>
+                    <li class="current"><a href="#" id="teamDepthChart">Free Agents</a></li>
+                </ul>
+                <div id="teamProfile" class="team profilecard">
+                    <div id="imageAndRank" class="imageandrank">
+                        <img src="images/themoons.png" id="accountImage" class="bigimage">
+                        <div id="accountRank" class="rank"><span>Rank</span>79</div>
+                    </div>
+                    <div id="TeamProfileInfo" class="info">
+                        <div id="teamName" class="name"><a href="#">The Moons</a></div>
+                        <span id="leagueName" class="leaguename"><a href="#">The Skulls</a></span>
+                        <table class="statistics">
+                            <tbody>
+                                <tr>
+                                    <td>Wins</td>
+                                    <td id="winCount" class="num divide">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Losses</td>
+                                    <td id="lossCount" class="num divide">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Place</td>
+                                    <td id="leaguePlacement" class="num divide">-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="controlbar" class="controlbar">
+                    <div id="pageTitle" class="pagetitle">
+                        <h1>Free Agents</h1>
+                    </div>
+                    <div id="controls" class="controls right">
+                    	<i data-tooltip class="icon-sort has-tip" title="Select Time"></i>
+	                    <a href="#" data-dropdown="timeSelect" class="small button dropdown secondary">Rank</a>
+                    	<div class="select-time control">
+	                        <i data-tooltip class="icon-calendar has-tip" title="Select Time"></i>
+	                        <a href="#" data-dropdown="timeSelect" class="small button dropdown secondary">Wk 9</a>
+	                        <ul id="timeSelect" class="f-dropdown content timeselect" data-dropdown-content>
+	                        	<div class="byseason">
+		                        	<li class="label">By Week:</li>
+		                            <li><a href="#" class="button small secondary">This Season</a></li>
+		                            <li><a href="#" class="button small secondary">Last Month</a></li>
+		                            <li><a href="#" class="button small secondary">Last Season</a></li>
+	                            </div>
+	                            <div class="byweek">
+		                            <ul class="weeks">
+		                            	<li><a href="#" class="secondary">1</a></li>
+		                            	<li><a href="#">2</a></li>
+		                            	<li><a href="#">3</a></li>
+		                            	<li><a href="#">4</a></li>
+		                            	<li><a href="#">5</a></li>
+		                            	<li><a href="#">6</a></li>
+		                            	<li><a href="#">7</a></li>
+		                            	<li><a href="#">8</a></li>
+		                            	<li class="active"><a href="#">9</a></li>
+		                            	<li class="disabled"><a href="#">10</a></li>
+		                            	<li class="disabled"><a href="#">11</a></li>
+		                            	<li class="disabled"><a href="#">12</a></li>
+		                            	<li class="disabled"><a href="#">13</a></li>
+		                            	<li class="disabled"><a href="#">14</a></li>
+		                            	<li class="disabled"><a href="#">15</a></li>
+		                            	<li class="disabled"><a href="#">16</a></li>
+
+		                            </ul>
+		                        </div>
+	                        </ul>
+	                    </div>
+                        <div class="select-stat control">
+	                        <i data-tooltip class="icon-bar-chart has-tip" title="Select Stat Source"></i>
+	                        <a href="#" data-dropdown="statSelect" class="small button dropdown secondary">NFL</a>
+	                        <ul id="statSelect" class="f-dropdown" data-dropdown-content>
+	                            <li class="active"><a href="#">NFL</a></li>
+	                            <li><a href="#">RFF</a></li>
+	                        </ul>
+                        </div>
+                        <a href="#" class="small button secondary hide-it-small"><i class="icon-plus"></i> Expand All</a>
+
+                        
+                        
+                    </div>
+                </div>
+                <div id="depthChart" class="depthchart">
+                    <div id="chartHead" class="titlebar">
+                        <span class="title position">Offense</span>
+                        <span class="title opponent right">Opponent</span>
+                    </div>
+                    <h2>Quarterbacks</h2>
+                    <ul id="quarterbacks" class="quarterbacks">
+                        <li id="playerHead" class="playerbar tradable">
+                            <img data-tooltip class="has-tip nflteam dim" title="Green Bay Packers" src="images/nflteams/Green_Bay_Packers.jpg"  >
+                            <span id="playerName" class="playername">Aaron Rodgers</span>
+                            
+                            <img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right dim">
+                            <div class="actions right">
+                                <a href="#" class="button tiny secondary"><i class="icon-random has-tip" data-tooltip title="Trade"></i></a>
+                            </div>
+                            <div class="leagueopponent right">
+                            	<span id="teamName" class="teamname">Amy's Team</span>
+                            	<img src="images/amys.gif" id="teamImage" class="tinyimage">
+                            </div>
+                        </li>
+                        <div id="playerStats" class="playerstats open">
+                            <img src="images/aaronrodgers.jpeg" id="accountImage" class="tinyimage">
+                            <ul class="large-block-grid-5 small-block-grid-1">
+                                <li>
+                                    <div id="playerPosition" class="stathead position">#12 Quarterback</div>
+                                    <dl>
+                                        <dt id="statHeight">Height</dt>
+                                        <dd>5-6</dd>
+                                        <dt id="statWeight">Weight</dt>
+                                        <dd>210</dd>
+                                        <dt id="statYdsPerGame">Yds/G</dt>
+                                        <dd>365</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div class="stathead">Passing</div>
+                                    <dl>
+                                        <dt>Yds</dt>
+                                        <dd id="statYdsPass">1234</dd>
+                                        <dt>TD</dt>
+                                        <dd id="statTdPass">27</dd>
+                                        <dt>INT</dt>
+                                        <dd id="statIntPass">17</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div class="stathead">Rushing</div>
+                                    <dl>
+                                        <dt>Yds</dt>
+                                        <dd id="statYdsRush">139</dd>
+                                        <dt>TD</dt>
+                                        <dd id="statTdRush">0</dd>
+                                        <dt class="hide-for-small"></dt>
+                                        <dd id="stat" class="hide-for-small"></dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div class="stathead">Receiving</div>
+                                    <dl>
+                                        <dt>Rec</dt>
+                                        <dd id="statRec">0</dd>
+                                        <dt>Yds</dt>
+                                        <dd id="statYdsRec">0</dd>
+                                        <dt>TD</dt>
+                                        <dd id="statTdRec">0</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <div class="stathead">Misc</div>
+                                    <dl>
+                                        <dt>2pt</dt>
+                                        <dd id="stat2ptMisc">1</dd>
+                                        <dt>Fum</dt>
+                                        <dd id="statFumMisc">2</dd>
+                                        <dt class="hide-for-small"></dt>
+                                        <dd class="hide-for-small"></dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                        <li id="playerHead" class="playerbar owned">
+                            <img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
+                            <span id="playerName" class="playername">Aaron Rodgers</span>
+                            <img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+                            <div class="actions right">
+                                <a href="#" class="button tiny secondary"><i class="icon-arrow-down has-tip" data-tooltip title="Drop"></i></a>
+                            </div>
+                            <div class="leagueopponent right">
+                            	<span id="teamName" class="teamname">The Moons</span>
+                            	<img src="images/themoons.png" id="teamImage" class="tinyimage">
+                            </div>
+                        </li>
+                        <li id="playerHead" class="playerbar injured unowned">
+                            <img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
+                            <span id="playerName" class="playername">Aaron Rodgers</span>
+                            <span data-tooltip id="playerInjured" class="injury has-tip tip-small" title="Can we somehow put some data in here (the title attribute of this span) from a news source describing the injury and other information?"><i class="icon-medkit"></i> <span class="hide-for-small">Injured</span></span>
+                            <img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+                            <div class="actions right">
+                                <a href="#" class="button tiny callout"><i class="icon-plus has-tip" data-tooltip title="Add Player"></i></a>
+                            </div>
+                        </li>
+                        <a herf="#">
+                        	<li id="showMore" class="more">
+                          		Show More
+                       		</li>
+                       	</a>
+                    </ul>
+                    <h2>Running Backs</h2>
+                    <ul id="runningbacks" class="runningbacks">
+                        <li id="playerHead" class="playerbar unowned">
+                            <img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
+                            <span id="playerName" class="playername">Aaron Rodgers</span>
+                            
+                            <img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+                            <div class="actions right">
+                                <a href="#" class="button tiny callout"><i class="icon-plus has-tip" data-tooltip title="Add Player"></i></a>
+                            </div>
+                        </li>
+                        <li id="playerHead" class="playerbar unowned">
+                            <img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
+                            <span id="playerName" class="playername">Aaron Rodgers</span>
+                            
+                            <img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+                            <div class="actions right">
+                                <a href="#" class="button tiny callout"><i class="icon-plus has-tip" data-tooltip title="Add Player"></i></a>
+                            </div>
+                        </li>
+                        <li id="playerHead" class="playerbar unowned">
+                            <img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
+                            <span id="playerName" class="playername">Aaron Rodgers</span>
+                            
+                            <img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+                            <div class="actions right">
+                                <a href="#" class="button tiny callout"><i class="icon-plus has-tip" data-tooltip title="Add Player"></i></a>
+                            </div>
+                        </li>
+                        <li id="playerHead" class="playerbar unowned">
+                            <img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
+                            <span id="playerName" class="playername">Aaron Rodgers</span>
+                            
+                            <img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+                            <div class="actions right">
+                                <a href="#" class="button tiny callout"><i class="icon-plus has-tip" data-tooltip title="Add Player"></i></a>
+                            </div>
+                        </li>
+                        <a herf="#">
+                        	<li id="showMore" class="more">
+                          		Show More
+                       		</li>
+                       	</a>
+                    </ul>
+                    <h2>Wide Receivers</h2>
+                    <ul id="widereceivers" class="widereceivers">
+                         <li id="playerHead" class="playerbar unowned">
+                            <img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
+                            <span id="playerName" class="playername">Aaron Rodgers</span>
+                            
+                            <img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+                            <div class="actions right">
+                                <a href="#" class="button tiny callout"><i class="icon-plus has-tip" data-tooltip title="Add Player"></i></a>
+                            </div>
+                        </li>
+                        <li id="playerHead" class="playerbar unowned">
+                            <img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
+                            <span id="playerName" class="playername">Aaron Rodgers</span>
+                            
+                            <img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+                            <div class="actions right">
+                                <a href="#" class="button tiny callout"><i class="icon-plus has-tip" data-tooltip title="Add Player"></i></a>
+                            </div>
+                        </li>
+                        <li id="playerHead" class="playerbar unowned">
+                            <img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
+                            <span id="playerName" class="playername">Aaron Rodgers</span>
+                            
+                            <img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+                            <div class="actions right">
+                                <a href="#" class="button tiny callout"><i class="icon-plus has-tip" data-tooltip title="Add Player"></i></a>
+                            </div>
+                        </li>
+                        <li id="playerHead" class="playerbar unowned">
+                            <img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
+                            <span id="playerName" class="playername">Aaron Rodgers</span>
+                            
+                            <img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+                            <div class="actions right">
+                                <a href="#" class="button tiny callout"><i class="icon-plus has-tip" data-tooltip title="Add Player"></i></a>
+                            </div>
+                        </li>
+                        <a herf="#">
+                        	<li id="showMore" class="more">
+                          		Show More
+                       		</li>
+                       	</a>
+                    </ul>
+                    <h2>Tight Ends</h2>
+                    <ul id="tightends" class="tightends">
+                         <li id="playerHead" class="playerbar unowned">
+                            <img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
+                            <span id="playerName" class="playername">Aaron Rodgers</span>
+                            
+                            <img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+                            <div class="actions right">
+                                <a href="#" class="button tiny callout"><i class="icon-plus has-tip" data-tooltip title="Add Player"></i></a>
+                            </div>
+                        </li>
+                        <li id="playerHead" class="playerbar unowned">
+                            <img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
+                            <span id="playerName" class="playername">Aaron Rodgers</span>
+                            
+                            <img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+                            <div class="actions right">
+                                <a href="#" class="button tiny callout"><i class="icon-plus has-tip" data-tooltip title="Add Player"></i></a>
+                            </div>
+                        </li>
+                        <li id="playerHead" class="playerbar unowned">
+                            <img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
+                            <span id="playerName" class="playername">Aaron Rodgers</span>
+                            
+                            <img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+                            <div class="actions right">
+                                <a href="#" class="button tiny callout"><i class="icon-plus has-tip" data-tooltip title="Add Player"></i></a>
+                            </div>
+                        </li>
+                        <li id="playerHead" class="playerbar unowned">
+                            <img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
+                            <span id="playerName" class="playername">Aaron Rodgers</span>
+                            
+                            <img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+                            <div class="actions right">
+                                <a href="#" class="button tiny callout"><i class="icon-plus has-tip" data-tooltip title="Add Player"></i></a>
+                            </div>
+                        </li>
+                        <a herf="#">
+                        	<li id="showMore" class="more">
+                          		Show More
+                       		</li>
+                       	</a>
+                    </ul>
+                    <h2>Defense</h2>
+                    <ul id="runningbacks" class="runningbacks">
+                         <li id="playerHead" class="playerbar unowned">
+                            <img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
+                            <span id="playerName" class="playername">Aaron Rodgers</span>
+                            
+                            <img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+                            <div class="actions right">
+                                <a href="#" class="button tiny callout"><i class="icon-plus has-tip" data-tooltip title="Add Player"></i></a>
+                            </div>
+                        </li>
+                        <li id="playerHead" class="playerbar unowned">
+                            <img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
+                            <span id="playerName" class="playername">Aaron Rodgers</span>
+                            
+                            <img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+                            <div class="actions right">
+                                <a href="#" class="button tiny callout"><i class="icon-plus has-tip" data-tooltip title="Add Player"></i></a>
+                            </div>
+                        </li>
+                        <li id="playerHead" class="playerbar unowned">
+                            <img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
+                            <span id="playerName" class="playername">Aaron Rodgers</span>
+                            
+                            <img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+                            <div class="actions right">
+                                <a href="#" class="button tiny callout"><i class="icon-plus has-tip" data-tooltip title="Add Player"></i></a>
+                            </div>
+                        </li>
+                        <li id="playerHead" class="playerbar unowned">
+                            <img src="images/nflteams/Green_Bay_Packers.jpg" data-tooltip class="nflteam has-tip" title="Green Bay Packers" >
+                            <span id="playerName" class="playername">Aaron Rodgers</span>
+                            
+                            <img data-tooltip src="images/nflteams/Baltimore_Ravens.jpg" title="Baltimore Ravens" class="nflteam opponent has-tip right">
+                            <div class="actions right">
+                                <a href="#" class="button tiny callout"><i class="icon-plus has-tip" data-tooltip title="Add Player"></i></a>
+                            </div>
+                        </li>
+                        <a herf="#">
+                        	<li id="showMore" class="more">
+                          		Show More
+                       		</li>
+                       	</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="row">
+            <div class="large-6 columns">
+                <p>&copy; Copyright Ridonkulous For Life. Can't Touch This.</p>
+
+            </div>
+            <div class="large-6 columns">
+                <ul class="link-list right">
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                    <li><a href="#">Link 4</a></li>
+                    <li><a href="#">Link 5</a></li>
+                </ul>
+            </div>
+        </footer>
+        <script src="javascripts/vendor/jquery.js"></script>
+        <script src="javascripts/vendor/zepto.js"></script>
+        <script src="javascripts/foundation.min.js"></script>
+        <script>
+            $(document).foundation();
+        </script>
+        <!-- Check for Zepto support, load jQuery if necessary -->
+        <script>
+            document.write('<script src=javascripts/vendor/'
+              + ('__proto__' in {} ? 'zepto' : 'jquery')
+              + '.js><\/script>');
+            less.watch();
+        </script>
+        <script src="javascripts/foundation/foundation.dropdown.js"></script>
+        <script src="javascripts/foundation/foundation.alerts.js"></script>
+        <script src="javascripts/foundation/foundation.clearing.js"></script>
+        <script src="javascripts/foundation/foundation.placeholder.js"></script>
+        <script src="javascripts/foundation/foundation.forms.js"></script>
+        <script src="javascripts/foundation/foundation.cookie.js"></script>
+        <script src="javascripts/foundation/foundation.joyride.js"></script>
+        <script src="javascripts/foundation/foundation.magellan.js"></script>
+        <script src="javascripts/foundation/foundation.orbit.js"></script>
+        <script src="javascripts/foundation/foundation.reveal.js"></script>
+        <script src="javascripts/foundation/foundation.section.js"></script>
+        <script src="javascripts/foundation/foundation.tooltips.js"></script>
+        <script src="javascripts/foundation/foundation.topbar.js"></script>
+    </body>
+</html>

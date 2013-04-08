@@ -507,6 +507,7 @@ body {
             &:hover {
                 background: #ddd;
             }
+			
             .tinyimage {
                 position: relative;
                 top: 4px;
@@ -539,6 +540,90 @@ body {
             }
         }
     }
+	.games {
+		.game {
+			padding: 5px 0px 0px 0px;
+			.transition;
+			&:hover {
+				background: #ddd;
+			}
+			.gameblock {
+				display: inline-block;
+				width: 60px;
+				.tinyimage {
+					margin: 0px -4px -7px 0;
+					width: 30px;
+				}
+				.button {
+					font-size: 16px;
+					text-transform: uppercase;
+					font-family: 'Ubuntu Mono';
+					font-weight: normal;
+					width: 60px;
+					padding: 8px;
+					margin: 0;
+					display: block;
+					&.watch {
+						text-shadow: none;
+						background: #2692FF;
+						.box-shadow(none);
+						&:hover {
+							background: lighten(#2692ff, 5%);
+						}
+					}
+				}
+				.countdown {
+					background: #fff;
+					color: #666;
+					border: 1px solid #ccc;
+				}
+			}
+			.gameinfo {
+				display: inline-block;
+				width: 228px;
+				position: relative;
+				vertical-align: middle;
+				top: -12px;
+				.gamename {
+					width: 120px;
+					display: inline-block;
+					font-family: 'Neuton';
+					line-height: 18px;
+				}
+				.gameoption {
+					color: @primary;
+	                font-size: 10px;
+	                position: relative;
+	                text-transform: uppercase;
+					top: 12px;
+					right: -8px;
+				}
+				i {
+	                color: #999;
+	                position: relative;
+					top: 12px;
+					right: -8px;
+	            }
+			}
+			&.selected {
+                .transition;
+                background: #fff;
+                border: 1px solid #ccc;
+                border-color: rgba(0,0,0,.2);
+                border-width: 1px 0px 1px 1px;
+                margin-right: -20px;
+				padding: 5px 0px 0px 5px;
+                .gameblock, .gameinfo {
+                    .transition;
+                    left: 5px;
+                }
+                .badge {
+                    .transition;
+                    right: 0px;
+                }
+            }
+		}
+	}
     .more {
         .rounded(100%);
         background: #fff;
