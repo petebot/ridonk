@@ -1115,16 +1115,36 @@ body {
 					border: 1px solid #ccc;
 					&.navigation {
 						height: 39px;
+						width: 39px;
 						top: -1px;
 						color: #999;
-						i { font-weight: 800; line-height: 0px;}
+						position: relative;
+						i { font-weight: 800; line-height: 0px; position: absolute; top: 5px;}
 						&.prev {
 							left: -1px;
+							i {
+								left: 10px;
+							}
 						}
 						&.next {
 							right: -1px;
+							background: @hilite;
+							i {
+								left: 14px;
+							}
 						}
 					}
+					&.nexthilight {
+						font-weight: 400;
+						top: 4px;
+						right: 3px;
+					}
+				}
+				.skip {
+					right: 10px;
+					position: relative;
+					top: 11px;
+					font-size: 12px;
 				}
 			}
 		}
