@@ -1234,7 +1234,12 @@ blockquote p {
   font-size: 1em;
   background-color: #2ba6cb;
   border-color: #2284a1;
-  color: white; }
+  color: white; 
+  background: #2692FF;
+  border: 1px solid #ccc;
+  color: #333;
+  font-weight: 400;
+}
   .button:hover, .button:focus {
     background-color: #2284a1; }
   .button:hover, .button:focus {
@@ -1256,7 +1261,7 @@ blockquote p {
     .button.success:hover, .button.success:focus {
       color: white; }
   .button.alert {
-    background-color: #c60f13;
+    background-color: #FF5B26;
     border-color: #970b0e;
     color: white; }
     .button.alert:hover, .button.alert:focus {
@@ -1341,7 +1346,7 @@ blockquote p {
       .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
         background-color: #5da423; }
     .button.disabled.alert, .button[disabled].alert {
-      background-color: #c60f13;
+      background-color: #FF5B26;
       border-color: #970b0e;
       color: white;
       cursor: default;
@@ -1353,7 +1358,7 @@ blockquote p {
       .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
         color: white; }
       .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
-        background-color: #c60f13; }
+        background-color: #FF5B26; }
 
 input.button,
 button.button {
@@ -1644,7 +1649,6 @@ fieldset {
   margin: 1.125em 0; }
   fieldset legend {
     font-weight: bold;
-    background: white;
     padding: 0 0.1875em;
     margin: 0;
     margin-left: -0.1875em; }
@@ -1654,8 +1658,8 @@ fieldset {
 input.error,
 .error textarea,
 textarea.error {
-  border-color: #c60f13;
-  background-color: rgba(198, 15, 19, 0.1); }
+  border-color: #FF5B26;
+  background-color: rgba(255,91,38,.1); }
   .error input:focus,
   input.error:focus,
   .error textarea:focus,
@@ -1665,7 +1669,7 @@ textarea.error {
 
 .error label,
 label.error {
-  color: #c60f13; }
+  color: #FF5B26; }
 
 .error small,
 small.error {
@@ -1675,7 +1679,7 @@ small.error {
   margin-bottom: 1em;
   font-size: 0.75em;
   font-weight: bold;
-  background: #c60f13;
+  background: #FF5B26;
   color: white; }
 
 /* Custom Checkbox and Radio Inputs */
@@ -2386,7 +2390,7 @@ form.custom {
       .top-bar-section ul li > a.button.success:hover {
         background: #457a1a; }
     .top-bar-section ul li > a.button.alert {
-      background: #c60f13; }
+      background: #FF5B26; }
       .top-bar-section ul li > a.button.alert:hover {
         background: #970b0e; }
   .top-bar-section ul li.active a {
@@ -3069,7 +3073,7 @@ form.custom {
     border-color: #457a1a;
     color: white; }
   .alert-box.alert {
-    background-color: #c60f13;
+    background-color: #FF5B26;
     border-color: #970b0e;
     color: white; }
   .alert-box.secondary {
@@ -3159,7 +3163,7 @@ kbd {
     -webkit-border-radius: 1000px;
     border-radius: 1000px; }
   .label.alert {
-    background-color: #c60f13;
+    background-color: #FF5B26;
     color: #fff; }
   .label.success {
     background-color: #5da423;
@@ -3327,7 +3331,7 @@ kbd {
     height: 100%;
     display: block; }
   .progress.alert .meter {
-    background: #c60f13;
+    background: #FF5B26;
     height: 100%;
     display: block; }
   .progress.radius {

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]--> <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]--> 
+	<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Ridonkulous™</title>
+        <link rel="stylesheet" href="stylesheets/normalize.css" />
+        <link rel="stylesheet" href="stylesheets/foundation.css" />
+        <link rel="stylesheet/less" href="stylesheets/app.less">
+        <link rel="stylesheet/less" href="stylesheets/font-awesome.less">
+        <script src="javascripts/vendor/custom.modernizr.js"></script>
+        <script src="javascripts/vendor/less-1.3.3.min.js"></script>
+    </head>
+    <body class="home">
+
+   <div id="globalNav" class="contain-to-grid nav">
+        <nav class="top-bar">
+            <ul class="title-area">
+                <!-- Title Area -->
+                <li class="logo name">
+                    <h1><a href="#">Ridonkulous</a></h1>
+                </li>
+                <li class="toggle-topbar menu-icon">
+                    <img src="images/userimage.png" id="accountImage" class="tinyimage mobilemenu" />
+                </li>
+            </ul>
+            <section class="top-bar-section">
+                <!-- Right Nav Section -->
+                <ul class="right hide-for-small">
+                    <li id="account" class="has-dropdown account">
+                        <img src="images/userimage.png" id="accountImage" class="tinyimage" />
+                        <span class="badge"><span id="badgeCount" class="count">1</span></span>
+                        <ul class="dropdown">
+                            <li><label>Personal Settings</label></li>
+                            <li><a href="#"><i class="icon-user"></i> Your Profile</a></li>
+                            <li><a href="#"><i class="icon-trophy"></i> Your Ranking</a></li>
+                            <hr>
+                            <li><label>Account Settings</label></li>
+                            <li><a href="#"><i class="icon-credit-card"></i> Billing Info</a></li>
+                            <li><a href="#"><i class="icon-comments"></i> Social Profiles</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="show-for-small">
+                    <li><label>Personal Settings</label></li>
+                    <li><a href="#"><i class="icon-user"></i> Your Profile</a></li>
+                    <li><a href="#"><i class="icon-trophy"></i> Your Ranking</a></li>
+                    <li><label>Account Settings</label></li>
+                    <li><a href="#"><i class="icon-credit-card"></i> Billing Info</a></li>
+                    <li><a href="#"><i class="icon-comments"></i> Social Profiles</a></li>
+                </ul>
+            </section>
+        </nav>
+    </div>
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <h1 class="docs header">Ridonkulous Form Elements</h1>
+        <h6 class="docs subheader"><a href="index.html">Looking for the front page?</a></h6>
+        <hr>
+      </div>
+    </div>
+
+    
+<div class="row">
+  <div class="full-width columns">
+
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <h2>Forms</h2>
+        <h4 class="subheader">We're using Foundation, which is an easy to handle, powerful and versatile form layout system. A combination of form styles and the Foundation grid means you can do basically anything.</h4>
+
+        <form class="custom">
+          <fieldset>
+            <legend>Fieldset</legend>
+
+            <div class="row">
+              <div class="large-12 columns">
+                <label>Input Label</label>
+                <input type="text" placeholder="large-12.columns">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="large-4 columns">
+                <label>Input Label</label>
+                <input type="text" placeholder="large-4.columns">
+              </div>
+              <div class="large-4 columns">
+                <label>Input Label</label>
+                <input type="text" placeholder="large-4.columns">
+              </div>
+              <div class="large-4 columns">
+                <div class="row collapse">
+                  <label>Input Label</label>
+                  <div class="small-9 columns">
+                    <input type="text" placeholder="small-9.columns">
+                  </div>
+                  <div class="small-3 columns">
+                    <span class="postfix">.com</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="large-12 columns">
+                <label>Textarea Label</label>
+                <textarea placeholder="small-12.columns"></textarea>
+              </div>
+            </div>
+
+          </fieldset>
+        </form>
+
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+
+        <h3>Building Forms with HTML</h3>
+        <p>Foundation has you covered with versatile forms that looks great out of the box and are easily customizable as you need.</p>
+
+        <p>Form elements in Foundation are styled based on their type attribute rather than a class. Inputs in Foundation have another major advantage &mdash; they are full width by default. That means that inputs will run as wide as the column that contains them. However, you have two options which make these forms extremely versatile:</p>
+
+        <ul class="disc">
+          <li>You can size inputs using column sizes, like <code>.large-6</code>, <code>.small-6</code>.</li>
+          <li>You can create row elements inside your form and use columns for the form, including inputs, labels and more. Rows inside a form inherit some special padding to even up input spacing.</li>
+        </ul>
+
+        <p>This ultimately adds a bit of code to your forms, but it's worth the trade off! Here's what the example above looks like in HTML:</p>
+
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="tag">&lt;form&gt;</span>
+  <span class="tag">&lt;fieldset&gt;</span>
+    <span class="tag">&lt;legend&gt;</span>Fieldset<span class="tag">&lt;/legend&gt;</span>
+
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-12 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;label&gt;</span>Input Label<span class="tag">&lt;/label&gt;</span>
+        <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-12.columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-4 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;label&gt;</span>Input Label<span class="tag">&lt;/label&gt;</span>
+        <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-4.columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-4 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;label&gt;</span>Input Label<span class="tag">&lt;/label&gt;</span>
+        <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-4.columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-4 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row collapse</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;label&gt;</span>Input Label<span class="tag">&lt;/label&gt;</span>
+          <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-9 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-9.columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;/div&gt;</span>
+          <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-3 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+            <span class="tag">&lt;span</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">postfix</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>.com<span class="tag">&lt;/span&gt;</span>
+          <span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-12 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;label&gt;</span>Textarea Label<span class="tag">&lt;/label&gt;</span>
+        <span class="tag">&lt;textarea</span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-12.columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/textarea&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+
+  <span class="tag">&lt;/fieldset&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre></div>
+</div>
+</div>
+
+        <hr>
+
+        <h4>Inline Labels</h4>
+        <p>Sometimes you want a form with labels to the left of your inputs. Piece of cake. You can put the label inside a different column to the left of the input. Then add a class of <code>.right</code> to the label to have it align to the right.</p>
+
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="tag">&lt;form&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-8</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-3 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;label</span> <span class="attribute-name">for</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">right-label</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">right</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Label<span class="tag">&lt;/label&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-9 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">right-label</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Inline Text Input</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/form&gt;</span>
+</pre></div>
+</div>
+</div>
+
+        <form>
+          <div class="row">
+            <div class="small-8">
+              <div class="row">
+                <div class="small-3 columns">
+                  <label for="right-label" class="right">Label</label>
+                </div>
+                <div class="small-9 columns">
+                  <input type="text" id="right-label" placeholder="Inline Text Input">
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <p>Adding a class of <code>.inline</code> will have it vertically center against an input. You can use one or both of these classes to accomplish the look you want.</p>
+
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="tag">&lt;form&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-8</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-3 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;label</span> <span class="attribute-name">for</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">right-label</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">right inline</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Label<span class="tag">&lt;/label&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-9 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">right-label</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Inline Text Input</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/form&gt;</span>
+</pre></div>
+</div>
+</div>
+
+        <form>
+          <div class="row">
+            <div class="small-8">
+              <div class="row">
+                <div class="small-3 columns">
+                  <label for="right-label" class="right inline">Label</label>
+                </div>
+                <div class="small-9 columns">
+                  <input type="text" id="right-label" placeholder="Inline Text Input">
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <hr>
+
+        <h4>Defining a Fieldset</h4>
+        <p>We don't see them too much, but one of the useful form elements included with Foundation is <code>&lt;fieldset&gt;</code>. This is used as a wrapper right inside the form element. Right after you define a fieldset, you can include a legend title by using <code>&lt;legend&gt;</code>. Here's some HTML to help make copy paste.</p>
+
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="tag">&lt;form&gt;</span>
+  <span class="tag">&lt;fieldset&gt;</span>
+    <span class="tag">&lt;legend&gt;</span>Fieldset Legend<span class="tag">&lt;/legend&gt;</span>
+
+    <span class="tag">&lt;label&gt;</span>Input Label<span class="tag">&lt;/label&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Inputs and other form elements go inside...</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;/fieldset&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre></div>
+</div>
+</div>
+
+        <form>
+          <fieldset>
+            <legend>Fieldset Legend</legend>
+
+            <label>Input Label</label>
+            <input type="text" placeholder="Inputs and other form elements go inside...">
+          </fieldset>
+        </form>
+
+        <hr>
+
+        <h4>Pre/Postfix Labels &amp; Actions</h4>
+        <p>Foundation forms support actions tied to buttons, and prefix / postfix labels, through a versatile approach using special grid properties. Essentially you can use <code>&lt;row class="collapse"&gt;</code> to create label / action / input combinations. You use the Foundation columns to define the size of the pre/postfix <code>&lt;span class="postfix"&gt;</code> or <code>&lt;span class="prefix"&gt;</code>. Here are a few examples:</p>
+
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="tag">&lt;form&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row collapse</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-3 large-2 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;span</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">prefix</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>http://<span class="tag">&lt;/span&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-9 large-10 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Enter your URL...</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-6 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row collapse</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-10 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Hex Value</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-2 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">button prefix</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Action<span class="tag">&lt;/a&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-6 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row collapse</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-9 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Value</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">small-3 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+          <span class="tag">&lt;span</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">postfix radius</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Label<span class="tag">&lt;/span&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre></div>
+</div>
+</div>
+
+        <form>
+          <div class="row collapse">
+            <div class="small-3 large-2 columns">
+              <span class="prefix">http://</span>
+            </div>
+            <div class="small-9 large-10 columns">
+              <input type="text" placeholder="Enter your URL...">
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-6 columns">
+              <div class="row collapse">
+                <div class="small-10 columns">
+                  <input type="text" placeholder="Hex Value">
+                </div>
+                <div class="small-2 columns">
+                  <a href="#" class="button prefix">Action</a>
+                </div>
+              </div>
+            </div>
+            <div class="large-6 columns">
+              <div class="row collapse">
+                <div class="small-9 columns">
+                  <input type="text" placeholder="Value">
+                </div>
+                <div class="small-3 columns">
+                  <span class="postfix radius">Label</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <p>You'll notice that on the last postfix element, we've included the class of <code>radius</code>. This adds the border radius on the appropriate edge depending on whether it's a prefix or a postfix element. You can even include buttons with these styles, just apply the <code>.button</code> as well as the pre/postfix class.</p>
+
+        <hr>
+
+        <h4>Error States</h4>
+        <p>Foundation includes error states for labels, inputs and messaging that you can have your app generate programatically. You can attach a class of <code>.error</code> either to the individual elements (label, input, small) or to a column/div.</p>
+
+<div class='html'><div class="CodeRay">
+  <div class="code"><pre>
+<span class="tag">&lt;form&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">row</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-6 columns</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;label</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">error</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Error<span class="tag">&lt;/label&gt;</span>
+      <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">error</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+      <span class="tag">&lt;small</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">error</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Invalid entry<span class="tag">&lt;/small&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">large-6 columns error</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;label&gt;</span>Another Error<span class="tag">&lt;/label&gt;</span>
+      <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+      <span class="tag">&lt;small&gt;</span>Invalid entry<span class="tag">&lt;/small&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;textarea</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">error</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">placeholder</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Message...</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/textarea&gt;</span>
+  <span class="tag">&lt;small</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">error</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Invalid entry<span class="tag">&lt;/small&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre></div>
+</div>
+</div>
+
+        <form>
+          <div class="row">
+            <div class="large-6 columns">
+              <label class="error">Error</label>
+              <input type="text" class="error" />
+              <small class="error">Invalid entry</small>
+            </div>
+
+            <div class="large-6 columns error">
+              <label>Another Error</label>
+              <input type="text" />
+              <small>Invalid entry</small>
+            </div>
+          </div>
+
+          <textarea class="error" placeholder="Message..."></textarea>
+          <small class="error">Invalid entry</small>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+    <footer class="row full-width">
+      <div class="large-5 columns">
+        <h6><strong>Made by ZURB</strong></h6>
+        <p>Foundation is made by <a href="http://www.zurb.com/">ZURB</a>, a product design company in Campbell, California. We've put more than 14 years of experience building web products, services and websites into this framework. <a href="http://foundation.zurb.com/about.php">Foundation Info and Goodies &rarr;</a></p>
+      </div>
+
+      <div class="large-3 columns">
+        <h6><strong>Using Foundation?</strong></h6>
+        <p>Let us know how you're using Foundation and we might feature you as an example! <a href="mailto:foundation@zurb.com?subject=I'm%20using%20Foundation">Get in touch &rarr;</a></p>
+      </div>
+
+      <div class="large-4 columns">
+        <h6><strong>Need some help?</strong></h6>
+        <p>For answers or help visit the <a href="http://foundation.zurb.com/docs/support.html">Support page</a>.</p>
+      </div>
+    </footer>
+
+    <div id="copyright">
+      <div class="row full-width">
+        <div class="large-4 columns">
+          <p>Site content &copy; 2013 ZURB, inc.</p>
+        </div>
+        <div class="large-8 columns">
+          <ul class="inline-list right">
+            <li><a href="http://foundation.zurb.com">Home</a></li>
+            <li><a href="http://foundation.zurb.com/download.php">Download</a></li>
+            <li><a href="http://foundation.zurb.com/docs">Docs</a></li>
+            <li><a href="http://foundation.zurb.com/docs/changelog.html">Changelog</a></li>
+            <li><a href="http://foundation.zurb.com/about.php">About</a></li>
+            <li><a href="http://feeds.feedburner.com/zurb/blog">Subscribe to the ZURBlog</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      // Google Analytics
+      var _gaq = _gaq || [];
+      _gaq.push(
+        ['_setAccount', 'UA-2195009-2'],
+        ['_trackPageview'],
+        ['b._setAccount', 'UA-2195009-27'],
+        ['b._trackPageview']
+      );
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      document.write('<script src="http://foundation.zurb.com/docs/assets/vendor/'
+        + ('__proto__' in {} ? 'zepto' : 'jquery')
+        + '.js"><\/script>');
+    </script>
+    <script src="http://foundation.zurb.com/docs/assets/docs.js"></script>
+    <script>
+      $(document)
+      
+        .foundation();
+      
+
+      // For Kitchen Sink Page
+      $('#start-jr').on('click', function() {
+        $(document).foundation('joyride','start');
+      });
+    </script>
+  </body>
+</html>
