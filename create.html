@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]--> <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]--> 
+	<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Ridonkulous™</title>
+        <link rel="stylesheet" href="stylesheets/normalize.css" />
+        <link rel="stylesheet" href="stylesheets/foundation.css" />
+        <link rel="stylesheet/less" href="stylesheets/app.less">
+        <link rel="stylesheet/less" href="stylesheets/font-awesome.less">
+        <script src="javascripts/vendor/custom.modernizr.js"></script>
+        <script src="javascripts/vendor/less-1.3.3.min.js"></script>
+    </head>
+    <body class="home">
+        <!-- Global Nav  -->
+        <div id="globalNav" class="contain-to-grid nav fixed">
+            <nav class="top-bar">
+                <ul class="title-area">
+                    <!-- Title Area -->
+                    <li class="logo name">
+                        <h1><a class="logoplace" href="../grails">Ridonkulous</a></h1>
+                        <span class="button notificationicon on"><i class="icon-bullhorn icon-large"></i></span><br>
+                        <div class="notificationholder">
+                            <ul id="notificationMenu" class="notifications">
+                                <li class="titlebar"><span class="title">Notifications</span> <span class="settings"><i class="icon-cog"></i></span></li>
+                                <div class="notifbox">
+                                    <li class=" notif unread">
+                                        <a href="#">
+                                            <div class="imageblock"><img src="${createLinkTo(dir:'images/temp',file:'themoons.png')}" class="notifimage"></div> 
+                                            <div class="messageblock">
+                                                <div class="message">Your team <strong>Admin Team</strong> has completed a match against <strong>The Moons</strong>.</div>
+                                                <div class="messageinfo"><i class="icon-trophy"></i>2 hours ago</div>
+                                            </div>
+                                            </a>
+                                        </a>
+                                    </li>
+                                    <li class=" notif unread">
+                                        <a href="#">
+                                            <div class="imageblock"><img src="${createLinkTo(dir:'images/temp',file:'zoidberg.png')}" class="notifimage"></div> 
+                                            <div class="messageblock">
+                                                <div class="message"><a href="#">Zoidberg</a> has challenged you!</div>
+                                                <div class="messageaction"><a class="button tiny success">accept</a> <a class="button tiny secondary">wuss out</a></div>
+                                                <div class="messageinfo"><i class="icon-flag"></i>1 hour ago</div>
+                                            </div>
+                                            </a>
+                                        </a>
+                                    </li>
+                                    <li class=" notif">
+                                        <a href="#">
+                                            <div class="imageblock"><img src="${createLinkTo(dir:'images/temp',file:'sullivan.png')}" class="notifimage"></div> 
+                                            <div class="messageblock">
+                                                <div class="message"><strong>John L. Sullivan</strong> has talked some trash: "<em>My name is John L. Sullivan, and I can lick any son of a b*tch in the place.</em>"</div>
+                                                <div class="messageinfo"><i class="icon-comment"></i>2 hours ago</div>
+                                            </div>
+                                            </a>
+                                        </a>
+                                    </li>
+                                    <li class=" notif">
+                                        <a href="#">
+                                            <div class="imageblock"><img src="${createLinkTo(dir:'images/temp',file:'savages.png')}" class="notifimage"></div> 
+                                            <div class="messageblock">
+                                                <div class="message">Your team <strong>Admin Team</strong> has completed a match against <strong>The Savages</strong>.</div>
+                                                <div class="messageinfo"><i class="icon-trophy"></i>2 hours ago</div>
+                                            </div>
+                                            </a>
+                                        </a>
+                                    </li>
+                                    <li class="injured notif">
+                                        <a href="#">
+                                            <div class="imageblock"><img src="${createLinkTo(dir:'images/temp',file:'aaronrodgers.jpeg')}" class="notifimage"></div> 
+                                            <div class="messageblock">
+                                                <div class="message"><a href="#">Aaron Rodgers</a> has been injured!</div>
+                                                <div class="messageaction"><a class="button tiny success">trade</a> <a class="button tiny alert">drop</a></div>
+                                                <div class="messageinfo"><i class="icon-medkit"></i>1 hour ago</div>
+                                            </div>
+                                            </a>
+                                        </a>
+                                    </li>
+                                    <li class=" notif">
+                                        <a href="#">
+                                            <div class="imageblock"><img src="${createLinkTo(dir:'images/temp',file:'sullivan.png')}" class="notifimage"></div> 
+                                            <div class="messageblock">
+                                                <div class="message"><strong>John L. Sullivan</strong> has talked some trash: "<em>My name is John L. Sullivan, and I can lick any son of a b*tch in the place.</em></div>
+                                                <div class="messageinfo"><i class="icon-comment"></i>2 hours ago</div>
+                                            </div>
+                                            </a>
+                                        </a>
+                                    </li>
+                                </div>
+                                <li class="seeall">
+                                    <a>See All</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <span class="badge"><span id="badgeCount" class="count">1</span></span>
+                    </li>
+                    <!-- %{-- <li class="toggle-topbar menu-icon">
+                        <img src="${createLinkTo(dir:'images/temp',file:'userimage.png')}" id="accountImage" class="tinyimage mobilemenu" />
+                    
+                    </li> --}% -->
+                </ul>
+                <section class="top-bar-section">
+                    <!-- Right Nav Section -->
+                    <ul class="right hide-for-small">
+                        <li id="account" class="account accounticon">
+
+                            <img src="${createLinkTo(dir:'images/temp',file:'userimage.png')}" id="accountImage" class="tinyimage" />
+                            <span class="drop"><i class="icon-caret-down"></i></span>
+                            
+                            
+                        </li>
+                        <div class="accountholder">
+                            <div class="accountlist">
+                                <ul>
+                                    <li><label>Personal Settings</label></li>
+                                    <li><a href="#"><i class="icon-user"></i> Your Profile</a></li>
+                                    <li><a href="#"><i class="icon-trophy"></i> Your Ranking</a></li>
+                                    <li><label>Account Settings</label></li>
+                                    <li><a href="#"><i class="icon-credit-card"></i> Billing Info</a></li>
+                                    <li><a href="#"><i class="icon-comments"></i> Social Profiles</a></li>
+                                    <li><a href="/RFB/logout/index"><i class="icon-signout"></i> Sign Out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </ul>
+                    <ul class="show-for-small">
+                        <li><label>Personal Settings</label></li>
+                        <li><a href="#"><i class="icon-user"></i> Your Profile</a></li>
+                        <li><a href="#"><i class="icon-trophy"></i> Your Ranking</a></li>
+                        <li><label>Account Settings</label></li>
+                        <li><a href="#"><i class="icon-credit-card"></i> Billing Info</a></li>
+                        <li><a href="#"><i class="icon-comments"></i> Social Profiles</a></li>
+                    </ul>
+                </section>
+            </nav>
+        </div>
+        </div>
+        <!-- Main Content Section -->
+        <div id="content" class="content row">
+        
+            <!-- MAIN -->
+            <div id="main" class="large-12 columns main createteam">
+                <h1>Create Your Team</h1>
+                <form>
+                    <div class="row">
+                        <div class="large-5 columns">
+                            <label>Team Name</label>
+                            <input type="text" placeholder="Make it a good one." />
+                        </div>
+
+                        <div class="columns large-5">
+                            <label>Example</label>
+                            <fieldset class="example">
+
+                                <div class="title"></div>
+                                
+                                <div id="teamProfile" class="team profilecard">
+                                    <div id="imageAndRank" class="imageandrank">
+                                        <div class="colorlogo"><span class="letter">R</span></div>
+                                        <div id="accountRank" class="rank"><span>Rank</span>79</div>
+                                    </div>
+                                    <div id="TeamProfileInfo" class="info">
+                                        <div id="teamName" class="name"><a href="#">Team Name</a></div>
+                                        <span id="leagueName" class="leaguename"><a href="#">Public League</a></span>
+                                        <table class="statistics">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Wins</td>
+                                                    <td id="winCount" class="num divide">0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Losses</td>
+                                                    <td id="lossCount" class="num divide">0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Place</td>
+                                                    <td id="leaguePlacement" class="num divide">-</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="columns large-2"></div>
+                    </div>
+                    <label>Choose Your Team Colors</label>
+                    <div class="row">
+                        <div class="columns large-5">
+                            <fieldset class="colorset">
+                                <div class="title">Primary</div>
+                                <div id="black" class="color black selected">Black</div>
+                                <div id="maroon" class="color maroon">Maroon</div>
+                                <div id="red" class="color red">Red</div>
+                                <div id="orange" class="color orange">Orange</div>
+                                <div id="lightOrange" class="color lightorange">Light Orange</div>
+                                <div id="yellow" class="color yellow">Yellow</div>
+                                <div id="limeGreen" class="color limegreen">Lime Green</div>
+                                <div id="green" class="color green">Green</div>
+                                <div id="skyBlue" class="color skyblue">Sky Blue</div>
+                                <div id="blue" class="color blue">Blue</div>
+                                <div id="violet" class="color violet">Violet</div>
+                                <div id="white" class="color white">White</div>
+                            </fieldset>
+                        </div>
+                        <div class="columns large-5">
+                            <fieldset class="colorset">
+                                <div class="title">Secondary</div>
+                                <div id="black" class="color black">Black</div>
+                                <div id="maroon" class="color maroon">Maroon</div>
+                                <div id="red" class="color red">Red</div>
+                                <div id="orange" class="color orange">Orange</div>
+                                <div id="lightOrange" class="color lightorange">Light Orange</div>
+                                <div id="yellow" class="color yellow selected">Yellow</div>
+                                <div id="limeGreen" class="color limegreen">Lime Green</div>
+                                <div id="green" class="color green">Green</div>
+                                <div id="skyBlue" class="color skyblue">Sky Blue</div>
+                                <div id="blue" class="color blue">Blue</div>
+                                <div id="violet" class="color violet">Violet</div>
+                                <div id="white" class="color white">White</div>
+                            </fieldset>
+                        </div>
+                        <div class-"columns large-2">
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="large-12 columns">
+                            <div class="addowner">
+                                <a href="#" class="button secondary"><i class="icon-plus-sign-alt icon-2x"></i> Add another owner</a>
+                            </div>
+                        </div>
+                    </div>
+                    <label>League Options</label>
+                    <div class="row">
+                        <div class="large-3 columns">
+                            <ul class="pricing-table on btn">
+                                <li class="title">Public</li>
+                                <li class="description">
+                                    Jump into a league and pit team against other Ridonkulous teams for a fun and easy way to get going!
+                                    <i class="icon-check-sign panel-check icon-3x"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="large-3 columns">
+                            <ul class="pricing-table off btn">
+                                <li class="title">Private</li>
+                                <li class="description">
+                                    Join or Create a private league and select nine of your own friends to join in on the fun! Don't like Randoms?! No problem!
+                                    <i class="icon-check-sign panel-check icon-3x"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="large-6 columns"></div>
+                    </div>
+                    <label>What type of fantasy player are you?</label>
+                    <div class="row radios">
+                        <div class="large-12 columns">
+                            <label for="radio1">
+                                <input name="radio1" type="radio" id="radio1" style="">
+                                <span class="custom radio"></span> New to fantasy football
+                            </label>
+                            <label for="radio1">
+                                <input name="radio1" type="radio" id="radio1" style="">
+                                <span class="custom radio"></span> I have played a little fantasy football
+                            </label>
+                            <label for="radio1">
+                                <input name="radio1" type="radio" id="radio1" style="">
+                                <span class="custom radio"></span> I'm an experienced fantasy football player
+                            </label>
+
+                        </div>
+                      </div>
+                    <div class="row dayselect">
+                        <div class="large-5 columns">
+                            <label>Let's find a time!</label>
+                            <fieldset class="days">
+                              <div class="title">
+                                What days are you available?
+                              </div>
+                              <div class="day btn">
+                                S
+                              </div>
+                              <div class="day btn">
+                                M
+                              </div>
+                              <div class="day btn">
+                                T
+                              </div>
+                              <div class="day btn">
+                                W
+                              </div>
+                              <div class="day btn on">
+                                TH
+                              </div>
+                              <div class="day btn">
+                                F
+                              </div>
+                              <div class="day btn">
+                                S
+                              </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="row timeselect">
+                        <div class="large-9 columns">
+                            <fieldset class="times">
+                              <div class="title">
+                                What times are you available?
+                              </div>
+                              <div class="time btn">
+                                12a
+                              </div>
+                              <div class="time btn">
+                                1a
+                              </div>
+                              <div class="time btn">
+                                2a
+                              </div>
+                              <div class="time btn">
+                                3a
+                              </div>
+                              <div class="time btn">
+                                4a
+                              </div>
+                              <div class="time btn">
+                                5a
+                              </div>
+                              <div class="time btn">
+                                6a
+                              </div>
+                              <div class="time btn">
+                                7a
+                              </div>
+                              <div class="time btn">
+                                8a
+                              </div>
+                              <div class="time btn on">
+                                9a
+                              </div>
+                              <div class="time btn on">
+                                10a
+                              </div>
+                              <div class="time btn">
+                                11a
+                              </div>
+                              <div class="time btn">
+                                12p
+                              </div>
+                              <div class="time btn">
+                                1p
+                              </div>
+                              <div class="time btn">
+                                2p
+                              </div>
+                              <div class="time btn">
+                                3p
+                              </div>
+                              <div class="time btn">
+                                4p
+                              </div>
+                              <div class="time btn">
+                                5p
+                              </div>
+                              <div class="time btn">
+                                6p
+                              </div>
+                              <div class="time btn">
+                                7p
+                              </div>
+                              <div class="time btn">
+                                8p
+                              </div>
+                              <div class="time btn">
+                                9p
+                              </div>
+                              <div class="time btn">
+                                10p
+                              </div>
+                              <div class="time btn">
+                                11p
+                              </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="row availableselect">
+                        <div class="large-12 columns">
+                            <fieldset class="availables">
+                                <div class="title">
+                                    Available appointments!
+                                </div>
+                                <div class="available btn on">
+                                    <span class="dayofweek">
+                                        Thursday
+                                    </span>
+                                    <date>
+                                        Aug 29
+                                    </date>
+                                    <time>
+                                        9:00a
+                                    </time>
+                                </div>
+                                <div class="available btn">
+                                    <span class="dayofweek">
+                                        Thursday
+                                    </span>
+                                    <date>
+                                        Aug 29
+                                    </date>
+                                    <time>
+                                        10:00a
+                                    </time>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <a href="#" class="button success">Create Team</a>
+                </form>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="row">
+            <div class="large-6 columns">
+                <p>&copy; Copyright Ridonkulous For Life. Can't Touch This.</p>
+
+            </div>
+            <div class="large-6 columns">
+                <ul class="link-list right">
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                    <li><a href="#">Link 4</a></li>
+                    <li><a href="#">Link 5</a></li>
+                </ul>
+            </div>
+        </footer>
+        <script src="javascripts/vendor/jquery.js"></script>
+        <script src="javascripts/vendor/zepto.js"></script>
+        <script src="javascripts/foundation.min.js"></script>
+        <script>
+            $(document).foundation();
+        </script>
+        <!-- Check for Zepto support, load jQuery if necessary -->
+        <script>
+            document.write('<script src=javascripts/vendor/'
+              + ('__proto__' in {} ? 'zepto' : 'jquery')
+              + '.js><\/script>');
+            less.watch();
+        </script>
+        <script src="javascripts/foundation/foundation.dropdown.js"></script>
+        <script src="javascripts/foundation/foundation.alerts.js"></script>
+        <script src="javascripts/foundation/foundation.clearing.js"></script>
+        <script src="javascripts/foundation/foundation.placeholder.js"></script>
+        <script src="javascripts/foundation/foundation.forms.js"></script>
+        <script src="javascripts/foundation/foundation.cookie.js"></script>
+        <script src="javascripts/foundation/foundation.joyride.js"></script>
+        <script src="javascripts/foundation/foundation.magellan.js"></script>
+        <script src="javascripts/foundation/foundation.orbit.js"></script>
+        <script src="javascripts/foundation/foundation.reveal.js"></script>
+        <script src="javascripts/foundation/foundation.section.js"></script>
+        <script src="javascripts/foundation/foundation.tooltips.js"></script>
+        <script src="javascripts/foundation/foundation.topbar.js"></script>
+    </body>
+</html>

@@ -1,9 +1,30 @@
+//Import Less Elements Mixins
+@import "elements.less";
+
 /* We use this media query to add styles to any device that supports media queries */
 @media only screen { }
 
 /* Used to alter styles for screens at least 768px wide. This is where the grid changes. */
 @media only screen and (min-width: 768px) {
+	.splash {
+		header {
+			.text {
+				text-align: center;
+				.splash {
+					margin: 0 auto;
+					background-size: 100%;
+					background-position: 50% 50%;
+				}
+			}
+			.callto {
+				top: 500px;
+				bottom: auto;
+				left: auto;
+				right: auto;
 
+			}
+		}
+	}
 }
 
 /* Used to alter styles for screens BELOW 768px wide. This is where the grid changes. */
@@ -15,6 +36,25 @@
 			overflow-x:hidden;
 			.hide-it-small {
 				display: none;
+			}
+			.splash {
+				header {
+					.text {
+						text-align: center;
+						.splash {
+							margin: 0 auto -40px;
+							background-size: 52%;
+							background-position: 0% 0%;
+						}
+					}
+					.callto {
+						display: none;
+						bottom: auto;
+						left: auto;
+						right: auto;
+
+					}
+				}
 			}
 
 			.nav {
@@ -161,8 +201,46 @@
 			display: none;
 		}
 }
+
+/* Used to alter styles for screens at least 800px wide. */
+@media only screen and (min-width: 800px) {
+	.splash header {
+		.text {
+			.splash {
+				background-size: 90%;
+				background-position: 0px 0px;
+			}
+		}
+		.callto {
+    		top: auto;
+    		right: auto;
+    		bottom: -40px;
+    		left: -100px;
+    	}
+    }
+}
+
+
+/* Used to alter styles for screens at least 980px wide. */
+@media only screen and (min-width: 980px) {
+	.splash header .callto {
+        top: 465px;
+        right: 20px;
+        left:auto;
+        bottom: auto;
+    }
+}
+
+
 /* Used to alter styles for screens at least 1280px wide. */
-@media only screen and (min-width: 1280px) {}
+@media only screen and (min-width: 1280px) {
+		.splash header .callto {
+	        top: 475px;
+	        right: 20px;
+	        left: auto;
+	        bottom: auto;
+	    }
+}
 
 /* Used to alter styles for screens at least 1440px wide. */
 @media only screen and (min-width: 1440px) {}
@@ -174,6 +252,21 @@
 
 /* Apply styles to screens in portrait orientation */
 @media only screen and (orientation: portrait) {
+	.splash {
+		header {
+			.text {
+				text-align: center;
+				.splash {
+					margin: 0 auto;
+					background-size: 70%;
+					background-position: 50% 50%;
+				}
+			}
+			.callto {
+				top: 380px;
+			}
+		}
+	}
 }
 
 /* We also use Modernizr to add a .touch class to the body when applicable */

@@ -17,191 +17,242 @@
 
 //Import google fonts
 @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700|Neuton:400,700,400italic|Open+Sans:400italic,600italic,400,600|Roboto+Condensed:400,700);
+@import url(http://fonts.googleapis.com/css?family=Electrolize);
 
 //Import Less Elements Mixins
-@import url(elements.less);
+@import "elements.less";
 
 //Import the media queries file
-@import url(media.less);
+@import "media.less";
 
+//Import the partial less files
+@import "forms.less";
 
-@hilite: #ffff73;
+@hilite: #fed24d;
+@hilite2: #ebb629;
 @primary: #007fff;
+
+@black: black;
+@maroon: maroon;
+@red: orangered;
+@orange: darkorange;
+@gold: gold;
+@yellow: yellow;
+@limegreen: lightgreen;
+@green: darkgreen;
+@skyblue: skyblue;
+@blue: midnightblue;
+@violet: indigo;
+@white: white;
 
 
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */
 
+
+
 body {
-    background: #f5f5f5;
-    background: rgba(0,0,0,.05);
-    color: #333;
-    line-height: 18px;
-    text-shadow: 1px 1px 0px #fff;
-    * {
-        .box-size;
-        font-family: 'Open Sans',sans-serif;
-    }
-    a {
-        color: @primary;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        font-family: 'Neuton',Georgia,sans-serif;
-    }
-    li {
-        list-style: none;
-    }
-    .tinyimage {
-        display: inline-block;
-        height: 30px;
-        width: 30px;
-    }
-    hr {
-        .box-shadow(0px 1px 0px #fff);
-    }
-    .num {
-        font-family: "Ubuntu Mono",Courier,monospace;
-    }
-    .onepointfive {
-        font-size: 1.5em;
-    }
-    .badge {
-        .box-shadow(1px 1px 0 rgba(0,0,0,.3));
-        background: #FFFF73;
-        color: #666;
-        display: inline-block;
-        height: 15px;
-        margin: -15px -15px 0 0;
-        padding: 0;
-        position: relative;
-        right: 0px;
-        top: -7px;
-        width: 15px;
-        z-index: 1000000;
-        &:before {
-            border: 10px solid transparent;
-            border-right-color: #ffff73;
-            border-width: 0px 5px 4px 10px;
-            content: '';
-            display: block;
-            height: 0px;
-            left: -15px;
-            position: relative;
-            top: 10px;
-            width: 0px;
-        }
-        .count {
-            content: '';
-            font-family: 'Ubuntu Mono',courier,monospace;
-            font-size: 14px;
-            font-weight: bold;
-            left: 4px;
-            line-height: 10px;
-            position: relative;
-            text-align: center;
-            top: -10px;
-        }
-    }
-    .has-tip {
-        border: none;
-        &:hover {
-            border: none;
-        }
-    }
-    .tooltip {
-        background: #333;
-        background: rgba(51,51,51,.9);
-        color: #ffff73;
-        font-size: 14px;
-        font-weight: 400;
-        max-width: 300px;
-        text-shadow: none;
-        .nub {
-            border-color: transparent transparent rgba(51,51,51,.9) transparent;
-        }
-        &.tip-top {
-            .nub {
-                border-color: rgba(51,51,51,.9) transparent transparent transparent;
-            }
-        }
-        &.tip-right {
-            .nub {
-                border-color: transparent rgba(51,51,51,.9) transparent transparent;
-            }
-        }
-        &.tip-bottom {
-            .nub {
-                border-color: transparent transparent rgba(51,51,51,.9) transparent;
-            }
-        }
-        &.tip-left {
-            .nub {
-                border-color: transparent transparent transparent rgba(51,51,51,.9);
-            }
-        }
-        .tap-to-close {
-            color: #ccc;
-        }
-    }
-    table {
-        &.statistics {
-            background: transparent;
-            border: 0px;
-            font-size: 12px;
-            th {
-                background: #fff;
-                color: #666;
-                font-size: 10px;
-                font-style: italic;
-                font-weight: 400;
-                height: 18px;
-                padding-bottom: 2px;
-                padding-top: 2px;
-                text-align: left;
-                text-transform: uppercase;
-            }
-            tr.even, tr.alt, tr:nth-of-type(even) {
-                background: none;
-            }
-            td {
-                font-weight: 600;
-                &.num {
-                    text-align: right;
-                }
-            }
-            th, td {
-                &.divide {
-                    border-right: 1px solid #ccc;
-                    &:last-child {
-                        border-right: none;
-                    }
-                }
-            }
-        }
-    }
-	.error {
-		text-shadow: none;
-	}
-    .button {
-		text-shadow: none;
-        &.callout {
-            background: #ffff73;
-            border: 1px solid #ccc;
-            color: #333;
-            font-weight: 400;
-            &:hover {
-                background: lighten(#ffff73,15%);
-            }
-        }
+
+
+
+    
+        .alerts {
+            position: fixed;
+            z-index: 98;
+            top: 43px;
+            width: 635px;
+            .close {
+                top:12px;
+            }
+        }
+        .alert-box {
+            &.success {
+                background: #468c00;
+            }
+            &.alert {
+                background: #ff5c00;
+            }
+        }
+        #loader{
+            position:fixed;
+            left:5px;
+            bottom:0;
+            height: 40px;
+            width: 100px;
+            background: #fff;
+            z-index: 100000000;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        &.home {
+            background: #f5f5f5;
+            background: url(../images/subtle-pattern-1.jpg) repeat;
+        }
+        
+        color: #333;
+        line-height: 18px;
+        //text-shadow: 1px 1px 0px #fff;
+        * {
+                .box-size;
+                font-family: 'Open Sans',sans-serif;
+        }
+        a {
+                color: @primary;
+        }
+        h1, h2, h3, h4, h5, h6 {
+                font-family: 'Neuton',Georgia,sans-serif;
+        }
+        li {
+                list-style: none;
+        }
+        .tinyimage {
+                display: inline-block;
+                height: 30px;
+                width: 30px;
+        }
+        hr {
+                .box-shadow(0px 1px 0px #fff);
+        }
+        .num {
+                font-family: "Ubuntu Mono",Courier,monospace;
+        }
+        .onepointfive {
+                font-size: 1.5em;
+        }
+        .badge {
+                .box-shadow(1px 1px 0 rgba(0,0,0,.3));
+                background: lighten(@hilite, 15%);
+                color: #666;
+                display: inline-block;
+                height: 15px;
+                margin: -15px -15px 0 0;
+                padding: 0;
+                position: relative;
+                right: 0px;
+                top: -7px;
+                width: 15px;
+                z-index: 79;
+                &:before {
+                        border: 10px solid transparent;
+                        border-right-color: lighten(@hilite, 15%);
+                        border-width: 0px 5px 4px 10px;
+                        content: '';
+                        display: block;
+                        height: 0px;
+                        left: -15px;
+                        position: relative;
+                        top: 10px;
+                        width: 0px;
+                }
+                .count {
+                        content: '';
+                        font-family: 'Ubuntu Mono',courier,monospace;
+                        font-size: 14px;
+                        font-weight: bold;
+                        left: 4px;
+                        line-height: 10px;
+                        position: relative;
+                        text-align: center;
+                        top: -10px;
+                }
+        }
+        .has-tip {
+                border: none;
+                &:hover {
+                        border: none;
+                }
+        }
+        .tooltip {
+                background: #333;
+                background: rgba(51,51,51,.9);
+                color: #ffff73;
+                font-size: 14px;
+                font-weight: 400;
+                max-width: 300px;
+                text-shadow: none;
+                .nub {
+                        border-color: transparent transparent rgba(51,51,51,.9) transparent;
+                }
+                &.tip-top {
+                        .nub {
+                                border-color: rgba(51,51,51,.9) transparent transparent transparent;
+                        }
+                }
+                &.tip-right {
+                        .nub {
+                                border-color: transparent rgba(51,51,51,.9) transparent transparent;
+                        }
+                }
+                &.tip-bottom {
+                        .nub {
+                                border-color: transparent transparent rgba(51,51,51,.9) transparent;
+                        }
+                }
+                &.tip-left {
+                        .nub {
+                                border-color: transparent transparent transparent rgba(51,51,51,.9);
+                        }
+                }
+                .tap-to-close {
+                        color: #ccc;
+                }
+        }
+        table {
+                &.statistics {
+                        background: transparent;
+                        border: 0px;
+                        font-size: 12px;
+                        th {
+                                background: #fff;
+                                color: #666;
+                                font-size: 10px;
+                                font-style: italic;
+                                font-weight: 400;
+                                height: 18px;
+                                padding-bottom: 2px;
+                                padding-top: 2px;
+                                text-align: left;
+                                text-transform: uppercase;
+                        }
+                        tr.even, tr.alt, tr:nth-of-type(even) {
+                                background: none;
+                        }
+                        td {
+                                font-weight: 600;
+                                &.num {
+                                        text-align: right;
+                                }
+                        }
+                        th, td {
+                                &.divide {
+                                        border-right: 1px solid #ccc;
+                                        &:last-child {
+                                                border-right: none;
+                                        }
+                                }
+                        }
+                }
+        }
+        .button {
+                &.callout {
+                        background: lighten(@hilite,15%);
+                        border: 1px solid #ccc;
+                        color: #333;
+                        font-weight: 400;
+                        &:hover {
+                                background: @hilite;
+                        }
+                }
 		&.dropdown {
 			position: relative;
 		}
-    }
+        }
 	.f-dropdown {
+        padding: 0px;
 		&.open {
-			top: 25px !important;
-			left: 25px !important;
+			top: 25px;
+			left: 25px;
 			.active {
 				background: #f5f5f5;
 				a {
@@ -209,8 +260,12 @@ body {
 				}
 			}
 		}
+        &.sortbyselect {
+            padding: 0px;
+        }
 		&.content {
 			padding: 0px;
+
 			&.timeselect {
 				min-width: 211px;
 				.byseason {
@@ -222,8 +277,10 @@ body {
 						color: #333;
 						width: 100%;
 						float: right;
-						font-size: 12px;
-						margin: 0px;
+						font-size: 10px;
+						margin: 8px 0 0;
+                        text-transform: uppercase;
+                        line-height: 8px;
 					}
 					li { 
 						margin: 0px;
@@ -285,216 +342,492 @@ body {
 
 
 .nav {
-    .box-shadow(0px 0px 8px #333);
-    background: url(../images/darkdenim3.png) repeat #333;
-    border-bottom: 1px solid #999;
-    max-height: 45px;
-    .top-bar {
-        background: transparent;
-        z-index: 100000000;
-        .title-area {
-            &:hover {
-                background: transparent;
-            }
-            .logo {
-                a {
-                    background: url(../images/small.png) no-repeat center;
-                    background-size: auto 35px;
-                    height: 45px;
-                    text-indent: -999em;
-                    width: 185px;
-                }
-            }
-        }
-        .top-bar-section {
-            z-index: 10000000;
-            ul {
-                background: transparent;
-                &:hover {
-                    background: #000;
-                }
-                &.name {
-                    position: relative;
-                    &:hover {
-                        background: transparent;
-                    }
-                }
-                li {
-                    &.account {
-                        height: 45px;
-                        width: 70px;
-                        a {
-                            display: inline-block;
-                            &:after {
-                                margin-top: 0px;
-                            }
-                            &.accountimage {
-                                text-indent: -999em;
-                            }
-                        }
-                    }
-                    .tinyimage {
-                        display: inline-block;
-                        margin: 7px 0 7px 5px;
-                    }
-                    ul {
-                        top: 45px;
-                        &.dropdown {
-                            background: #f5f5f5;
-                            border: 1px solid #ccc;
-                            height: auto;
-                            min-width: 200px;
-                            li {
-                                background: #f5f5f5;
-                                color: #333;
-                                padding-bottom: 0px;
-                                &:last-child {
-                                    padding-bottom: 0px;
-                                    a {
-                                        padding-bottom: 15px;
-                                    }
-                                }
-                                a {
-                                    background: #f5f5f5;
-                                    color: #333;
-                                    padding: 10px 5px 10px 15px;
-                                    width: 100%;
-                                    &:hover {
-                                        background: @hilite;
-                                    }
-                                }
-                                label {
-                                    background: #f5f5f5;
-                                    color: #666;
-                                    font-size: 10px;
-                                }
-                            }
-                            hr {
-                                margin: 0 0 0px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+        &.contain-to-grid {
+            .box-shadow(0px 0px 8px #333);
+            background: url(../images/darkdenim3.png) repeat #333;
+            border-bottom: 1px solid #999;
+            max-height: 45px;
+        }
+        .top-bar {
+                background: transparent;
+                z-index: 100000000;
+                .title-area {
+                        &:hover {
+                                background: transparent;
+                        }
+                        .logo {
+                            position: relative;
+                                .logoplace {
+                                    background-color: transparent;
+                                    background-image: url(../images/small.png);
+                                    background-repeat: no-repeat;
+                                    background-position: center; 
+                                    background-size: auto 35px;
+                                    height: 45px;
+                                    text-indent: -999em;
+                                    width: 185px;
+                                    position: relative;
+                                    border: none;
+                                    display: block;
+                                }
+                                .notificationicon {
+                                    background: transparent;
+                                    border: none;
+                                    height: 44px;
+                                    position: absolute;
+                                    top: 0px;
+                                    left: 170px;
+                                    .box-shadow(0px 0px 0px transparent);
+                                    i {
+                                        position: relative;
+                                        top: 8px;
+                                        color: #999;
+                                    }
+                                    &:before {
+                                        border: none;
+                                    }
+                                    &:hover {
+                                        background: rgba(0,0,0,.5);
+                                        i {
+                                            color: #fff;
+                                        }
+                                    }
+                                    &.on {
+                                        i {
+                                            color: #ddd;
+                                        }
+                                    }
+                                    &.open {
+                                        background: rgba(0,0,0,.5);
+                                    }
+                                }
+                                .notificationholder {
+                                    position: absolute;
+                                    top: -1000px;
+                                    .transition(0s);
+                                    .transition-delay(.3s);
+                                    &.open {
+                                        top: 45px;
+                                        .transition(0s);
+                                        .notifications {
+                                            opacity: 1;
+                                            .transition();
+                                            .transition-delay(.2s);
+                                        }
+                                    }
+                                    .notifications {
+                                        max-width: 300px;
+                                        width: 300px;
+                                        background: #fff;
+                                        border: 1px solid #ccc;
+                                        padding: 0px;
+                                        .box-shadow(0px 0px 20px #666);
+                                        opacity:0;
+                                        .transition();
+                                        &:before {
+                                            content: '';
+                                            height: 10px;
+                                            width: 10px;
+                                            display: block;
+                                            position: absolute;
+                                            top: -19px;
+                                            left: 180px;
+                                            border: 10px solid #fff;
+                                            border-color: transparent transparent #fff transparent;
+                                        }
+                                        &.open {
+                                            opacity: 1;
+                                            .transition();
+                                        }
+                                        li {
+                                            padding: 5px;
+                                            &.titlebar {
+                                                border-bottom: 1px solid #ccc;
+                                                color: #666;
+                                                font-size: 12px;
+                                                cursor: inherit;
+                                                padding: 2px 5px;
+                                                &:hover {
+                                                    background: #fff;
+                                                }
+                                                .settings {
+                                                    float: right;
+                                                    cursor: pointer;
+                                                }
+                                            }
+                                            &.seeall {
+                                                text-align: center;
+                                                font-size: 12px;
+                                                min-height: 30px;
+                                                text-transform: uppercase;
+                                                position: relative;
+                                                border-top: 1px solid #ccc;
+                                                a {
+                                                    background: #f5f5f5;
+                                                    position: absolute;
+                                                    top: 0px;
+                                                    left: 0px;
+                                                    right: 0px;
+                                                    bottom: 0px;
+                                                    color: @primary;
+                                                    padding-top: 8px;
+                                                }
+                                            }
+                                        }
+                                            .notifbox {
+                                                max-height: 300px;
+                                                overflow: auto;
+                                                li {
+                                                    color: #666;
+                                                    a { color: #666;}
+                                                    &.unread {
+                                                        background: lighten(@primary, 45%);
+                                                    }
+                                                    &.notif {
+                                                        min-height: 70px;
+                                                        border-bottom: 1px solid #ccc;
+                                                        position: relative;
+                                                        &:last-child {
+                                                            border-bottom: none;
+                                                        }
+                                                        .imageblock {
+                                                            width: 70px;
+                                                            position: absolute;
+                                                            left: 5px;
+                                                            .notifimage {
+                                                                height: 60px;
+                                                            }
+                                                        }
+                                                        .messageblock {
+                                                            width: 200px;
+                                                            position: relative;
+                                                            left: 70px;
+                                                            font-size: 12px;
+                                                            .message {
+                                                                a {
+                                                                    color: @primary;
+                                                                }
+                                                            }
+                                                            .messageaction {
+                                                                min-height: 30px;
+                                                                margin-bottom: 5px;
+                                                                .button {
+                                                                    font-weight: normal;
+                                                                    text-transform: uppercase;
+                                                                    &.success, &.alert {
+                                                                        color: #fff;
+                                                                    }
+
+                                                                }
+                                                            }
+                                                            .messageinfo {
+                                                                font-size: 10px;
+                                                                color: #999;
+                                                            }
+                                                        }
+                                                        &.injured {
+                                                                background: #ffcfbf;
+                                                                &:hover {
+                                                                        background: darken(#ffcfbf,10%);
+                                                                        .injury {
+                                                                                color: darken(#FF5C00,20%);
+                                                                        }
+                                                                }
+                                                                .injury {
+                                                                        color: #FF5C00;
+                                                                        font-size: 12px;
+                                                                        font-weight: 600;
+                                                                        position: relative;
+                                                                        text-shadow: none;
+                                                                        top: -7px;
+                                                                        i {
+                                                                                font-size: 1.2em;
+                                                                        }
+                                                                }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                    }
+                                }
+                                .badge {
+                                    position: absolute;
+                                    top: 30px;
+                                    right: -20px;
+                                }
+                        }
+
+                }
+                .top-bar-section {
+                        z-index: 10000000;
+                        ul {
+                                background: transparent;
+                                &:hover, &.open {
+                                        background: #000;
+                                }
+
+                                &.name {
+                                        position: relative;
+                                        &:hover {
+                                                background: transparent;
+                                        }
+                                }
+                                .accountholder {
+                                    position: absolute;
+                                    top: -1000px;
+                                    .transition(0s);
+                                    .transition-delay(0s);
+                                    width: 200px;
+                                    margin-left: -145px;
+                                    opacity: 0;
+
+                                        background: #fff;
+                                        border: 1px solid #ccc;
+                                    .accountlist {
+                                        label {
+                                            background: #fff;
+                                            border-bottom: 1px solid #ccc;
+                                            color: #666;
+                                            font-size: 12px;
+                                            cursor: inherit;
+                                            padding: 2px 5px;
+                                            margin-bottom: 0px;
+                                        }
+                                        li {
+                                            width: 100%;
+                                            opacity: 0;
+                                            background: #fff;
+                                            &:last-child {
+                                                a {
+                                                    border-bottom: none;
+
+                                                }
+                                            }
+                                            a {
+                                                background: #f5f5f5;
+                                                color: #333;
+                                                font-weight: normal;
+                                                border-bottom: 1px solid #ccc;
+                                                .transition();
+                                                &:hover {
+                                                    background: #eee;
+                                                    .transition();
+                                                }
+                                            }
+                                        }
+                                        hr {
+                                            margin-bottom: 0px;
+                                        }
+                                    }
+                                    &.open {
+                                        top: 45px;
+                                        opacity: 1;
+                                        .transition(0s);
+                                        .accountlist {
+                                            li {
+                                                opacity: 1;
+                                                .transition();
+                                                .transition-delay(.1s);
+                                            }
+                                        }
+                                    }
+                                }
+                                li {
+                                        &.account {
+                                                height: 45px;
+                                                width: 55px;;
+                                                a {
+                                                        display: inline-block;
+                                                        &:after {
+                                                                margin-top: 0px;
+                                                        }
+                                                        &.accountimage {
+                                                                text-indent: -999em;
+                                                        }
+                                                }
+                                                .drop {
+                                                    position: relative;
+                                                    top: -40px;
+
+                                                    i {
+                                                        color: #f5f5f5;
+                                                        .rotation(-90deg);
+                                                        .transition();
+                                                    }
+                                                }
+
+                                        }
+                                        &.open {
+                                            .drop {
+                                                i {
+                                                    .rotation(0deg);
+                                                    .transition(.4s);
+                                                }
+                                            }
+                                        }
+
+                                        .tinyimage {
+                                                display: inline-block;
+                                                margin: 7px 0 7px 20px;
+                                        }
+                                        ul {
+                                                top: 45px;
+                                                &.dropdown {
+                                                        background: #f5f5f5;
+                                                        border: 1px solid #ccc;
+                                                        height: auto;
+                                                        min-width: 200px;
+                                                        li {
+                                                                background: #f5f5f5;
+                                                                color: #333;
+                                                                padding-bottom: 0px;
+                                                                &:last-child {
+                                                                        padding-bottom: 0px;
+                                                                        a {
+                                                                                padding-bottom: 15px;
+                                                                        }
+                                                                }
+                                                                a {
+                                                                        background: #f5f5f5;
+                                                                        color: #333;
+                                                                        padding: 10px 5px 10px 15px;
+                                                                        width: 100%;
+                                                                        &:hover {
+                                                                                background: @hilite;
+                                                                        }
+                                                                }
+                                                                label {
+                                                                        background: #f5f5f5;
+                                                                        color: #666;
+                                                                        font-size: 10px;
+                                                                }
+                                                        }
+                                                        hr {
+                                                                margin: 0 0 0px;
+                                                        }
+                                                }
+                                        }
+                                }
+                        }
+                }
+        }
 }
 /* -----------------------------------------
    Content
 ----------------------------------------- */
 .content {
-    input[type=checkbox] {
-        left: -9999px;
-        position: absolute;
-        top: -9999px;
-    }
-    label {
-        color: #fff;
-        cursor: pointer;
-        display: none;
-        font-size: 1.1em;
-        height: 43px;
-        left: 0;
-        margin: 0;
-        padding: .35em;
-        position: absolute;
-        transition: color .3s ease-in-out;
-        user-select: none;
-        width: 43px;
-    }
-    h2 {
-        font-family: 'Open Sans',arial,sans-serif;
-        font-size: 16px;
-        font-weight: 400;
-    }
-    .profilecard {
-        position: relative;
+        // input[type=checkbox] {
+        //         left: -9999px;
+        //         position: absolute;
+        //         top: -9999px;
+        // }
+        // label {
+        //         color: #fff;
+        //         cursor: pointer;
+        //         display: none;
+        //         font-size: 1.1em;
+        //         height: 43px;
+        //         left: 0;
+        //         margin: 0;
+        //         padding: .35em;
+        //         position: absolute;
+        //         transition: color .3s ease-in-out;
+        //         user-select: none;
+        //         width: 43px;
+        // }
+        h2 {
+                font-family: 'Open Sans',arial,sans-serif;
+                font-size: 16px;
+                font-weight: 400;
+        }
+        .profilecard {
+                position: relative;
 		width: 315px;
 		display: inline-block;
-        .imageandrank {
-            display: inline-block;
-            position: absolute;
-            width: 48px;
-            .bigimage {
-                top: 0px;
-            }
-            .rank {
-                background: #468C00;
-                color: #fff;
-                filter: none;
-                font-family: 'Ubuntu Mono',courier,monospace;
-                font-size: 21px;
-                font-weight: bold;
-                line-height: 15px;
-                padding: 0 3px 5px;
-                position: absolute;
-                text-align: center;
-                text-shadow: none;
-                top: 50px;
-                width: 48px;
-                span {
-                    color: #fff;
-                    display: block;
-                    font-size: 10px;
-                    font-weight: normal;
-                    text-transform: uppercase;
-                }
-            }
-        }
-        table.statistics {
-            td {
-                padding: 3px 20px 2px 0px;
-            }
-        }
-        .info {
-            display: inline-block;
-            margin-left: 52px;
-            max-width: 250px;
-            min-width: 173px;
-            padding: 0px 5px;
-            .name {
-                a, span {
-                    font-family: 'Neuton',georgia,serif;
-                    font-size: 21px;
-                }
-                .nickname {
-                    &:before {
-                        content: "\201C";
-                    }
-                    &:after {
-                        content: "\201D";
-                    }
-                }
-            }
-            .leaguename {
-                font-size: 10px;
-                text-transform: uppercase;
-            }
-            .timestamp {
-                color: #666;
-                font-size: 12px;
-            }
-            .location {
-                font-size: 14px;
-            }
-            .quote {
-                font-size: 14px;
-                font-style: italic;
-                &:before {
-                    content: "\201C";
-                }
-                &:after {
-                    content: "\201D";
-                }
-            }
-        }
+                .imageandrank {
+                        display: inline-block;
+                        position: absolute;
+                        width: 48px;
+                        .bigimage, .colorlogo {
+                                top: 0px;
+                        }
+                        .rank {
+                                background: #468C00;
+                                color: #fff;
+                                filter: none;
+                                font-family: 'Ubuntu Mono',courier,monospace;
+                                font-size: 21px;
+                                font-weight: bold;
+                                line-height: 15px;
+                                padding: 0 3px 5px;
+                                position: absolute;
+                                text-align: center;
+                                text-shadow: none;
+                                top: 50px;
+                                width: 48px;
+                                span {
+                                        color: #fff;
+                                        display: block;
+                                        font-size: 10px;
+                                        font-weight: normal;
+                                        text-transform: uppercase;
+                                }
+                        }
+                }
+                table.statistics {
+                        td {
+                                padding: 3px 20px 2px 0px;
+                        }
+                }
+                .info {
+                        display: inline-block;
+                        margin-left: 52px;
+                        max-width: 250px;
+                        min-width: 173px;
+                        padding: 0px 5px;
+                        .name {
+                                a, span {
+                                        font-family: 'Neuton',georgia,serif;
+                                        font-size: 21px;
+                                }
+                                .nickname {
+                                        &:before {
+                                                content: "\201C";
+                                        }
+                                        &:after {
+                                                content: "\201D";
+                                        }
+                                }
+                        }
+                        .leaguename {
+                                font-size: 10px;
+                                text-transform: uppercase;
+                        }
+                        .timestamp {
+                                color: #666;
+                                font-size: 12px;
+                        }
+                        .location {
+                                font-size: 14px;
+                        }
+                        .quote {
+                                font-size: 14px;
+                                font-style: italic;
+                                &:before {
+                                        content: "\201C";
+                                }
+                                &:after {
+                                        content: "\201D";
+                                }
+                        }
+                }
 		&.opponent {
 			text-align: right;
 			.imageandrank {
 				right: 0px;
-	        }
+	                }
 			.info {
-	            margin-right: 52px;
+	                        margin-right: 52px;
 			}
 			.statistics {
 				position: absolute;
@@ -508,64 +841,74 @@ body {
 				}
 			}
 		}
-    }
-    .teams {
-        .team {
-            .transition;
-            border: 1px solid transparent;
-            cursor: pointer;
-            &.selected {
-                .transition;
-                background: #fff;
-                border: 1px solid #ccc;
-                border-color: rgba(0,0,0,.2);
-                border-width: 1px 0px 1px 1px;
-                margin-right: -20px;
-                .tinyimage, .teamname {
-                    .transition;
-                    left: 5px;
-                }
-                .badge {
-                    .transition;
-                    right:0px;
-                }
-            }
-            &:hover {
-                background: #ddd;
-            }
+        }
+        .teams {
+                .team {
+                        .transition;
+                        border: 1px solid transparent;
+                        cursor: pointer;
+                        &.selected {
+                                .transition;
+                                background: #fff;
+                                border: 1px solid #ccc;
+                                border-color: rgba(0,0,0,.2);
+                                border-width: 1px 0px 1px 1px;
+                                margin-right: -20px;
+                                cursor: default;
+                                z-index: 80;
+                                position: relative;
+                                &:hover {
+                                    background: #fff;
+
+                                }
+                                .leaguename {
+                                    cursor: pointer;
+                                }
+                                .tinyimage, .teamname {
+                                        .transition;
+                                        left: 5px;
+                                }
+                                .badge {
+                                        .transition;
+                                        right:0px;
+                                }
+                        }
+                        &:hover {
+                                background: #ddd;
+                        }
 			
-            .tinyimage {
-                position: relative;
-                top: 4px;
-            }
-            .teamname {
-                font-family: 'Neuton',georgia,serif;
-                font-size: 18px;
-                position: relative;
-                top: -6px;
-            }
-            .leaguename {
-                color: @primary;
-                font-size: 10px;
-                position: relative;
-                text-transform: uppercase;
-                top: 11px;
-            }
-            i {
-                color: #999;
-                position: relative;
-                top: 11px;
-            }
-        }
-        .create {
-            font-size: 12px;
-            i {
-                color: #468C00;
-                position: relative;
-                top: 2px;
-            }
-        }
-    }
+                        .tinyimage {
+                                position: relative;
+                                top: 4px;
+                        }
+                        .teamname {
+                                font-family: 'Neuton',georgia,serif;
+                                font-size: 18px;
+                                position: relative;
+                                top: -6px;
+                        }
+                        .leaguename {
+                                color: @primary;
+                                font-size: 10px;
+                                position: relative;
+                                text-transform: uppercase;
+                                top: 11px;
+                        }
+                        i {
+                                color: #999;
+                                position: relative;
+                                top: 11px;
+                        }
+                }
+                .create {
+                        font-size: 12px;
+                        i {
+                                color: #468C00;
+                                position: relative;
+                                top: 2px;
+                        }
+                }
+        }
 	.games {
 		.game {
 			padding: 5px 0px 0px 0px;
@@ -618,344 +961,368 @@ body {
 				}
 				.gameoption {
 					color: @primary;
-	                font-size: 10px;
-	                position: relative;
-	                text-transform: uppercase;
+	                                font-size: 10px;
+	                                position: relative;
+	                                text-transform: uppercase;
 					top: 12px;
 					right: -8px;
 				}
 				i {
-	                color: #999;
-	                position: relative;
+	                                color: #999;
+	                                position: relative;
 					top: 12px;
 					right: -8px;
-	            }
+	                        }
 			}
 			&.selected {
-                .transition;
-                background: #fff;
-                border: 1px solid #ccc;
-                border-color: rgba(0,0,0,.2);
-                border-width: 1px 0px 1px 1px;
-                margin-right: -20px;
+                                .transition;
+                                background: #fff;
+                                border: 1px solid #ccc;
+                                border-color: rgba(0,0,0,.2);
+                                border-width: 1px 0px 1px 1px;
+                                margin-right: -20px;
 				padding: 5px 0px 0px 5px;
-                .gameblock, .gameinfo {
-                    .transition;
-                    left: 5px;
-                }
-                .badge {
-                    .transition;
-                    right: 0px;
-                }
-            }
+                                .gameblock, .gameinfo {
+                                        .transition;
+                                        left: 5px;
+                                }
+                                .badge {
+                                        .transition;
+                                        right: 0px;
+                                }
+                        }
 		}
 	}
-    .more {
-        .rounded(100%);
-        background: #fff;
-        border: 1px solid #ccc;
-        border-color: rgba(0,0,0,.2);
-        display: block;
-        height: 16px;
-        left: 150px;
-        margin: -10px 0 -28px;
-        position: relative;
-        width: 16px;
-        i {
-            color: #999;
-            font-size: .9em;
-            left: 3px;
-            position: relative;
-            top: -3px;
-        }
-    }
+        .more {
+                .rounded(100%);
+                background: #fff;
+                border: 1px solid #ccc;
+                border-color: rgba(0,0,0,.2);
+                display: block;
+                height: 16px;
+                left: 150px;
+                margin: -10px 0 -28px;
+                position: relative;
+                width: 16px;
+                i {
+                        color: #999;
+                        font-size: .9em;
+                        left: 3px;
+                        position: relative;
+                        top: -2px;
+                }
+        }
 /* -----------------------------------------
    Sidebar
 ----------------------------------------- */
-    .sidebar {
-        border: 1px solid #ccc;
-        border-color: rgba(0,0,0,.2);
-        border-width: 0px 1px 0 0;
-        bottom: 0px;
-        height: 100%;
-        padding-top: 30px;
-        position: relative;
-        top: 0px;
-        h5 {
-            color: #666;
-            font-family: 'Open Sans',arial,sans-serif;
-            font-size: 10px;
-            font-style: italic;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        .badge {
-            right: 5px;
-            top: 3px;
-        }
-    }
+        .sidebar {
+                border: 1px solid #ccc;
+                border-color: rgba(0,0,0,.2);
+                border-width: 0px 0px 0 0;
+                bottom: 0px;
+                height: 100%;
+                padding-top: 30px;
+                position: relative;
+                top: 0px;
+                h5 {
+                        color: #666;
+                        font-family: 'Open Sans',arial,sans-serif;
+                        font-size: 10px;
+                        font-style: italic;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                }
+                .badge {
+                        right: 5px;
+                        top: 3px;
+                }
+        }
 /* -----------------------------------------
    Main
 ----------------------------------------- */
-    .main {
-        background: #fff;
-        border: 1px solid #ccc;
-        border-color: rgba(0,0,0,.2);
-        border-width: 0px 1px 0 0;
-        height: 100%;
-        padding-top: 30px;
-        .breadcrumbs {
-            background: transparent;
-            border: none;
-            margin: 0px 0px 10px;
-            padding: 0px;
-            .current {
-                color: #999;
-            }
-            li {
-                &:hover {
-                    text-decoration: none;
-                    a {
-                        text-decoration: none;
-                    }
-                }
-                a {
-                    color: @primary;
-                    &:hover {
-                        text-decoration: none;
-                    }
-                }
-            }
-        }
-        .titlebar {
-            background: #f5f5f5;
-            border: 1px solid #ccc;
-            border-width: 1px 0px;
-            color: #666;
-            font-weight: 600;
-            padding: 10px 2px;
-            text-transform: uppercase;
-            .position {
-                font-size: 16px;
-            }
-            .opponent {
-                font-size: 10px;
-                font-style: italic;
-                margin-right: 3px;
-            }
-        }
-        .controlbar {
-            background: transparent;
-            border: 1px solid #ccc;
-            border-width: 1px 0 0;
-            padding: 5px 0;
-            .pagetitle {
-                display: inline-block;
-                h1 {
-                    display: inline-block;
-                    font-size: 21px;
-                    font-weight: 400;
-                    margin: 0px;
-                }
-            }
-            .controls {
-                display: inline-block;
-                padding: 0px;
-                position: relative;
-                top: 4px;
-                i {
-                    color: #666;
-                    margin-left: 10px;
-                    padding-right: 5px;
-                    position: relative;
-                    top: 2px;
-                }
-                a {
-                    i {
-                        margin-left: 0px;
-                        padding: 0px;
-                        top: 0px;
-                    }
-                }
+        .main {
+                background: #fff;
+                border: 1px solid #ccc;
+                border-color: rgba(0,0,0,.2);
+                border-width: 0px 1px 0 1px;
+                height: 100%;
+                padding-top: 30px;
+                .breadcrumbs {
+                        background: transparent;
+                        border: none;
+                        margin: 0px 0px 10px;
+                        padding: 0px;
+                        .current {
+                                color: #999;
+                        }
+                        li {
+                                &:hover {
+                                        text-decoration: none;
+                                        a {
+                                                text-decoration: none;
+                                        }
+                                }
+                                a {
+                                        color: @primary;
+                                        &:hover {
+                                                text-decoration: none;
+                                        }
+                                }
+                        }
+                }
+                .titlebar {
+                        background: #f5f5f5;
+                        border: 1px solid #ccc;
+                        border-width: 1px 0px;
+                        color: #666;
+                        font-weight: 600;
+                        padding: 10px 2px;
+                        text-transform: uppercase;
+                        .position {
+                                font-size: 16px;
+                        }
+                        .opponent {
+                                font-size: 10px;
+                                font-style: italic;
+                                margin-right: 3px;
+                        }
+                }
+                .controlbar {
+                        background: transparent;
+                        border: 1px solid #ccc;
+                        border-width: 1px 0 0;
+                        padding: 5px 0;
+                        width: 100%;
+                        height: 40px;
+                        .pagetitle {
+                                display: inline-block;
+                                h1 {
+                                        display: inline-block;
+                                        font-size: 21px;
+                                        font-weight: 400;
+                                        margin: 0px;
+                                }
+                        }
+                        .controls {
+                                display: inline-block;
+                                padding: 0px;
+                                position: relative;
+                                top: 4px;
+                                .expandobot {
+                                    display: inline-block;
+                                    .button {
+                                        width: 99px;
+                                    }
+                                  .expando {
+                                    display: none;
+                                  }
+                                  .collapse {
+                                    display: inline-block;
+                                  }
+                                  &.on {
+                                    .expando {
+                                      display: inline-block;
+                                    }
+                                    .collapse {
+                                      display: none;
+                                    }
+                                  }
+                                }
+                                i {
+                                        color: #666;
+                                        margin-left: 10px;
+                                        padding-right: 5px;
+                                        position: relative;
+                                        top: 2px;
+                                }
+                                a {
+                                        i {
+                                                margin-left: 0px;
+                                                padding: 0px;
+                                                top: 0px;
+                                        }
+                                }
 				.control {
 					display: inline-block;
 					position: relative;
 				}
-                .button {
-                    font-size: 12px;
-                    font-weight: normal;
-                    margin: 0px;
-                    &.small {
-                        height: 21px;
-                        padding: 4px 10px;
-                    }
-                    &.dropdown {
-                        padding-right: 20px;
-                        &:before {
-                            border-color: #666 transparent transparent transparent;
-                            border-width: 5px 3px;
-                            right: 7px;
-                        }
-                    }
-                    &.secondary {
-                        .gradient(#f5f5f5,#eee,#fff);
-                    }
-                }
-            }
-        }
-        .playerbar {
-            .transition;
-            border: 1px solid #ccc;
-            border-width: 1px 1px 0px;
-            clear: both;
-            cursor: pointer;
-            max-height: 37px;
-            padding: 0px 2px 0 0;
-            &:last-child {
-                border-width: 1px;
-            }
-            &:before {
-                background: url(../images/icons/texture.png);
-                content: '';
-                display: inline-block;
-                height: 14px;
-                left: 2px;
-                position: relative;
-                top: -5px;
-                width: 6px;
+                                .button {
+                                        font-size: 12px;
+                                        font-weight: normal;
+                                        margin: 0px;
+                                        &.small {
+                                                height: 21px;
+                                                padding: 4px 10px;
+                                        }
+                                        &.dropdown {
+                                                padding-right: 20px;
+                                                &:before {
+                                                        border-color: #666 transparent transparent transparent;
+                                                        border-width: 5px 3px;
+                                                        right: 7px;
+                                                }
+                                        }
+                                        &.secondary {
+                                                .gradient(#f5f5f5,#eee,#fff);
+                                        }
+                                }
+                        }
+                }
+
+                .playerbar {
+                        .transition;
+                        border: 1px solid #ccc;
+                        border-width: 1px 1px 0px;
+                        clear: both;
+                        cursor: pointer;
+                        max-height: 37px;
+                        padding: 0px 2px 0 0;
+                        &:last-child {
+                                border-width: 1px;
+                        }
+                        &:before {
+                                background: url(../images/icons/texture.png);
+                                content: '';
+                                display: inline-block;
+                                height: 14px;
+                                left: 2px;
+                                position: relative;
+                                top: -5px;
+                                width: 6px;
 				cursor: move !important;
-            }
-            &:hover {
-                .transition;
-            }
-            &.selected {
-                background: #666;
-                .playername {
-                    color: #fff;
-                    text-shadow: none;
-                }
-                &:hover {
-                    background: darken(#666,10%);
-                }
-            }
-            &.injured {
-                background: #ffcfbf;
-                &:hover {
-                    background: darken(#ffcfbf,10%);
-                    .injury {
-                        color: darken(#ff5b26,20%);
-                    }
-                }
-                .injury {
-                    color: #FF5B26;
-                    font-size: 12px;
-                    font-weight: 600;
-                    position: relative;
-                    text-shadow: none;
-                    top: -7px;
-                    i {
-                        font-size: 1.2em;
-                    }
-                }
-            }
-			&.owned {
-				background: #666;
-                .playername {
-                    color: #fff;
-                    text-shadow: none;
-                }
-                &:hover {
-                    background: darken(#666,10%);
-                }
-				.leagueopponent {
-					span {
-						font-style: normal;
-						color: #fff;
-						text-shadow: none;
-					}
-				}
-			}
-			&.tradable {
-				background: #ddd;
-			}
-			&.unowned {
-				background: #ffffe2;
-			}
-            &.available {
-                background: #ffffe2;
-                &:hover {
-                    background: darken(#ffffe2,10%);
-                }
-            }
-            &.slot {
-                background: url(../images/subtle-pattern-1.jpg);
-                min-height: 35px;
-                padding-left: 5px;
-                .note, .playername {
-                    left: 5px;
-                    top: 4px;
-                }
-                .note {
-                    color: #666;
-                }
-                &:before {
-                    display: none;
-                }
-            }
-			.leagueopponent {
-				display: inline-block;
-				margin-bottom: -2px;
-				img {
-					right: 10px;
-					top: 2px;
-					position: relative;
-					height: 31px;
-					width: 31px;
-				}
-				span {
-					font-size: 12px;
-					font-style: italic;
-					top:-7px;
-					position: relative;
-					right: 10px;
-				}
-			}
+                        }
+                        &:hover {
+                                .transition;
+                        }
+                        &.selected {
+                                background: #666;
+                                .playername {
+                                        color: #fff;
+                                        text-shadow: none;
+                                }
+                                &:hover {
+                                        background: darken(#666,10%);
+                                }
+                        }
+                        
+            			&.owned {
+            				background: #666;
+                                            .playername {
+                                                    color: #fff;
+                                                    text-shadow: none;
+                                            }
+                                            &:hover {
+                                                    background: darken(#666,10%);
+                                            }
+            				.leagueopponent {
+            					span {
+            						font-style: normal;
+            						color: #fff;
+            						text-shadow: none;
+            					}
+            				}
+            			}
+            			&.tradable {
+            				background: #ddd;
+            			}
+            			&.unowned {
+            				background: lighten(@hilite,30%);
+            			}
+                                    &.available {
+                                            background: #ffffe2;
+                                            &:hover {
+                                                    background: darken(#ffffe2,10%);
+                                            }
+                                    }
+                                    &.slot {
+                                            background: url(../images/subtle-pattern-1.jpg);
+                                            min-height: 35px;
+                                            padding-left: 5px;
+                                            .note, .playername {
+                                                    left: 5px;
+                                                    top: 4px;
+                                            }
+                                            .note {
+                                                    color: #666;
+                                            }
+                                            &:before {
+                                                    display: none;
+                                            }
+                                    }
+            			.leagueopponent {
+            				display: inline-block;
+            				margin-bottom: -2px;
+            				img {
+            					right: 10px;
+            					top: 2px;
+            					position: relative;
+            					height: 31px;
+            					width: 31px;
+            				}
+            				span {
+            					font-size: 12px;
+            					font-style: italic;
+            					top:-7px;
+            					position: relative;
+            					right: 10px;
+            				}
+            			}
+                        &.injured {
+                                background: #ffcfbf;
+                                &:hover {
+                                        background: darken(#ffcfbf,10%);
+                                        .injury {
+                                                color: darken(#FF5C00,20%);
+                                        }
+                                }
+                                .injury {
+                                        color: #FF5C00;
+                                        font-size: 12px;
+                                        font-weight: 600;
+                                        position: relative;
+                                        text-shadow: none;
+                                        top: -7px;
+                                        i {
+                                                font-size: 1.2em;
+                                        }
+                                }
+                        }
 			img.dim {
 				opacity: .5;
 			}
-            .note {
-                font-size: 12px;
-                position: relative;
-                text-shadow: none;
-                top: -7px;
-            }
-            .playername {
-                position: relative;
-                text-shadow: none;
-                top: -7px;
-            }
-            .nflteam {
-                display: inline-block;
-                height: auto;
-                position: relative;
-                top: 2px;
-                width: 41px;
-            }
-            .actions {
-                display: inline-block;
-                max-height: 30px;
-                position: relative;
-                right: 5px;
-                top: 4px;
-                .button {
-                    margin: 0px;
-                    max-height: 30px;
-                    i {
-                        font-size: 1.4em;
-                    }
-                }
-            }
-        }
+                        .note {
+                                font-size: 12px;
+                                position: relative;
+                                text-shadow: none;
+                                top: -7px;
+                        }
+                        .playername {
+                                position: relative;
+                                text-shadow: none;
+                                top: -7px;
+                        }
+                        .nflteam {
+                                display: inline-block;
+                                height: auto;
+                                position: relative;
+                                top: 2px;
+                                width: 41px;
+                        }
+                        .actions {
+                                display: inline-block;
+                                max-height: 30px;
+                                position: relative;
+                                right: 5px;
+                                top: 4px;
+                                .button {
+                                        margin: 0px;
+                                        max-height: 30px;
+                                        i {
+                                                font-size: 1.4em;
+                                        }
+                                }
+                        }
+                }
 		.more {
 			.gradient();
 			width: 100%;
@@ -967,94 +1334,224 @@ body {
 			line-height: 37px;
 			cursor: pointer;
 		}
-        .playerstats {
-            background: #f5f5f5;
-            border: 1px solid #ccc;
-            border-width: 0px 1px;
-            clear: both;
-            display: none;
-            padding: 10px;
-            img {
-                height: 48px;
-                left: 26px;
-                position: absolute;
-                vertical-align: top;
-                width: 48px;
-            }
-            ul {
-                height: 100%;
-                margin-left: 50px;
-                margin-right: 0px;
-                position: relative;
-                li {
-                    border-right: 1px solid #ccc;
-                    padding: 0px;
-                    &:last-child, &:first-child {
-                        border-right: none;
-                    }
-                    .stathead {
-                        background: #fff;
-                        color: #666;
-                        font-size: 10px;
-                        font-style: italic;
-                        font-weight: 400;
-                        height: 18px;
-                        padding-left: 10px;
-                        text-align: left;
-                        text-transform: uppercase;
-                        &.position {
-                            background: transparent;
-                            font-weight: 800;
-                        }
-                    }
-                    dl {
-                        display: inline-block;
-                        font-size: 10px;
-                        padding: 0px 10px;
-                        width: 100%;
-                        dt {
-                            display: inline-block;
-                            margin: 0px;
-                            width: 50%;
-                        }
-                        dd {
-                            display: inline-block;
-                            font-family: 'Ubuntu Mono',courier,monospace;
-                            margin: 0px;
-                            text-align: right;
-                            width: 45%;
-                        }
-                    }
-                }
-            }
-            &.open {
-                display: block;
-            }
-            .position {
-                font-size: 12px;
-                font-weight: 600;
-                text-transform: uppercase;
-            }
-            .bigimage {
-                width: 48px;
-            }
-            .bigimage, .info, .stats {
-                display: inline-block;
-                vertical-align: top;
-            }
-            .info {
-                margin: 0px 20px 0px 10px;
-            }
-            .stats {
-                min-width: 400px;
-                table {
-                    width: 100%;
-                }
-            }
-        }
+                .playerstats {
+                        background: #f5f5f5;
+                        border: 1px solid #ccc;
+                        border-width: 0px 1px;
+                        clear: both;
+                        padding: 0px 10px;
+                        height: 0px;
+                        opacity: 0;
+                        .box-size();
+                        .transition(.1s);
+                        img {
+                                height: 48px;
+                                left: 26px;
+                                position: absolute;
+                                vertical-align: top;
+                                width: 48px;
+                        }
+                        ul {
+                                height: 100%;
+                                margin-left: 50px;
+                                margin-right: 0px;
+                                position: relative;
+                                li {
+                                        border-right: 1px solid #ccc;
+                                        padding: 0px;
+                                        height: 0px;
+                                        &:last-child, &:first-child {
+                                                border-right: none;
+                                                height: 0px;
+                                        }
+                                        .stathead {
+                                                background: #fff;
+                                                color: #666;
+                                                font-size: 10px;
+                                                font-style: italic;
+                                                font-weight: 400;
+                                                height: 18px;
+                                                padding-left: 10px;
+                                                text-align: left;
+                                                text-transform: uppercase;
+                                                height: 0px;
+                                                &.position {
+                                                        background: transparent;
+                                                        font-weight: 800;
+                                                        height: 0px;
+                                                }
+                                        }
+                                        dl {
+                                                display: inline-block;
+                                                font-size: 10px;
+                                                padding: 0px 10px;
+                                                width: 100%;
+                                                height: 0px;
+                                                dt {
+                                                        display: inline-block;
+                                                        margin: 0px;
+                                                        width: 50%;
+                                                        height: 0px;
+                                                }
+                                                dd {
+                                                        display: inline-block;
+                                                        font-family: 'Ubuntu Mono',courier,monospace;
+                                                        margin: 0px;
+                                                        text-align: right;
+                                                        width: 45%;
+                                                        height: 0px;
+                                                }
+                                        }
+                                }
+
+                        }
+                        .alert-box.injury {
+                            margin-bottom: 0;
+                            height: 0px;
+                            padding: 0px;
+                            border-width: 0px;
+                            .close {
+                                color: #fff;
+                                opacity: .7;
+                                height: 0px;
+                                &:hover {
+                                    opacity: 1;
+                                }
+                            }
+                            .imageblock {
+                                height: 0px;
+                                width: 70px;
+                                position: absolute;
+                                left: 10px;
+                                .vetruvian {
+                                    height: 0px;
+                                    width: 80px;
+                                    background: url(../images/vetruv2.png) no-repeat;
+                                    display: block;
+                                    background-size: 100%;
+                                    position: relative;
+                                    &.knee {
+                                        &:after {
+                                            content: "knee";
+                                            text-indent: -999em;
+                                            display: block;
+                                            background: #ffff00;
+                                            width: 20px;
+                                            height: 20px;
+                                            border-radius: 100%;
+                                            position: relative;
+                                            top: 70px;
+                                            left: 38px;
+                                            border: 2px solid rgba(255,92,0,1);
+                                        }
+                                    }
+                                }
+                            }
+                            .messageblock {
+                                width: 480px;
+                                position: relative;
+                                left: 90px;
+                                font-size: 12px;
+                                ul {
+                                    margin-left: 0px;
+                                }
+                                .messageinfo {
+                                    font-size: 10px;
+                                    color: #999;
+                                }
+                            }
+                            .note {
+                                font-weight: normal;
+                            }
+                            .injurylist {
+                                li {
+                                    font-weight: 600;
+                                    border: none;
+                                    i {
+                                        font-weight: 200;
+                                    }
+                                }
+                            }
+                        }
+                        &.open {
+                                height: auto;
+                                opacity: 1;
+                                padding: 10px;
+                                border-width: 1px 1px 0px;
+                                .transition(.2s);
+
+
+                                .alert-box.injury {
+                                    height: auto;
+                                    min-height: 130px;
+                                    margin-bottom: 10px;
+                                    padding: 10px 10px 0px;
+                                    border-width: 1px;
+                                    .close {
+                                        height: auto;
+                                    }
+                                    .imageblock {
+                                        height: auto;
+                                        .vetruvian {
+                                            height: 120px;
+                                        }
+                                    }
+                                }
+                                img {
+                                        height: 48px;
+                                }
+                                ul {
+                                        height: 100%;
+                                        li {
+                                                height:auto;
+                                                &:last-child, &:first-child {
+                                                        height:auto;
+                                                }
+                                                .stathead {
+                                                       height:auto;
+                                                        &.position {
+                                                                height:auto;
+                                                        }
+                                                }
+                                                dl {
+                                                        height:auto;
+                                                        dt {
+                                                                height:auto;
+                                                        }
+                                                        dd {
+                                                                height:auto;
+                                                        }
+                                                }
+                                        }
+                                }
+                        }
+                        .position {
+                                font-size: 12px;
+                                font-weight: 600;
+                                text-transform: uppercase;
+                        }
+                        .bigimage {
+                                width: 48px;
+                        }
+                        .bigimage, .info, .stats {
+                                display: inline-block;
+                                vertical-align: top;
+                        }
+                        .info {
+                                margin: 0px 20px 0px 10px;
+                        }
+                        .stats {
+                                min-width: 400px;
+                                table {
+                                        width: 100%;
+                                }
+                        }
+                }
 //gameday
 		&.gameday {
 			background: url(../images/clashsplash.png) no-repeat 80px -10px #fff;
+            .transition();
+            height: auto;
 			h1 {
 				font-size: 44px;
 				font-weight: normal;
@@ -1067,23 +1564,90 @@ body {
 			.profilecard {
 				margin-top: 10px;
 			}
-			.tabs {
-				.secondary {
-					.gradient();
-					font-weight: normal;
-					&.active {
-						.gradient(#F5F5F5, #FFF, #EEE);
-						color: #999;
-						cursor: default;
-					}
-				}
-			}
+            .resultsbox {
+                position: relative;
+                .transition();
+                .playbyplay, .boxscore {
+                    background: #fcfcfc;
+                    border: 1px solid #ccc;
+                    box-sizing: border-box;
+                    left: 0px;
+                    opacity: 0;
+                    position: relative;
+                    top: -1px;
+                    transition: .2s;
+                    height: 0px;
+                    h2 {
+                        height: 0px;
+                    }
+                    &.active {
+                        height: auto;
+                      transition: .8s;
+                      transition-delay: .3s;
+                      opacity: 1;
+                      h2 {
+                        height: auto;
+                      }
+                    }
+                }
+                .boxscore {
+                    top: -3px;
+                    table {
+                        width: 100%;
+                        border-width: 1px 0px;
+                        border-spacing: 0px;
+                        padding: 2px;
+                        thead {
+                            tr {
+                                &:last-child {
+                                    border-bottom: 1px solid #ccc;
+                                    border-collapse: separate;
+                                    background: #ddd;
+                                }
+                            }
+                        }
+                        tbody {
+                            border-top: 1px solid #ccc;
+                        }
+                        tr {
+                            &.norm {
+                                background: #fff;
+                            }
+                        }
+                        th, td {
+                            border-spacing: 0px;
+                            border: none;
+                            &.rtl {
+                                text-align: right;
+                            }
+                        }
+                    }
+                    h3 {
+                        font-size: 21px;
+                        margin-left: 10px;
+                        color: #666;
+                    }
+                }
+    			.button-group {
+                    margin: 0px;
+    				.secondary {
+    					.gradient();
+    					font-weight: normal;
+                        margin: 0px;
+    					&.active {
+    						.gradient(#F5F5F5, #FFF, #EEE);
+    						color: #999;
+    						cursor: default;
+    					}
+    				}
+    			}
+            }
 			.results {
-				background: url(/images/subtle-pattern-1.jpg) repeat #efefef;
+				background: url(../images/subtle-pattern-1.jpg) repeat #efefef;
 				border: 1px solid #ccc;
 				margin: 0px;
 				position: relative;
-				top: -21px;
+				//top: -21px;
 				h2 {
 					font-size: 24px;
 					font-family: 'Neuton', serif;
@@ -1111,9 +1675,12 @@ body {
 				}
 			}
 			.controls {
-				background: url(/images/subtle-pattern-1.jpg) repeat #efefef;
+				background: url(../images/subtle-pattern-1.jpg) repeat #efefef;
 				border: 1px solid #ccc;
 				height: 39px;
+                position: relative;
+                top: -5px;
+                .transition();
 				.button {
 					.gradient();
 					border: 1px solid #ccc;
@@ -1123,7 +1690,7 @@ body {
 						top: -1px;
 						color: #999;
 						position: relative;
-						i { font-weight: 800; position: absolute; top: -2px;}
+						i { font-weight: 800; line-height: 0px; position: absolute; top: 5px;}
 						&.prev {
 							left: -1px;
 							i {
@@ -1152,25 +1719,711 @@ body {
 				}
 			}
 		}
-    }
+        }
 }
+
+// splash
+
+.splash {
+    background: #222;
+    * {
+        font-family: 'Roboto', sans-serif;
+        color: #fff;
+        text-shadow: none;
+    }
+    h3 {
+        margin-top: 60px;
+    }
+    .reveal-modal {
+        * { color: #333;}
+        a {
+            color: #0099ff;
+            &.button {
+                color: #fff;
+            }
+        }
+    }
+    .contain-to-grid .top-bar {
+        margin-top: -10px;
+    }
+    .top-bar-section {
+        ul.links {
+            background: transparent;
+            height: 44px;
+            &:hover {
+                background: transparent;
+            }
+            li {
+                background: rgba(0,0,0,.2);
+                .transition;
+                height: 44px;
+                &:hover {
+                    background: rgba(0,0,0,.4);
+                    .transition;
+                }
+                a {
+                    background: transparent;
+                }
+                &.active {
+                    background: @hilite;
+                    opacity: .95;
+                    color: #222;
+                    a {
+                        color: #222;
+                    }
+                }
+                &.topone {
+                    display: none;
+                }
+            }
+        }
+        ul.login {
+            &:hover {
+                background: transparent;
+            }
+            li {
+                padding: 0 0 0 10px;
+                margin-top: 2px;
+                right: 10px;
+                position: relative;
+                height: 45px;
+                a.signup {
+                    background: transparent;
+                    text-transform: uppercase;
+                    padding: 0px;
+                    font-weight: 100;
+                    font-size: 10px;
+                    margin-top: -1px;
+                }
+                &:hover {
+                    background: transparent;
+                }
+                a.button {
+                    font-family: 'Open Sans';
+                    font-weight: 600;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    background: @hilite;
+                    color: #333;
+                    .box-shadow(0px 0px 10px #333);
+                    .transition;
+                    &:hover {
+                        background: @hilite2;
+                        .transition;
+                    }
+                }
+            }
+        }
+    }
+    .ultra {
+        font-weight: 900;
+        color: @hilite;
+    }
+    .button {
+        background: darken(lime, 20%);
+        font-family: 'Roboto Condensed', sans-serif;
+        border: 1px solid darken(lime, 40%);
+        &:hover {
+            background: darken(lime, 10%);
+        }
+    }
+    i {
+        color: darken(@primary, 10%);
+    }
+    
+    header {
+            background: url(../images/football-grass2.png) no-repeat center top fixed;
+            min-height: 650px;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            padding-top: 30px;
+            border-bottom: 1px solid #999;
+        * {
+            color: #fff;
+        }
+
+
+        @ribbon: url(../images/darkdenim3.png) repeat;
+        @primary: #0099ff;
+        @hilite2: #ffff99;
+
+        .rotate(@arg:45deg) {
+            -moz-transform: rotate(@arg);
+            -webkit-transform: rotate(@arg);
+            -o-transform: rotate(@arg);
+            -ms-transform: rotate(@arg);
+            transform: rotate(@arg);
+
+        }
+
+
+        @badgewidth: 8em;
+
+        .callto {
+          background: @hilite;
+          border-radius: 1.5em;
+          color: #fff;
+          margin: 2em auto;
+          position: absolute;
+          width: @badgewidth; height: @badgewidth;
+          z-index: 1;
+          top: 485px;
+          right: 20px;
+          cursor: pointer;
+          .transition;
+          &:before {
+            background: @hilite;
+            border-radius: 1.5em;
+            content:"";
+            position: absolute;
+            top: 0; left: 0;
+            .rotate(30deg);
+            width:  @badgewidth; height:  @badgewidth;
+            z-index: 1;
+            .transition;
+          }
+          &:after {
+            background: @hilite;
+            border-radius: 1.5em;
+            content:"";
+            position: absolute;
+            top: 0; left: 0;
+            .rotate(-30deg);
+            width: @badgewidth; height: @badgewidth;
+            z-index: 1;
+            .transition;
+          }
+          &:hover {
+            background: saturate(@hilite, -30%);
+            .rotate(5deg);
+            &:before {
+                background: saturate(@hilite, -30%);
+            }
+            &:after {
+                background: saturate(@hilite, -30%);
+            }
+          }
+        }
+        .seal {
+          border-radius: 100%;
+          position: absolute;
+          top: 50%; left: 50%;
+          background: @ribbon;
+          margin-top: -(@badgewidth/2); margin-left: -(@badgewidth/2);
+          width: @badgewidth; height: @badgewidth;
+          z-index: 100;
+          &:before {
+            content:"";
+            border-radius: 100%;
+          position: absolute;
+          top: 50%; left: 50%;
+          border:5px solid #222;
+          margin-top: -(@badgewidth/2); margin-left: -(@badgewidth/2);
+          width: @badgewidth; height: @badgewidth;
+          z-index: 100;
+          }
+          
+        }
+        .type {
+            border-radius: 100%;
+            .rotate(-15deg);
+            border: 2px dashed rgba(255,255,255,.5); 
+            font-family: "Neuton", serif;
+            text-align: center;
+            text-transform: uppercase;
+            padding-top: 0em;
+            position: absolute;
+            top: 50%; left: 50%;
+            margin-top: -(@badgewidth/2); margin-left: -(@badgewidth/2); 
+            width: @badgewidth; height: @badgewidth;
+            z-index: 400;
+            h1 {  
+                font-family: "Neuton", serif;
+                font-size: 1.8em; 
+                font-weight: 600;
+                color: #fff;
+                margin: 0px 0 -23px;
+            }
+            h2 {  
+                font-family: "Neuton", serif;
+                font-size: 1.6em; 
+                font-weight: 600;
+                color: #fff;
+                margin: 0px 0 -11px;
+            }
+            em {
+                display: block;
+                font-size: .75em;
+                font-style: italic;
+                font-weight: 300;
+                margin: 0 0 -10px;
+                &.top {
+                    margin-top: 25px;
+                }
+            }
+        }
+        h1.splash {
+            background: url(../images/splash.png) no-repeat center center;
+            text-indent: -999em;
+            width: 478px;
+            height: 140px;
+        }
+        h2 {
+            font-weight: 400;
+            font-size: 3.7em;
+        }
+        .text {
+            background: rgba(0,0,0,.5);
+            padding: 60px 20px 20px 40px;
+            margin-top: -30px;
+            position: relative;
+            top: 0px;
+            bottom: 0px;
+            h2 {
+                font-family: "Neuton";
+                line-height: 52px;
+                .ultra {
+                    font-family: "Neuton";
+                }
+            }
+        }
+    }
+    .content {
+        margin: 0px auto 20px;
+        h1,h2,h3,h4,h5,h6 {
+            font-family: Neuton;
+            color: @hilite;
+        }
+    }
+    .pricing-table {
+        &.dark {
+            border: 1px solid darken(@hilite2, 30%);
+            .title {
+                background: url(../images/darkdenim3.png) repeat #333;
+                color: #fff;
+            }
+            .price, .cta-button {
+                background: #111;
+                color: #fff;
+                .button {
+                    background: @hilite;
+                    border: 1px solid @hilite2;
+                    color: #222;
+                    &:hover {
+                        background: @hilite2;
+                        border: 1px solid darken(@hilite2, 20%);
+                    }
+                }
+            }
+            .price {
+                border-bottom: 1px solid #444;
+            }
+            .description, .bullet-item {
+                background: #333;
+                border-bottom: 1px dashed #000;
+                color: #eee;
+            }
+        }
+    }
+
+} 
 /* -----------------------------------------
    Footer
 ----------------------------------------- */
 footer {
-    border-top: 1px solid #ccc;
-    padding: 20px;
-    position: relative;
-    top: 0px;
-    * {
-        color: #999;
-    }
-    .link-list {
-        li {
-            border-right: 1px solid #ccc;
-            display: inline;
-            padding: 0 10px;
-        }
-    }
+        border-top: 1px solid #ccc;
+        padding: 20px;
+        position: relative;
+        top: 0px;
+        * {
+                color: #999;
+        }
+        .link-list {
+                li {
+                        border-right: 1px solid #ccc;
+                        display: inline;
+                        padding: 0 10px;
+                }
+        }
 }
+
+fieldset {
+    padding-bottom: 0px;
+    background: #e5e5e5;
+    .keepme {
+        margin-bottom: 20px;
+    }
+    
+}
+
+
+/* -----------------------------------------
+   Modals
+----------------------------------------- */
+
+.reveal-modal {
+    background: #f5f5f5;
+    background-color: #f5f5f5 !important;
+    .border-radius(10px, 10px, 10px, 10px);
+    .gradient(#f5f5f5, #eee);
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    fieldset {
+        padding-bottom: 0px;
+        background: #e5e5e5;
+        .keepme {
+            margin-bottom: 20px;
+        }
+        
+    }
+    a {
+        color: #00aaff;
+    }
+    .success {
+        i {
+            color: #fff;
+        }
+    }
+    .facebook {
+        background: #3B5998;
+        &:hover {
+            background: darken(#3B5998, 10%);
+        }
+        i {
+            color: #fff;
+        }
+    }
+    .hr-or {
+        color: #888;
+        font-style: italic;
+        line-height: 2.0em;
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+        font-size: 1.2em;
+    }
+    hr {
+        border: 1px solid #ccc;
+    }
+}
+
+.chk {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+/* ------------------------------------------
+Index.gsp css
+------------------------------------------ */
+
+#status {
+    background-color: #eee;
+    border: .2em solid #fff;
+    margin: 2em 2em 1em;
+    padding: 1em;
+    width: 12em;
+    float: left;
+    -moz-box-shadow: 0px 0px 1.25em #ccc;
+    -webkit-box-shadow: 0px 0px 1.25em #ccc;
+    box-shadow: 0px 0px 1.25em #ccc;
+    -moz-border-radius: 0.6em;
+    -webkit-border-radius: 0.6em;
+    border-radius: 0.6em;
+}
+
+.ie6 #status {
+    display: inline; /* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
+}
+
+#status ul {
+    font-size: 0.9em;
+    list-style-type: none;
+    margin-bottom: 0.6em;
+    padding: 0;
+}
+         
+#status li {
+    line-height: 1.3;
+}
+
+#status h1 {
+    text-transform: uppercase;
+    font-size: 1.1em;
+    margin: 0 0 0.3em;
+}
+
+#page-body {
+    margin: 2em 1em 1.25em 18em;
+}
+
+h2 {
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+    font-size: 1em;
+}
+
+p {
+    line-height: 1.5;
+    margin: 0.25em 0;
+}
+
+#controller-list ul {
+    list-style-position: inside;
+}
+
+#controller-list li {
+    line-height: 1.3;
+    list-style-position: inside;
+    margin: 0.25em 0;
+}
+
+@media screen and (max-width: 480px) {
+    #status {
+        display: none;
+    }
+
+    #page-body {
+        margin: 0 1em 1em;
+    }
+
+    #page-body h1 {
+        margin-top: 0;
+    }
+}
+
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
+
+
+
+
+
+
+@tipcolor: #0099ff;
+
+
+
+
+.rotate(@deg: 45deg) {
+    -moz-transform: rotate(@deg);
+        -webkit-transform: rotate(@deg);
+        -o-transform: rotate(@deg);
+        -ms-transform: rotate(@deg);
+        transform: rotate(@deg);
+}
+
+
+
+  
+  
+
+/* teamhover stuffs (tooltip) */
+.profiletip {
+    position:relative;
+
+    .profilehover {
+      .box-size;
+      border: 1px solid transparent;
+      position: absolute;
+      padding: 0px;
+      width: 302px;
+      height: 0px;
+      .rounded;
+      font-weight: normal;
+      color: rgba(0,0,0,0);
+      opacity: 0;
+      font-size: 16px;
+      // .transition;
+      z-index: 1;
+      .profilecard {
+        padding: 10px;
+        height: 0px;
+        display: none;
+        .info {
+            max-width: 230px;
+        }
+      }
+      .messageaction {
+        background: rgba(245,245,245,1);
+        padding: 5px 10px;
+        border-top: 1px solid #ccc;
+        display: none;
+        .button {
+            margin: 0px 0px 3px;
+            z-index: 100001;
+        }
+      }
+      .nub{
+        display: block; 
+        width: 15px; 
+        height: 15px; 
+        padding: 5px;
+        border-style: solid; 
+        border-color: #ccc; 
+        border-width: 0px 1px 1px 0px;
+        background: rgba(245,245,245,1);
+        .box-size; 
+        position: absolute; 
+        left: 42%;
+        .rotate;
+        z-index: 0;
+        // .transition;
+        // .transition-delay;
+        .rounded(0px);
+      }
+      &.top {
+        bottom: 0px;
+        left: 0px;
+        .nub {
+          left: 20%; 
+          bottom: -8px;
+        }
+      }
+      &.bottom {
+        bottom: 0px;
+        left: 4px;
+        .nub {
+          left: 20%; 
+          top: -8px;
+        }
+      }
+      &.left {
+        top: 0px;
+        left: 4px;
+        .nub {
+          left: 180px; 
+          top: 20px;
+        }
+      }
+      &.right {
+        top: 0px;
+        right: 4px;
+        .nub {
+          left: -8px; 
+          top: 20px;
+          margin: 0 0 0 0;
+          .transition;
+        }
+      }
+    }
+    &:hover {
+      .profilehover {
+        background: rgba(255,255,255,1);
+        border: 1px solid #ccc;
+        height: auto;
+        color: rgba(40,40,40,1);
+        cursor: default;
+        font-size: 16px;
+        opacity: 100;
+        .transition;
+        .transition-delay(1s);
+        z-index: 100000;
+        .profilecard {
+            display: block;
+            height: auto;
+            cursor: default;
+        }
+        .messageaction{
+            display: block;
+        }
+        .nub {
+          .transition;
+          .transition-delay(1s);
+        }
+        &.bottom {
+          bottom: -60px;
+        }
+        &.left {
+          left: -193px;
+        }
+        &.right {
+          right: -193px;
+        }
+        &.top {
+          bottom: 39px;
+        }
+      }
+    }
+}
+
+.reveal-modal {
+    &.action {
+        padding: 0px 0px 0px;
+        .actioncontain {
+            padding: 20px;
+            ul {
+                margin-bottom: 0px;
+            }
+            .teams {
+                border: 1px solid #ccc;
+                h5 {
+                    padding: 0px 10px;
+                    border-bottom: 1px solid #ccc;
+                    margin: 0px;
+                    background: #fff;
+                }
+                .team {
+                    .transition;
+                    border: 1px solid transparent;
+                    cursor: pointer;
+                    padding: 0px 10px;
+                    &:hover {
+                        background: #ddd;
+                    }
+                    .badge {display: none;}
+                    .tinyimage {
+                            position: relative;
+                            top: 4px;
+                    }
+                    .teamname {
+                            font-family: 'Neuton',georgia,serif;
+                            font-size: 18px;
+                            position: relative;
+                            top: -6px;
+                    }
+                    .leaguename {
+                            color: @primary;
+                            font-size: 10px;
+                            position: relative;
+                            text-transform: uppercase;
+                            top: 11px;
+                    }
+                    i {
+                            color: #999;
+                            position: relative;
+                            top: 11px;
+                            &.icon-caret-right {
+                                display: none;
+                            }
+                    }
+                }
+                .create {
+                        display: none;
+                        i {
+                                color: #468C00;
+                                position: relative;
+                                top: 2px;
+                        }
+                }
+            }
+        }
+        .more, hr {
+                display: none;
+                i {
+                        display: none;
+                }
+        }
+    }
+
+}
+
+
+
 

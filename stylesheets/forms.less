@@ -1,0 +1,261 @@
+body {
+	.main {
+		.btn {
+			cursor: pointer;
+		}
+		&.createteam {
+		    background: transparent;
+		    border: none;
+		    form {
+			    label {
+			     	display: block;
+			     	margin: 10px 0 5px 0px;
+			     	font-size: 16px;
+			    }
+			    input[type=text] {
+			     	padding: 30px 10px;
+			     	margin-bottom: 20px;
+			     	width: 100%;
+			     	font-size: 24px;
+			    }
+			    .radios {
+			    	margin-bottom: 10px;
+			    	label {
+			    		font-size: 14px;
+			    	}
+			    }
+			    .pricing-table {
+			    	.transition;
+			    	.panel-check {
+			    		display: block;
+			    		text-align: center;
+			    		margin: 10px auto 0px;
+			    		color: #999;
+			    		.transition;
+			    	}
+			    	&.off {
+			    		.title {
+			    			background: #999;
+			    			color: #fff;
+			    			.transition;
+			    		}
+			    		&:hover {
+			    			.transition;
+			    			border-color: #999;
+			    			.title {
+			    				background: #666;
+			    				.transition;
+			    			}
+			    			.panel-check {
+			    				color: #666;
+			    				.transition;
+			    			}
+			    		}
+			    	}
+			    	&.on {
+			    		cursor: default;
+			    		border-color: @primary;
+			    		.title {
+			    			color: #fff;
+			    			background: @primary;
+			    		}
+			    		.panel-check {
+			    			color: @green;
+			    		}
+			    	}
+			    }
+			    fieldset {
+					width: 100%;
+					background: #fff;
+					margin: 10px 0;
+					position: relative;
+					padding: 15px 0px 10px 10px;
+					display: inline-block;
+					.title {
+						font-size: 14px;
+						position: absolute;
+						top: -1px;
+						background: #fff;
+						padding: 0px 5px;
+						line-height: 1px;
+					}
+					.color {
+						text-indent: -1000em;
+						width: 51px;
+						height: 51px;
+						background: #eee;
+						display: inline-block;
+						position: relative;
+						margin: 4px 3px;
+						cursor: pointer;
+						&:hover {
+							opacity: .9;
+						}
+						&:after {
+							content: "";
+							display: block;
+							border: 2px solid transparent;
+							width: 61px;
+							height: 61px;
+							position: absolute;
+							top: -5px;
+							left: -5px;
+						}
+						&.selected {
+							&:after {
+								border: 2px solid #0099ff;
+							}
+						}
+						&.black {
+							background: @black;
+						}
+						&.maroon {
+							background: @maroon;
+						}
+						&.red {
+							background: @red;
+						}
+						&.orange {
+							background: @orange;
+						}
+						&.lightorange {
+							background: @gold;
+						}
+						&.yellow {
+							background: @yellow;
+						}
+						&.limegreen {
+							background: @limegreen;
+						}
+						&.green {
+							background: @green;
+						}
+						&.skyblue {
+							background: @skyblue;
+						}
+						&.blue {
+							background: @blue;
+						}
+						&.violet {
+							background: @violet;
+						}
+						&.white {
+							background: @white;
+							border: 1px solid #ccc;
+						}
+					}
+				}
+
+			}
+			.addowner {
+				margin: 30px 0px 10px;
+				.button {
+					background: transparent;
+					border: none;
+					padding: 0px 0px 0px 0px;
+					text-align: left;
+					line-height: 18px;
+					font-weight: normal;
+					i {
+						color: @green;
+						line-height: 10px;
+					}
+				}
+			}
+			.timeselect, .dayselect, .availableselect {
+				.times {
+					width: 642px;
+				}
+				.days, .times, .availables {
+					// background: #fff;
+					// border: 1px solid #ccc;
+					// color: #666;
+					// margin: 10px 0 30px;
+					// padding: 10px;
+					// position: relative;
+					.day, .time, .available {
+						display: inline-block;
+						padding: 10px 0;
+						background: #ddd;
+						width: 48px;
+						height: 48px;
+						border: 1px solid #ccc;
+						box-sizing: border-box;
+						line-height: 24px;
+						font-size: 23px;
+						text-align: center;
+						transition: .3s;
+						margin: 5px 0px;
+						&:hover {
+							background: #e5e5e5;
+							transition: .3s;
+						}
+						&.on {
+							background: #f0f0f0;
+							border-color: #0099ff;
+							color: #0099ff;
+						}
+				    }
+				    .available {
+						width: 102px;
+						height: 102px;
+						border: 1px solid #ccc;
+						.dayofweek {
+							background: #666;
+							color: #fff;
+							font-weight: bold;
+							font-size: 10px;
+							display: block;
+							position: relative;
+							top: -10px;
+							text-transform: uppercase;
+							transition: .3s;
+						}
+						date {
+							font-size: 18px;
+							font-weight: bold;
+							display: block;
+						}
+						time {
+							font-size: 14px;
+							display: block;
+						}
+						&:hover {
+							.dayofweek {
+							background: #333;
+							transition: .3s;
+							}
+						}
+						&.on {
+							border: 1px solid #0099ff;
+							.dayofweek {
+								background: #0099ff;
+							}
+						}
+					}
+				}
+			}
+			.example {
+				.colorlogo {
+					width: 48px;
+					height: 48px;
+					background: @black;
+					//display: inline-block;
+					border: 1px solid @black;
+					position: relative;
+					// top: 8px;
+					.letter {
+						font-family: "Electrolize", tahoma;
+						color: @yellow;
+						text-align: center;
+						font-size: 44px;
+						position: relative;
+						top: 15px;
+						left: 0px;
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
